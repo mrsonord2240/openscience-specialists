@@ -1,0 +1,9 @@
+OpenScience Specialists
+Copyright 2026 Samuel Nord
+
+This repository contains tooling, schemas and tests derived from the OpenScience Specialist
+Marketplace (https://github.com/aipoch/openscience-specialist-marketplace, commit 7215c1d),
+Copyright AIPOCH, licensed under the Apache License, Version 2.0.
+
+Specialist Skill content retains the license of its upstream source, recorded per release in
+specialists/<id>/versions/<version>/release.config.json.

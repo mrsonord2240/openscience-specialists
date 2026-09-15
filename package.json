@@ -1,0 +1,27 @@
+{
+  "name": "openscience-specialists",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build:release": "node scripts/build-release.mjs",
+    "check:immutability": "node scripts/check-published-immutability.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "node --test \"test/**/*.test.mjs\"",
+    "validate": "node scripts/validate.mjs",
+    "verify:history": "node scripts/verify-release-history.mjs",
+    "verify:marketplace": "node scripts/verify-marketplace.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "fflate": "0.8.3",
+    "yaml": "2.9.0"
+  },
+  "devDependencies": {
+    "prettier": "3.9.6"
+  }
+}

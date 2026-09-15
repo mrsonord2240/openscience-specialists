@@ -1,0 +1,7 @@
+{
+  "name": "FIXTURE_SPECIALIST",
+  "description": "Non-publishable protocol fixture",
+  "system_prompt": "Help verify the Marketplace protocol.",
+  "skill_ids": ["example-skill"],
+  "connector_ids": ["example-connector"]
+}
