@@ -1,2 +1,7 @@
 # Specialist Skill payloads are validated as packages, not formatted as repository tooling.
 specialists/*/versions/*/package/skills/
+# Audit records are published as the auditors wrote them; the index files are generated.
+audits/skills/
+audits/specialists/
+audits/INDEX.md
+audits/BACKLOG.md

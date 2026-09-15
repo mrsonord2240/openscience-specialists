@@ -95,6 +95,12 @@ A Skill can therefore score 84 and still be graded Beta Only.
   commit recorded in the release.
 - Specialists are research-only and never make individual patient-level calls.
 
+### Audit records
+
+Every audit is published in [audits/](audits/README.md) — including Skills that failed, earlier
+versions that were later fixed, and Specialist candidates that were not viable — with each Skill's
+author, source commit and license, and a [backlog](audits/BACKLOG.md) of open improvements.
+
 ### How to read the numbers
 
 Most sub-scores are an auditor's judgment, so a difference of a point or two is noise. The stronger
