@@ -8,7 +8,7 @@ marketplace.
 In the App: Marketplace → Add GitHub source →
 `https://github.com/mrsonord2240/openscience-specialists/tree/published`. On the review screen,
 confirm the marketplace name is `OpenScience Specialists (Samuel Nord)`, the key ID is
-`openscience-samuelnord-2026-09`, and the fingerprint is `3d0a93f80ac3f5361fdac9d3746f9a4f1168d4b38456f260c0dfc60fb6c032f1`. Do not add the source if any of
+`openscience-samuelnord-2026-09`, and the fingerprint is `1e615f87f702b9ce5343ac6107e6b602e6f72d8828c8937539964b09d4e24345`. Do not add the source if any of
 these differ.
 
 ## Specialists
