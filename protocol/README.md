@@ -5,7 +5,7 @@ OpenScience Specialist Marketplace. Any public GitHub repository may implement t
 
 ## Published files
 
-The `published` branch and CDN mirror expose:
+The `published` branch and GitHub Releases expose:
 
 ```text
 marketplace.json
@@ -96,11 +96,10 @@ transition—clients must never trust a replacement merely because remote metada
 
 ## Immutability and transport fallback
 
-Versioned release descriptors and ZIPs are immutable and retain long-lived cache headers. The root
-and signature use short caching or revalidation. A publisher uploads candidate bytes to CDN staging,
-downloads and verifies them, publishes the same metadata to GitHub, promotes the same bytes to the CDN,
-then proves GitHub and CDN byte equality. A root is not promoted until its referenced artifact passes
-all checks. Clients may fall back from the CDN mirror to GitHub without changing trust semantics.
+Versioned release descriptors and ZIPs are immutable. This repository publishes through GitHub
+only: the root, signature and descriptors on the `published` branch, ZIPs as GitHub Release
+assets. A root is committed to `published` only after its referenced artifacts are built, signed
+and verified, and the publish job then proves the raw GitHub bytes equal what was signed.
 
 Schema v1 is immutable after production adoption. Incompatible contracts require a new versioned
 prefix and schemas; additive Marketplace releases do not rewrite historical App-exported ZIPs.
