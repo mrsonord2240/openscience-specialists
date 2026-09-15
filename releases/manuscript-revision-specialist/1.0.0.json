@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "specialist_id": "manuscript-revision-specialist",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/aipoch/medical-research-skills",
+    "commit": "f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/manuscript-revision-specialist/1.0.0/manuscript-revision-specialist-1.0.0.zip",
+    "github_release": {
+      "tag": "manuscript-revision-specialist-v1.0.0",
+      "asset_name": "manuscript-revision-specialist-1.0.0.zip"
+    },
+    "sha256": "86349d3c95c5af495f81a8369503b5ebc1f119d912eeb6cfb9bd5c355e148e09",
+    "compressed_bytes": 234478,
+    "uncompressed_bytes": 529096,
+    "file_count": 128
+  },
+  "defaults": {
+    "skill_ids": [
+      "paper-sprint-review",
+      "revision-strategy-planner",
+      "response-letter",
+      "reporting-guideline-compliance-checker",
+      "consistency-checker-across-manuscript",
+      "reference-integrity-checker",
+      "author-response-builder",
+      "rebuttal-letter-strategist",
+      "response-tone-polisher",
+      "claim-strength-calibrator",
+      "retraction-watcher",
+      "cover-letter-drafter",
+      "blind-review-sanitizer",
+      "figure-reference-checker",
+      "arxiv-preflight",
+      "journal-recommender"
+    ],
+    "connector_ids": [
+      "pubmed",
+      "literature",
+      "clinical-trials",
+      "biorxiv"
+    ]
+  },
+  "skills": [
+    {
+      "id": "paper-sprint-review",
+      "name": "paper-sprint-review",
+      "display_name": "Paper Sprint Review",
+      "description": "Runs a multi-lens (contribution, rigor, writing, editor) manuscript review and turns findings into a prioritized revision backlog with gated sprints.",
+      "path": "skills/paper-sprint-review",
+      "content_digest": "b18ab0afce69b02736bee2903012700e4cdaa3d616d8af8374bf10ea1458ee3d",
+      "file_count": 24,
+      "uncompressed_bytes": 78853
+    },
+    {
+      "id": "revision-strategy-planner",
+      "name": "revision-strategy-planner",
+      "display_name": "Revision Strategy Planner",
+      "description": "Triages editor and reviewer comments by severity and routes each to experiment, analysis, clarification, restructuring, wording, or bounded rebuttal.",
+      "path": "skills/revision-strategy-planner",
+      "content_digest": "6c008fe1477d301a736c27eb61f2032e4dbeb33901c4f644cb245218322e29dd",
+      "file_count": 8,
+      "uncompressed_bytes": 16614
+    },
+    {
+      "id": "response-letter",
+      "name": "response-letter",
+      "display_name": "Point-by-Point Response Letter",
+      "description": "Assembles a Word response letter with an editor overview and Comment/Response/Changes-in-Text blocks mapped to page, paragraph, and line.",
+      "path": "skills/response-letter",
+      "content_digest": "fcd06bc0b14d7e5e6395813ca01417444437a88e71a5e539bc128f895529ad05",
+      "file_count": 4,
+      "uncompressed_bytes": 75853
+    },
+    {
+      "id": "reporting-guideline-compliance-checker",
+      "name": "reporting-guideline-compliance-checker",
+      "display_name": "Reporting Guideline Compliance Checker",
+      "description": "Checks a manuscript against its design-matched reporting guideline (CONSORT, STROBE, PRISMA, TRIPOD, or hybrid) and grades gaps by submission risk.",
+      "path": "skills/reporting-guideline-compliance-checker",
+      "content_digest": "6b26120f533e5e123f12aa21bf4d0ff552badd887fe2cf38e7512745e8d008c3",
+      "file_count": 8,
+      "uncompressed_bytes": 16365
+    },
+    {
+      "id": "consistency-checker-across-manuscript",
+      "name": "consistency-checker-across-manuscript",
+      "display_name": "Cross-Manuscript Consistency Checker",
+      "description": "Finds sample-size, endpoint, terminology, figure/table/supplement, and conclusion-result contradictions and version drift across manuscript sections.",
+      "path": "skills/consistency-checker-across-manuscript",
+      "content_digest": "bc67150c0d68ad88cdd4cba30ee64678803401ac37e307ff37be43c82f384fb9",
+      "file_count": 9,
+      "uncompressed_bytes": 16224
+    },
+    {
+      "id": "reference-integrity-checker",
+      "name": "reference-integrity-checker",
+      "display_name": "Reference Integrity Checker",
+      "description": "Checks that each citation supports the exact claim it is attached to, flagging mismatch, overextension, quote drift, and second-hand citation.",
+      "path": "skills/reference-integrity-checker",
+      "content_digest": "a9a06b5101b97d428328a72be9d0ac02585a8f3bc3f0555138675d23acc9108f",
+      "file_count": 8,
+      "uncompressed_bytes": 15728
+    },
+    {
+      "id": "author-response-builder",
+      "name": "author-response-builder",
+      "display_name": "Author Response Builder",
+      "description": "Drafts point-by-point replies in accept, explain, rebut, or added-analysis mode, linked to actual manuscript changes and open about unresolved items.",
+      "path": "skills/author-response-builder",
+      "content_digest": "4cd27aedde967316a7698cded62f648ad6634aa7408f74b791738770740de803",
+      "file_count": 8,
+      "uncompressed_bytes": 16489
+    },
+    {
+      "id": "rebuttal-letter-strategist",
+      "name": "rebuttal-letter-strategist",
+      "display_name": "Rebuttal Letter Strategist",
+      "description": "Frames soft-but-firm replies to a sharp or disputed reviewer criticism or an appeal; its script only grades severity and fills a response template.",
+      "path": "skills/rebuttal-letter-strategist",
+      "content_digest": "75c47ba293ef0f33e607618c3b68b79ad6eb8cd640db589a2baf1b591ba02506",
+      "file_count": 4,
+      "uncompressed_bytes": 12631
+    },
+    {
+      "id": "response-tone-polisher",
+      "name": "response-tone-polisher",
+      "display_name": "Response Tone Polisher",
+      "description": "Rewrites defensive or confrontational draft replies into professional academic tone while keeping the author's scientific position.",
+      "path": "skills/response-tone-polisher",
+      "content_digest": "a57a27bb9adc9f8d06568ad432c3e169aaf61994d5abef365ff491fea92c815a",
+      "file_count": 5,
+      "uncompressed_bytes": 52557
+    },
+    {
+      "id": "claim-strength-calibrator",
+      "name": "claim-strength-calibrator",
+      "display_name": "Claim Strength Calibrator",
+      "description": "Maps manuscript claims to their evidence level and flags causal, mechanistic, validation, and translational inflation with narrower wording.",
+      "path": "skills/claim-strength-calibrator",
+      "content_digest": "1421449d55578371920aaceb90e97a3e43a1d71a68fe886fb5b5328e05c0334a",
+      "file_count": 8,
+      "uncompressed_bytes": 15845
+    },
+    {
+      "id": "retraction-watcher",
+      "name": "retraction-watcher",
+      "display_name": "Retraction Watcher",
+      "description": "Parses reference lists and queries Open Retractions, Crossref, and PubMed by DOI or PMID for retractions and expressions of concern; needs network.",
+      "path": "skills/retraction-watcher",
+      "content_digest": "94539e3b8f17f287219c0a4102c1c14365d0ab6e903449e0c9e73285d59a86bd",
+      "file_count": 4,
+      "uncompressed_bytes": 40358
+    },
+    {
+      "id": "cover-letter-drafter",
+      "name": "cover-letter-drafter",
+      "display_name": "Cover Letter Drafter",
+      "description": "Drafts a five-paragraph editor-facing submission cover letter from supplied title, journal, contributions, results, and declarations.",
+      "path": "skills/cover-letter-drafter",
+      "content_digest": "e08dcd0e7d7b48a4d11c10d1140bedb2a9b81e828a7eeb34c98d726ff7edd8fc",
+      "file_count": 3,
+      "uncompressed_bytes": 7125
+    },
+    {
+      "id": "blind-review-sanitizer",
+      "name": "blind-review-sanitizer",
+      "display_name": "Blind Review Sanitizer",
+      "description": "Masks author names, institutions, contacts, acknowledgments, and first-person self-citation phrases in .docx/.md/.txt files for double-blind review.",
+      "path": "skills/blind-review-sanitizer",
+      "content_digest": "3607254749608dffc42453525da8915359a34136b17d71056232b2ff7166edb1",
+      "file_count": 4,
+      "uncompressed_bytes": 23911
+    },
+    {
+      "id": "figure-reference-checker",
+      "name": "figure-reference-checker",
+      "display_name": "Figure Reference Checker",
+      "description": "Checks figure citation numbering in manuscript text; its bundled script only extracts 'Fig. N' mentions and does not detect orphans or label mismatches.",
+      "path": "skills/figure-reference-checker",
+      "content_digest": "e231e509b360a763f5c0aa9d92333693e6ce5918ec5ac92e6ea437c21a3f9ffb",
+      "file_count": 4,
+      "uncompressed_bytes": 10124
+    },
+    {
+      "id": "arxiv-preflight",
+      "name": "arxiv-preflight",
+      "display_name": "arXiv Preflight",
+      "description": "Preflights LaTeX or PDF manuscripts for LLM residue, placeholders, AI-as-author, and fabricated or mismatched BibTeX references.",
+      "path": "skills/arxiv-preflight",
+      "content_digest": "0749d8edd4a91187b5eff4349cced747dd76474c9d492e893fa9a4774362736c",
+      "file_count": 21,
+      "uncompressed_bytes": 96532
+    },
+    {
+      "id": "journal-recommender",
+      "name": "journal-recommender",
+      "display_name": "Journal Recommender",
+      "description": "Proposes sprint, robust, and safe target-journal tiers from topic, abstract, and target impact factor; every metric needs live verification.",
+      "path": "skills/journal-recommender",
+      "content_digest": "ba69403d0e7d214a8280bd0be57a360407d0e899688745e1dc6eac25d15c6bd0",
+      "file_count": 3,
+      "uncompressed_bytes": 8415
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "clinical-trials",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "biorxiv",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

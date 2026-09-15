@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "specialist_id": "preclinical-validation-designer",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/aipoch/medical-research-skills",
+    "commit": "f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/preclinical-validation-designer/1.0.0/preclinical-validation-designer-1.0.0.zip",
+    "github_release": {
+      "tag": "preclinical-validation-designer-v1.0.0",
+      "asset_name": "preclinical-validation-designer-1.0.0.zip"
+    },
+    "sha256": "63b02b3330d1e14c3c57be22720c910cb957d5fbbfe7c9c3b29b8fa554b5780d",
+    "compressed_bytes": 70415,
+    "uncompressed_bytes": 144024,
+    "file_count": 50
+  },
+  "defaults": {
+    "skill_ids": [
+      "mechanism-to-validation-planner",
+      "animal-and-cell-validation-planner",
+      "translational-study-blueprint",
+      "experiment-design",
+      "sample-size-basic",
+      "randomization-gen",
+      "sop-writer",
+      "methodology-extractor"
+    ],
+    "connector_ids": [
+      "cancer-models",
+      "research-resources",
+      "genes",
+      "protein-annotation",
+      "expression",
+      "pubmed",
+      "literature"
+    ]
+  },
+  "skills": [
+    {
+      "id": "mechanism-to-validation-planner",
+      "name": "mechanism-to-validation-planner",
+      "display_name": "Mechanism-to-Validation Planner",
+      "description": "Turns an association or mechanism finding into a staged validation ladder that separates replication, perturbation, specificity, robustness, and clinical relevance.",
+      "path": "skills/mechanism-to-validation-planner",
+      "content_digest": "9bcce9b559220815b2a5312cf97bd0412091e15e51fd8fe1b613bc6445b50389",
+      "file_count": 11,
+      "uncompressed_bytes": 23412
+    },
+    {
+      "id": "animal-and-cell-validation-planner",
+      "name": "animal-and-cell-validation-planner",
+      "display_name": "Animal and Cell Validation Planner",
+      "description": "Plans claim-centered cell and animal validation with model choice, perturbations, controls, readouts, go/no-go gates, and Lite to Publication+ workload tiers.",
+      "path": "skills/animal-and-cell-validation-planner",
+      "content_digest": "81079e82e4fb749abeff460728d7a02b008c0db9f9a5b5bedbc48ecdc669678c",
+      "file_count": 10,
+      "uncompressed_bytes": 21847
+    },
+    {
+      "id": "translational-study-blueprint",
+      "name": "translational-study-blueprint",
+      "display_name": "Translational Study Blueprint",
+      "description": "Frames one primary translational use case with an evidence ladder, milestone thresholds, non-advancement signals, and feasibility-aware fallback routes.",
+      "path": "skills/translational-study-blueprint",
+      "content_digest": "f2c14543fe0b9ad187846c3304cf466d190b43c95ed39ac9cf94e21d37b7ba28",
+      "file_count": 7,
+      "uncompressed_bytes": 20524
+    },
+    {
+      "id": "experiment-design",
+      "name": "experiment-design",
+      "display_name": "Experiment Design",
+      "description": "Guides design selection, control types, randomization and blinding schemes, bias mitigation, and protocol structure for comparative experiments.",
+      "path": "skills/experiment-design",
+      "content_digest": "0b74799a12a4cd567caf8f9fbc1ad27564fadc3aa2071fc650f489ae6c7f2e59",
+      "file_count": 2,
+      "uncompressed_bytes": 6481
+    },
+    {
+      "id": "sample-size-basic",
+      "name": "sample-size-basic",
+      "display_name": "Basic Sample Size Estimator",
+      "description": "Computes per-group and total N for two-group mean, proportion, or survival comparisons from alpha, power, and effect size, with an assumptions summary.",
+      "path": "skills/sample-size-basic",
+      "content_digest": "e31528b5e2e57b963147010389ab0d66aa1ee8cf9571fc71a9b91baa19902c44",
+      "file_count": 4,
+      "uncompressed_bytes": 10706
+    },
+    {
+      "id": "randomization-gen",
+      "name": "randomization-gen",
+      "display_name": "Randomization Generator",
+      "description": "Generates blocked randomization lists across named groups and exports them as CSV for concealed allocation of subjects or animals.",
+      "path": "skills/randomization-gen",
+      "content_digest": "29d59a15e3b40b06b97c49b3653bbf2a3a7c2083d081684a999b0c450ea32bd5",
+      "file_count": 5,
+      "uncompressed_bytes": 11665
+    },
+    {
+      "id": "sop-writer",
+      "name": "sop-writer",
+      "display_name": "SOP Writer",
+      "description": "Drafts a structured standard operating procedure with purpose, scope, responsibilities, procedure steps, quality control, documentation, and approval sections.",
+      "path": "skills/sop-writer",
+      "content_digest": "5a5ef82f45066e56a1b288b404eed244c45d1c4b4735871794c523b7a1abcdae",
+      "file_count": 4,
+      "uncompressed_bytes": 10979
+    },
+    {
+      "id": "methodology-extractor",
+      "name": "methodology-extractor",
+      "display_name": "Methodology Extractor",
+      "description": "Extracts and compares experimental methods across papers into protocol-oriented tables of steps, parameters, and cross-study variations.",
+      "path": "skills/methodology-extractor",
+      "content_digest": "04797c3f0e5bd165f8b4dcbc5da3c69db36c63ae9fc536f9c9d7186b6d62646e",
+      "file_count": 4,
+      "uncompressed_bytes": 13470
+    }
+  ],
+  "connectors": [
+    {
+      "id": "cancer-models",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "research-resources",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "genes",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "protein-annotation",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "expression",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

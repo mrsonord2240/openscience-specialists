@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "specialist_id": "real-world-evidence-epidemiologist",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/aipoch/medical-research-skills",
+    "commit": "f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/real-world-evidence-epidemiologist/1.0.0/real-world-evidence-epidemiologist-1.0.0.zip",
+    "github_release": {
+      "tag": "real-world-evidence-epidemiologist-v1.0.0",
+      "asset_name": "real-world-evidence-epidemiologist-1.0.0.zip"
+    },
+    "sha256": "65cb2bec5a0a815a6fda540dd8b8cdb386232fda1853fef50a45b8321ba10d27",
+    "compressed_bytes": 215015,
+    "uncompressed_bytes": 481278,
+    "file_count": 111
+  },
+  "defaults": {
+    "skill_ids": [
+      "real-world-evidence-study-designer",
+      "clinical-cohort-protocol-designer",
+      "confounder-and-bias-control-planner",
+      "case-control-study-planner",
+      "clinical-data-cleaner",
+      "nhanes-clinical-retrospective-biomarker-research-planner",
+      "sample-size-and-power-planning-assistant",
+      "table-1-generator-advanced",
+      "univariate-multivariable-cox-regression",
+      "km-survival-curve",
+      "epidemiology",
+      "reporting-guideline-compliance-checker"
+    ],
+    "connector_ids": [
+      "pubmed",
+      "literature",
+      "clinical-trials",
+      "drug-regulatory",
+      "research-resources"
+    ]
+  },
+  "skills": [
+    {
+      "id": "real-world-evidence-study-designer",
+      "name": "real-world-evidence-study-designer",
+      "display_name": "Real-World Evidence Study Designer",
+      "description": "Designs EHR, claims, or registry RWE studies with explicit time zero, exposure and outcome windows, censoring, confounding control, and target trial emulation.",
+      "path": "skills/real-world-evidence-study-designer",
+      "content_digest": "0a606e31eefd17dc85c92aac05cd3a0cc809b6c5171c213b50b25a611f665511",
+      "file_count": 10,
+      "uncompressed_bytes": 20969
+    },
+    {
+      "id": "clinical-cohort-protocol-designer",
+      "name": "clinical-cohort-protocol-designer",
+      "display_name": "Clinical Cohort Protocol Designer",
+      "description": "Builds retrospective or prospective cohort protocol frameworks: eligibility, time zero, follow-up, endpoints, variable tiers, and one primary analysis line.",
+      "path": "skills/clinical-cohort-protocol-designer",
+      "content_digest": "dabccf5bffe1886d701743f0e914c69792a471d06f11ccdf1c68ea754d91c0a7",
+      "file_count": 13,
+      "uncompressed_bytes": 30384
+    },
+    {
+      "id": "confounder-and-bias-control-planner",
+      "name": "confounder-and-bias-control-planner",
+      "display_name": "Confounder and Bias Control Planner",
+      "description": "Classifies variable roles, selects a minimal adjustment set and control strategy, and flags mediator, collider, immortal-time, and selection bias before analysis.",
+      "path": "skills/confounder-and-bias-control-planner",
+      "content_digest": "f222689ab95b2083c6dac2e04cfba4286e01c038cf4910841be5c7e3a1817e9f",
+      "file_count": 10,
+      "uncompressed_bytes": 21637
+    },
+    {
+      "id": "case-control-study-planner",
+      "name": "case-control-study-planner",
+      "display_name": "Case-Control Study Planner",
+      "description": "Frames case-control designs with source-population logic, control sampling, matching decisions, exposure timing, and a bias-control matrix.",
+      "path": "skills/case-control-study-planner",
+      "content_digest": "03ff6c0e67754c817b287419914ae5720d38984c232637d3cb65a2c279c3361a",
+      "file_count": 6,
+      "uncompressed_bytes": 21386
+    },
+    {
+      "id": "clinical-data-cleaner",
+      "name": "clinical-data-cleaner",
+      "display_name": "Clinical Data Cleaner",
+      "description": "Runs SDTM-style DM, LB, and VS data checks: required-field validation, outlier flagging, ISO 8601 date standardization, and a JSON audit trail.",
+      "path": "skills/clinical-data-cleaner",
+      "content_digest": "9886a0821b688da87bc75e3120f04734c51f6895aac39265b16f89ad478e4e59",
+      "file_count": 8,
+      "uncompressed_bytes": 45134
+    },
+    {
+      "id": "nhanes-clinical-retrospective-biomarker-research-planner",
+      "name": "nhanes-clinical-retrospective-biomarker-research-planner",
+      "display_name": "NHANES Biomarker Research Planner",
+      "description": "Plans NHANES-style cross-sectional biomarker association studies with spline and subgroup modules, optional hospital validation, and four workload tiers.",
+      "path": "skills/nhanes-clinical-retrospective-biomarker-research-planner",
+      "content_digest": "d496ee3492dbbe4fed9c952bfd783d3bfbbdd2a60c18c1cdd46f37a48187f011",
+      "file_count": 9,
+      "uncompressed_bytes": 57528
+    },
+    {
+      "id": "sample-size-and-power-planning-assistant",
+      "name": "sample-size-and-power-planning-assistant",
+      "display_name": "Sample Size and Power Planning Assistant",
+      "description": "Writes assumption-audited sample size, event-count, precision, and fixed-N feasibility memos with fallback scenarios instead of false-precision numbers.",
+      "path": "skills/sample-size-and-power-planning-assistant",
+      "content_digest": "a62869b8ae470dc66bb4ca50301b823746c13649717763d5305fa5940a7aecfb",
+      "file_count": 6,
+      "uncompressed_bytes": 16879
+    },
+    {
+      "id": "table-1-generator-advanced",
+      "name": "table-1-generator-advanced",
+      "display_name": "Table 1 Generator",
+      "description": "Generates an unweighted baseline characteristics table from a CSV: mean and SD, median and IQR, n (%), with t-test, ANOVA, or chi-square by group.",
+      "path": "skills/table-1-generator-advanced",
+      "content_digest": "f32fded5416826895ccec131b10323ac084972a5f8e68578612274c9021cbeb2",
+      "file_count": 3,
+      "uncompressed_bytes": 13994
+    },
+    {
+      "id": "univariate-multivariable-cox-regression",
+      "name": "univariate-multivariable-cox-regression",
+      "display_name": "Univariate and Multivariable Cox Regression",
+      "description": "Runs complete-case univariate and multivariable Cox models in R, exports hazard ratio tables, and draws forest plots.",
+      "path": "skills/univariate-multivariable-cox-regression",
+      "content_digest": "7e3947a050475912d0d2b28d7e6ac084be85a7dec4fbe862471e662bd95e3743",
+      "file_count": 21,
+      "uncompressed_bytes": 113892
+    },
+    {
+      "id": "km-survival-curve",
+      "name": "km-survival-curve",
+      "display_name": "Kaplan-Meier Survival Curve",
+      "description": "Draws Kaplan-Meier curves in R for a precomputed categorical group with log-rank or Wald p-value, confidence bands, and a risk table.",
+      "path": "skills/km-survival-curve",
+      "content_digest": "ab327020edf9f5303882d2bffa1af9d05d7fc8d6ff5a4e4eacce6ac0b6e89315",
+      "file_count": 12,
+      "uncompressed_bytes": 92604
+    },
+    {
+      "id": "epidemiology",
+      "name": "epidemiology",
+      "display_name": "Epidemiology",
+      "description": "Guides occurrence measures with person-time denominators, absolute and relative association measures, DAG-based confounder reasoning, and bias checklists.",
+      "path": "skills/epidemiology",
+      "content_digest": "fdf28e2281146d3bb72cccb8196a8e55d1720dc454bc99f0a9416ba1a4e49de0",
+      "file_count": 2,
+      "uncompressed_bytes": 5133
+    },
+    {
+      "id": "reporting-guideline-compliance-checker",
+      "name": "reporting-guideline-compliance-checker",
+      "display_name": "Reporting Guideline Compliance Checker",
+      "description": "Checks manuscripts against STROBE, CONSORT, PRISMA, or TRIPOD and ranks missing or weak reporting items by submission risk.",
+      "path": "skills/reporting-guideline-compliance-checker",
+      "content_digest": "6b26120f533e5e123f12aa21bf4d0ff552badd887fe2cf38e7512745e8d008c3",
+      "file_count": 8,
+      "uncompressed_bytes": 16365
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "clinical-trials",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "drug-regulatory",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "research-resources",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

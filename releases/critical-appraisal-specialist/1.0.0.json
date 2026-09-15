@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "specialist_id": "critical-appraisal-specialist",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/aipoch/medical-research-skills",
+    "commit": "f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/critical-appraisal-specialist/1.0.0/critical-appraisal-specialist-1.0.0.zip",
+    "github_release": {
+      "tag": "critical-appraisal-specialist-v1.0.0",
+      "asset_name": "critical-appraisal-specialist-1.0.0.zip"
+    },
+    "sha256": "cf509b49f727482da51b4dc35b219f26beac5deab0600e53200f567496694eb6",
+    "compressed_bytes": 182644,
+    "uncompressed_bytes": 398525,
+    "file_count": 106
+  },
+  "defaults": {
+    "skill_ids": [
+      "study-design-identifier",
+      "medical-research-literature-reader-pro",
+      "rct-bias-assessment-rob2",
+      "diagnostic-study-quality-assessment-quadas-2",
+      "result-reliability-checker",
+      "paper-to-claim-verifier",
+      "high-value-paper-screener",
+      "figure-first-paper-reader",
+      "methods-reverse-engineer",
+      "reproducibility-check",
+      "reporting-guideline-compliance-checker",
+      "scientific-critical-thinking",
+      "contradictory-findings-resolver",
+      "retraction-watcher"
+    ],
+    "connector_ids": [
+      "pubmed",
+      "literature",
+      "biorxiv",
+      "clinical-trials"
+    ]
+  },
+  "skills": [
+    {
+      "id": "study-design-identifier",
+      "name": "study-design-identifier",
+      "display_name": "Study Design Identifier",
+      "description": "Identifies a paper's real study design from its methods, separates primary and secondary layers in hybrid papers, and corrects misleading author design labels.",
+      "path": "skills/study-design-identifier",
+      "content_digest": "6bac16f31791b64274126166e2e9dd51e92ac9ea55ce7a6d856b689f4e170627",
+      "file_count": 7,
+      "uncompressed_bytes": 15980
+    },
+    {
+      "id": "medical-research-literature-reader-pro",
+      "name": "medical-research-literature-reader-pro",
+      "display_name": "Medical Research Literature Reader Pro",
+      "description": "Classifies a medical paper into clinical, computational, experimental or hybrid tracks and writes a structured critical appraisal with explicit claim boundaries.",
+      "path": "skills/medical-research-literature-reader-pro",
+      "content_digest": "c9a808a4d3d36fc18530c197de4a620b1373ba6d7e1b36f87039de1e1e7f335e",
+      "file_count": 7,
+      "uncompressed_bytes": 40753
+    },
+    {
+      "id": "rct-bias-assessment-rob2",
+      "name": "rct-bias-assessment-rob2",
+      "display_name": "RCT Risk of Bias Assessment (RoB 2)",
+      "description": "Applies the five RoB 2 domains to a randomized trial result and returns domain-level and overall risk-of-bias judgments in a fixed JSON schema.",
+      "path": "skills/rct-bias-assessment-rob2",
+      "content_digest": "a40378b10babae6d7f0fef7e2b8f6bf69d16ba804203b66abf186f357f38a974",
+      "file_count": 5,
+      "uncompressed_bytes": 12336
+    },
+    {
+      "id": "diagnostic-study-quality-assessment-quadas-2",
+      "name": "diagnostic-study-quality-assessment-quadas-2",
+      "display_name": "Diagnostic Accuracy Quality Assessment (QUADAS-2)",
+      "description": "Answers QUADAS-2 signalling questions for a diagnostic accuracy study across patient selection, index test, reference standard and flow/timing, with quotes.",
+      "path": "skills/diagnostic-study-quality-assessment-quadas-2",
+      "content_digest": "3592dd806d64ca7f886f22e76eef292fd7cec1de552525028a57f99142e38bd3",
+      "file_count": 6,
+      "uncompressed_bytes": 14275
+    },
+    {
+      "id": "result-reliability-checker",
+      "name": "result-reliability-checker",
+      "display_name": "Result Reliability Checker",
+      "description": "Audits whether each main result is trustworthy by tracing design, bias control, statistics, validation chain and claim discipline to a per-claim reliability judgment.",
+      "path": "skills/result-reliability-checker",
+      "content_digest": "505bb5d05faba1f0794e1f5b465014f8c4099bfbd61fddcee93818e25113258d",
+      "file_count": 8,
+      "uncompressed_bytes": 21617
+    },
+    {
+      "id": "paper-to-claim-verifier",
+      "name": "paper-to-claim-verifier",
+      "display_name": "Paper-to-Claim Verifier",
+      "description": "Checks whether a claim is supported by the paper it cites, diagnosing citation drift, context transfer and causality inflation, and proposes citation-safe wording.",
+      "path": "skills/paper-to-claim-verifier",
+      "content_digest": "7d2b8268419e324340fead917dc258f3c94a18e1b57bdc53ef90f421995dd358",
+      "file_count": 10,
+      "uncompressed_bytes": 17579
+    },
+    {
+      "id": "high-value-paper-screener",
+      "name": "high-value-paper-screener",
+      "display_name": "High-Value Paper Screener",
+      "description": "Reading-priority triage: judges a paper's question fit and screening value and returns full read, skim, skip or uncertain, keeping relevance apart from quality.",
+      "path": "skills/high-value-paper-screener",
+      "content_digest": "946a33806416b7260daa3cc898098c49d338e3ac25e5353761254c615a062df4",
+      "file_count": 8,
+      "uncompressed_bytes": 13100
+    },
+    {
+      "id": "figure-first-paper-reader",
+      "name": "figure-first-paper-reader",
+      "display_name": "Figure-First Paper Reader",
+      "description": "Reads a paper figure by figure, maps each figure to the claim it is meant to carry, and judges whether the visual evidence supports that claim.",
+      "path": "skills/figure-first-paper-reader",
+      "content_digest": "3ce78b91f03fc5c298848127762b76828ca3a5eccb3fa53b510cee2960be0eb1",
+      "file_count": 8,
+      "uncompressed_bytes": 14378
+    },
+    {
+      "id": "methods-reverse-engineer",
+      "name": "methods-reverse-engineer",
+      "display_name": "Methods Reverse Engineer",
+      "description": "Reconstructs a paper's methods into an ordered, reproducible workflow, labelling explicit, inferred and missing steps, and builds a replication checklist.",
+      "path": "skills/methods-reverse-engineer",
+      "content_digest": "72f40e622e91fc5d66a9b00b139d9931034ca8103c422d74d9a2895e7330a7fd",
+      "file_count": 12,
+      "uncompressed_bytes": 22496
+    },
+    {
+      "id": "reproducibility-check",
+      "name": "reproducibility-check",
+      "display_name": "Reproducibility Check",
+      "description": "Audits a supplied Methods section for replication-critical omissions and ambiguities, rates reproducibility risk, and gives open-science practice guidance.",
+      "path": "skills/reproducibility-check",
+      "content_digest": "925ef09c31aac3e23126616f8785e054df209a818719e64921ae7be38eb18ca7",
+      "file_count": 4,
+      "uncompressed_bytes": 21742
+    },
+    {
+      "id": "reporting-guideline-compliance-checker",
+      "name": "reporting-guideline-compliance-checker",
+      "display_name": "Reporting Guideline Compliance Checker",
+      "description": "Checks a manuscript against its matching reporting guideline family (CONSORT, STROBE, PRISMA, TRIPOD) and ranks missing or weak reporting items by severity.",
+      "path": "skills/reporting-guideline-compliance-checker",
+      "content_digest": "6b26120f533e5e123f12aa21bf4d0ff552badd887fe2cf38e7512745e8d008c3",
+      "file_count": 8,
+      "uncompressed_bytes": 16365
+    },
+    {
+      "id": "scientific-critical-thinking",
+      "name": "scientific-critical-thinking",
+      "display_name": "Scientific Critical Thinking",
+      "description": "General rigor checklist for methodology, bias, confounding, statistical pitfalls, logical fallacies and claim proportionality when no design-specific tool fits.",
+      "path": "skills/scientific-critical-thinking",
+      "content_digest": "1840edfb166956ca1f7df489c6b15258988ab26919ffd48e71f162127db974c8",
+      "file_count": 8,
+      "uncompressed_bytes": 105186
+    },
+    {
+      "id": "contradictory-findings-resolver",
+      "name": "contradictory-findings-resolver",
+      "display_name": "Contradictory Findings Resolver",
+      "description": "Explains why studies on one topic disagree by comparing population, endpoint, sample source, platform, model, validation depth and interpretation.",
+      "path": "skills/contradictory-findings-resolver",
+      "content_digest": "01b68c4a92a68660b883f7029ea62c358baed0a998afdd508aad6b0ddc867ebe",
+      "file_count": 8,
+      "uncompressed_bytes": 16918
+    },
+    {
+      "id": "retraction-watcher",
+      "name": "retraction-watcher",
+      "display_name": "Retraction Watcher",
+      "description": "Parses a reference list and queries Crossref, PubMed and Open Retractions by DOI or PMID for retractions and expressions of concern; needs network access.",
+      "path": "skills/retraction-watcher",
+      "content_digest": "94539e3b8f17f287219c0a4102c1c14365d0ab6e903449e0c9e73285d59a86bd",
+      "file_count": 4,
+      "uncompressed_bytes": 40358
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "biorxiv",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "clinical-trials",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "drug-regulatory",
+      "required": false,
+      "default_selected": false
+    }
+  ]
+}

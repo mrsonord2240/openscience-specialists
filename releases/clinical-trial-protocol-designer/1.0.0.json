@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "specialist_id": "clinical-trial-protocol-designer",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/aipoch/medical-research-skills",
+    "commit": "f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/clinical-trial-protocol-designer/1.0.0/clinical-trial-protocol-designer-1.0.0.zip",
+    "github_release": {
+      "tag": "clinical-trial-protocol-designer-v1.0.0",
+      "asset_name": "clinical-trial-protocol-designer-1.0.0.zip"
+    },
+    "sha256": "4ea534474da073a5b0997ba5a94623cffbeffd16fc61a86fd37473a398d40541",
+    "compressed_bytes": 283648,
+    "uncompressed_bytes": 784846,
+    "file_count": 78
+  },
+  "defaults": {
+    "skill_ids": [
+      "clinical-trial-protocol-skill",
+      "endpoint-definition-designer",
+      "inclusion-exclusion-criteria-builder",
+      "sample-size-and-power-planning-assistant",
+      "randomization-gen",
+      "adaptive-trial-simulator",
+      "tooluniverse-clinical-trial-design",
+      "sop-writer",
+      "clinicaltrials-database",
+      "reporting-guideline-compliance-checker"
+    ],
+    "connector_ids": [
+      "clinical-trials",
+      "drug-regulatory",
+      "pubmed",
+      "literature"
+    ]
+  },
+  "skills": [
+    {
+      "id": "clinical-trial-protocol-skill",
+      "name": "clinical-trial-protocol-skill",
+      "display_name": "Clinical Trial Protocol Generator",
+      "description": "Researches similar registered trials and FDA pathways, then drafts NIH/FDA-template protocol sections for a drug or device, with a two-arm sample size script.",
+      "path": "skills/clinical-trial-protocol-skill",
+      "content_digest": "ae5cce71da57ef7809cdee13119a9e51e08c31c14092b0fac2f557e65ce67b8c",
+      "file_count": 10,
+      "uncompressed_bytes": 408637
+    },
+    {
+      "id": "endpoint-definition-designer",
+      "name": "endpoint-definition-designer",
+      "display_name": "Endpoint Definition Designer",
+      "description": "Turns study objectives into operational primary, secondary, and exploratory endpoints with event rules, timing windows, composite logic, and ambiguity review.",
+      "path": "skills/endpoint-definition-designer",
+      "content_digest": "f6ec94c36758d15749d3fc38e91476a7336f23a5f60047eb5cfac6e7315380f4",
+      "file_count": 11,
+      "uncompressed_bytes": 21641
+    },
+    {
+      "id": "inclusion-exclusion-criteria-builder",
+      "name": "inclusion-exclusion-criteria-builder",
+      "display_name": "Inclusion-Exclusion Criteria Builder",
+      "description": "Converts a target population into executable, time-anchored inclusion and exclusion criteria tied to verifiable evidence sources, with edge-case adjudication rules.",
+      "path": "skills/inclusion-exclusion-criteria-builder",
+      "content_digest": "2456fe0669ee10afa8539b0df2165155530e8b15c7f21e7fbe80ea25c29791b9",
+      "file_count": 10,
+      "uncompressed_bytes": 23713
+    },
+    {
+      "id": "sample-size-and-power-planning-assistant",
+      "name": "sample-size-and-power-planning-assistant",
+      "display_name": "Sample Size and Power Planning Assistant",
+      "description": "Plans sample-size logic, audits the quality of every power assumption, and builds conservative and feasibility-bound fallback scenarios instead of false-precision N.",
+      "path": "skills/sample-size-and-power-planning-assistant",
+      "content_digest": "a62869b8ae470dc66bb4ca50301b823746c13649717763d5305fa5940a7aecfb",
+      "file_count": 6,
+      "uncompressed_bytes": 16879
+    },
+    {
+      "id": "randomization-gen",
+      "name": "randomization-gen",
+      "display_name": "Randomization Sequence Generator",
+      "description": "Generates permuted-block allocation schedules for multi-arm RCTs from a bundled script, as input to a separately controlled allocation-concealment process.",
+      "path": "skills/randomization-gen",
+      "content_digest": "29d59a15e3b40b06b97c49b3653bbf2a3a7c2083d081684a999b0c450ea32bd5",
+      "file_count": 5,
+      "uncompressed_bytes": 11665
+    },
+    {
+      "id": "adaptive-trial-simulator",
+      "name": "adaptive-trial-simulator",
+      "display_name": "Adaptive Trial Simulator",
+      "description": "Monte Carlo simulation of group-sequential and sample-size re-estimation designs for a two-arm continuous endpoint, summarizing power, stopping rates, and type I error.",
+      "path": "skills/adaptive-trial-simulator",
+      "content_digest": "ea9c6868ed3e2208a045339607b05478142900f990ee6de0d7f803c100b6b2c8",
+      "file_count": 4,
+      "uncompressed_bytes": 41884
+    },
+    {
+      "id": "tooluniverse-clinical-trial-design",
+      "name": "tooluniverse-clinical-trial-design",
+      "display_name": "Trial Feasibility Assessment Framework",
+      "description": "Scores early-phase trial feasibility across population, biomarker, endpoint, comparator, safety, and regulatory paths; built on ToolUniverse, usable here via Connectors.",
+      "path": "skills/tooluniverse-clinical-trial-design",
+      "content_digest": "4bef1cbe75aa51a3e8c8de80580cbec1bc5e6b61d0093fb045255843f6b5da16",
+      "file_count": 13,
+      "uncompressed_bytes": 173640
+    },
+    {
+      "id": "sop-writer",
+      "name": "sop-writer",
+      "display_name": "SOP Writer",
+      "description": "Drafts standard operating procedures with purpose, scope, responsibilities, numbered steps, quality control, and documentation sections for clinical or lab workflows.",
+      "path": "skills/sop-writer",
+      "content_digest": "5a5ef82f45066e56a1b288b404eed244c45d1c4b4735871794c523b7a1abcdae",
+      "file_count": 4,
+      "uncompressed_bytes": 10979
+    },
+    {
+      "id": "clinicaltrials-database",
+      "name": "clinicaltrials-database",
+      "display_name": "ClinicalTrials.gov Database",
+      "description": "Queries ClinicalTrials.gov API v2 by condition, intervention, sponsor, status, or phase and retrieves registered design, eligibility, and outcome fields by NCT ID.",
+      "path": "skills/clinicaltrials-database",
+      "content_digest": "92753e8274e83849ef6246ee9e0a2262dd652c92abed9f674e93d7d4c3b58d58",
+      "file_count": 4,
+      "uncompressed_bytes": 34341
+    },
+    {
+      "id": "reporting-guideline-compliance-checker",
+      "name": "reporting-guideline-compliance-checker",
+      "display_name": "Reporting Guideline Compliance Checker",
+      "description": "Checks trial and other biomedical manuscripts against CONSORT, STROBE, PRISMA, or TRIPOD and grades missing or weakly reported items by submission risk.",
+      "path": "skills/reporting-guideline-compliance-checker",
+      "content_digest": "6b26120f533e5e123f12aa21bf4d0ff552badd887fe2cf38e7512745e8d008c3",
+      "file_count": 8,
+      "uncompressed_bytes": 16365
+    }
+  ],
+  "connectors": [
+    {
+      "id": "clinical-trials",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "drug-regulatory",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

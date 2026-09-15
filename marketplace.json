@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "revision": "10",
+  "marketplace": {
+    "id": "openscience-specialists",
+    "name": "OpenScience Specialists (Samuel Nord)"
+  },
+  "specialists": [
+    {
+      "id": "clinical-prediction-model-specialist",
+      "display_name": "Clinical Prediction Model Development and Validation Specialist",
+      "summary": "Plans, develops, and validates diagnostic and prognostic clinical prediction models with leakage-safe selection, sample-size and optimism checks, calibration, decision curves, and TRIPOD-aligned reporting for research, without issuing individual patient risk predictions.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/clinical-prediction-model-specialist/1.0.0.json",
+          "sha256": "d3dfdb47e4287b39aad0c445a978e097c344932a8ff634324f2cf05dfe77f7ff"
+        }
+      }
+    },
+    {
+      "id": "clinical-trial-protocol-designer",
+      "display_name": "Clinical Trial Protocol Design Specialist",
+      "summary": "Designs estimand-anchored, registry-informed clinical trial protocols—endpoints, eligibility, sample size, randomization, interim rules, and reporting checks—for research and regulatory planning without giving individual treatment advice or implying ethics approval.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/clinical-trial-protocol-designer/1.0.0.json",
+          "sha256": "867c3776b2246752c73e296269e7e2a577357f8299ef96f0f8e2d81a86155f38"
+        }
+      }
+    },
+    {
+      "id": "critical-appraisal-specialist",
+      "display_name": "Biomedical Critical Appraisal Specialist",
+      "summary": "Appraises individual biomedical papers or small paper sets for journal club, peer review and citation decisions, routing by verified study design to risk-of-bias, claim, spin and registry checks without reconstructing papers from memory.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/critical-appraisal-specialist/1.0.0.json",
+          "sha256": "944686ea927aa307eb2a3c177d9e50ce5dfbd8f2914f9b0d96b93efe051948c4"
+        }
+      }
+    },
+    {
+      "id": "manuscript-revision-specialist",
+      "display_name": "Manuscript Submission and Peer-Review Revision Specialist",
+      "summary": "Runs pre-submission QA, reporting-guideline, consistency and reference checks, anonymization, revision triage, and location-mapped reviewer responses for biomedical manuscripts without claiming experiments, analyses, or edits the authors have not supplied.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/manuscript-revision-specialist/1.0.0.json",
+          "sha256": "7b203de6619deee08e2bd21da2bd7ecc592f191b086c2d589606e582eccaba9e"
+        }
+      }
+    },
+    {
+      "id": "mendelian-randomization-specialist",
+      "display_name": "Mendelian Randomization and Causal Genomics Specialist",
+      "summary": "Designs assumption-audited Mendelian randomization, pleiotropy-sensitivity, and QTL colocalization studies from GWAS summary statistics, with instrument, ancestry, overlap, and harmonization gates and supporting MR execution, without claiming proven causality or clinical advice.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/mendelian-randomization-specialist/1.0.0.json",
+          "sha256": "a9515ea56c383192b64f79c050b103758a6f4f135451b5913d7f773a3e8ebd33"
+        }
+      }
+    },
+    {
+      "id": "pharmacovigilance-signal-designer",
+      "display_name": "Pharmacovigilance Signal Study Design Specialist",
+      "summary": "Designs deduplicated, MedDRA-versioned FAERS disproportionality, single-drug safety-atlas, and active-comparator signal studies with reporting-bias controls, without inventing reporting ratios, case counts, case facts, or causal claims.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/pharmacovigilance-signal-designer/1.0.0.json",
+          "sha256": "e555cc8a5c319156b4a675c7b635c63dc069de9d72a72f016669d3c8039acdbe"
+        }
+      }
+    },
+    {
+      "id": "preclinical-validation-designer",
+      "display_name": "Preclinical Mechanism Validation Design Specialist",
+      "summary": "Designs claim-locked cell and animal validation routes from computational or association findings, with defined experimental units, randomization, blinding, controls, and escalation gates, without inventing models, effect sizes, or ethics approvals.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/preclinical-validation-designer/1.0.0.json",
+          "sha256": "d08701a15667bd6d8fa3da3e5d6897ea2d0452b24ddf41dd8d2bb84a31d50090"
+        }
+      }
+    },
+    {
+      "id": "real-world-evidence-epidemiologist",
+      "display_name": "Real-World Evidence and Observational Epidemiology Specialist",
+      "summary": "Designs and audits target-trial-aligned cohort, case-control, and survey studies on EHR, claims, registry, and NHANES-type data with explicit time zero, DAG-justified confounding control, and bias sensitivity analyses, without drawing individual patient conclusions.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/real-world-evidence-epidemiologist/1.0.0.json",
+          "sha256": "af8a9a34327dfd07b4d6825cfbc429c958fd0d9de98770633d79d0b4a482160f"
+        }
+      }
+    },
+    {
+      "id": "research-grant-proposal-specialist",
+      "display_name": "Research Grant Proposal Specialist",
+      "summary": "Frames testable aims, drafts agency-aligned proposal sections, and stress-tests them with structured mock review, verifying the current funding notice and never inventing preliminary data, citations, budgets, or reviewer scores.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/research-grant-proposal-specialist/1.0.0.json",
+          "sha256": "8401921515877fd7b54b494e551ba9d74705ff6c460f28c3a31431a65ab1aa63"
+        }
+      }
+    },
+    {
+      "id": "tumor-immune-microenvironment-analyst",
+      "display_name": "Tumor Immune Microenvironment Bulk-Transcriptome Specialist",
+      "summary": "Estimates, triangulates and interprets tumor immune microenvironment composition from bulk transcriptomes via CIBERSORT-style deconvolution, ssGSEA, ESTIMATE and consensus subtyping, without treating scores as measured infiltration or making patient-level claims.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/tumor-immune-microenvironment-analyst/1.0.0.json",
+          "sha256": "b8a132cb8205f2d5eb9cb939beb5193f6174ab7512b2d8b5a600f47d4392b10d"
+        }
+      }
+    }
+  ]
+}

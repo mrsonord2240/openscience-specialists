@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "specialist_id": "tumor-immune-microenvironment-analyst",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/aipoch/medical-research-skills",
+    "commit": "f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/tumor-immune-microenvironment-analyst/1.0.0/tumor-immune-microenvironment-analyst-1.0.0.zip",
+    "github_release": {
+      "tag": "tumor-immune-microenvironment-analyst-v1.0.0",
+      "asset_name": "tumor-immune-microenvironment-analyst-1.0.0.zip"
+    },
+    "sha256": "b5727a64645384560f826394b595a79aaad7f14b25033936c21354b6356de3b0",
+    "compressed_bytes": 1573775,
+    "uncompressed_bytes": 5678126,
+    "file_count": 218
+  },
+  "defaults": {
+    "skill_ids": [
+      "tumor-immune-infiltration-diagnostic-ml-research-planner",
+      "cibersort-immune-infiltration-analysis",
+      "ssgsea-immune-infiltration-analysis",
+      "estimate-immune-score-analysis",
+      "consensus-clustering-analysis",
+      "deg-screening-analysis",
+      "immune-pathway-analysis",
+      "gsva-analysis-and-visualization",
+      "gokegg-analysis",
+      "pcd-immune-oncology-research-planner",
+      "hierarchical-clustering-plot",
+      "sample-group-sankey-plot",
+      "gene-protein-expression-matrix-normalization",
+      "batch-effect-correction",
+      "km-survival-curve"
+    ],
+    "connector_ids": [
+      "expression",
+      "omics-archives",
+      "cancer-models",
+      "genes",
+      "cellguide",
+      "pubmed",
+      "literature"
+    ]
+  },
+  "skills": [
+    {
+      "id": "tumor-immune-infiltration-diagnostic-ml-research-planner",
+      "name": "tumor-immune-infiltration-diagnostic-ml-research-planner",
+      "display_name": "Tumor Immune-Infiltration Study Planner",
+      "description": "Plans tumor immune-infiltration-guided bulk-transcriptome biomarker and diagnostic-ML studies with four workload tiers, dependency maps and verified references.",
+      "path": "skills/tumor-immune-infiltration-diagnostic-ml-research-planner",
+      "content_digest": "895c34a0f1809e420d3d0980c23712829bfe8fe5afb86638be0c0b2398f6d7fa",
+      "file_count": 9,
+      "uncompressed_bytes": 40067
+    },
+    {
+      "id": "cibersort-immune-infiltration-analysis",
+      "name": "cibersort-immune-infiltration-analysis",
+      "display_name": "CIBERSORT Immune Deconvolution",
+      "description": "Runs local CIBERSORT-style nu-SVR deconvolution against LM22 to estimate relative immune-cell fractions with permutation p-values and a case-vs-control test.",
+      "path": "skills/cibersort-immune-infiltration-analysis",
+      "content_digest": "92e511ddbdb261b8aee7efb93c93e3a2b9ecf7ac7b5525f74f2a2d85b6f31bdf",
+      "file_count": 19,
+      "uncompressed_bytes": 261587
+    },
+    {
+      "id": "ssgsea-immune-infiltration-analysis",
+      "name": "ssgsea-immune-infiltration-analysis",
+      "display_name": "ssGSEA Immune Cell Enrichment",
+      "description": "Scores immune cell-type gene sets per sample with ssGSEA or GSVA on bulk expression and compares one case group against one control group.",
+      "path": "skills/ssgsea-immune-infiltration-analysis",
+      "content_digest": "99c107ffaa69d5a305885313b4abdcdb096b29d518a13082bdc59ccbb6ee42fd",
+      "file_count": 15,
+      "uncompressed_bytes": 82302
+    },
+    {
+      "id": "estimate-immune-score-analysis",
+      "name": "estimate-immune-score-analysis",
+      "display_name": "ESTIMATE Stromal And Immune Scoring",
+      "description": "Computes ESTIMATE StromalScore, ImmuneScore and ESTIMATEScore (plus platform-dependent purity) from bulk expression, with optional two-group tests.",
+      "path": "skills/estimate-immune-score-analysis",
+      "content_digest": "7ce199f203c882d5621a295f55c46289d173fe6e238ec5dac6c0ce98390961ef",
+      "file_count": 15,
+      "uncompressed_bytes": 100319
+    },
+    {
+      "id": "consensus-clustering-analysis",
+      "name": "consensus-clustering-analysis",
+      "display_name": "Consensus Clustering Subtyping",
+      "description": "Finds stable sample subtypes in bulk expression with ConsensusClusterPlus across distance/algorithm pairs, choosing K by minimum PAC with consensus and CDF plots.",
+      "path": "skills/consensus-clustering-analysis",
+      "content_digest": "3283930384357fb9a32e87934512f39be90982f26d986b2e7f75c324bb190b66",
+      "file_count": 19,
+      "uncompressed_bytes": 109122
+    },
+    {
+      "id": "deg-screening-analysis",
+      "name": "deg-screening-analysis",
+      "display_name": "limma DEG Screening",
+      "description": "Screens differentially expressed genes between two groups of a non-count bulk expression matrix with limma, exporting DEG tables, a volcano plot and a heatmap.",
+      "path": "skills/deg-screening-analysis",
+      "content_digest": "3bd3c517cd3f5ba81477be9854b45a12e1b4f25ef24f2167cba5149931e23cc5",
+      "file_count": 13,
+      "uncompressed_bytes": 1075733
+    },
+    {
+      "id": "immune-pathway-analysis",
+      "name": "immune-pathway-analysis",
+      "display_name": "Immune Pathway GSVA",
+      "description": "Scores immune Reactome pathways from a user-supplied local gene-set table with GSVA or ssGSEA and tests two-group differences with limma plus a heatmap.",
+      "path": "skills/immune-pathway-analysis",
+      "content_digest": "94c7a3a7b353d4781c19f7747a2bc227336a0ccc52d42970e5b8e0c7ccc4ff24",
+      "file_count": 19,
+      "uncompressed_bytes": 2298838
+    },
+    {
+      "id": "gsva-analysis-and-visualization",
+      "name": "gsva-analysis-and-visualization",
+      "display_name": "MSigDB GSVA Pathway Analysis",
+      "description": "Runs GSVA or ssGSEA on MSigDB collections loaded via msigdbr, tests case-vs-control pathway differences with limma, and renders heatmaps.",
+      "path": "skills/gsva-analysis-and-visualization",
+      "content_digest": "cc6fe34b4d503dd75b63f5b69d2296a0b391df369c3359431eb5ac7edabbca7e",
+      "file_count": 15,
+      "uncompressed_bytes": 65670
+    },
+    {
+      "id": "gokegg-analysis",
+      "name": "gokegg-analysis",
+      "display_name": "GO And KEGG Enrichment",
+      "description": "Runs clusterProfiler GO and KEGG over-representation on a supplied gene list for human, mouse or rat and draws a combined GO/KEGG dot chart.",
+      "path": "skills/gokegg-analysis",
+      "content_digest": "7bda0d917a04596fc908ab861084bb8102e58729874fe7e6ce64e19e291bc6d1",
+      "file_count": 11,
+      "uncompressed_bytes": 136408
+    },
+    {
+      "id": "pcd-immune-oncology-research-planner",
+      "name": "pcd-immune-oncology-research-planner",
+      "display_name": "PCD Immuno-Oncology Study Planner",
+      "description": "Plans cell-death-themed bulk-transcriptome oncology studies spanning subtype discovery, immune landscape, prognostic signatures, TIDE/TMB context and drug hypotheses.",
+      "path": "skills/pcd-immune-oncology-research-planner",
+      "content_digest": "c30b7f78c8332de4c1e169664036e5a67329c6661667d5790004e6fb43e8a12a",
+      "file_count": 9,
+      "uncompressed_bytes": 43309
+    },
+    {
+      "id": "hierarchical-clustering-plot",
+      "name": "hierarchical-clustering-plot",
+      "display_name": "Sample Hierarchical Clustering QC",
+      "description": "Builds a sample-level hierarchical clustering dendrogram and distance matrix from bulk expression for QC, batch inspection and sample-similarity checks.",
+      "path": "skills/hierarchical-clustering-plot",
+      "content_digest": "296698b1d552a56e184c7528ae87e421aafb6ee5271a5837f7549844eb6d26ab",
+      "file_count": 17,
+      "uncompressed_bytes": 63324
+    },
+    {
+      "id": "sample-group-sankey-plot",
+      "name": "sample-group-sankey-plot",
+      "display_name": "Sample Group Sankey Plot",
+      "description": "Draws Sankey/alluvial plots of how samples flow across categorical annotations such as immune subtype, score group, cohort or response label.",
+      "path": "skills/sample-group-sankey-plot",
+      "content_digest": "f972436771b8eb4575bc01921a56ee9dc4df4a032faac600767494a4130a9d09",
+      "file_count": 11,
+      "uncompressed_bytes": 33579
+    },
+    {
+      "id": "gene-protein-expression-matrix-normalization",
+      "name": "gene-protein-expression-matrix-normalization",
+      "display_name": "Expression Matrix Normalization",
+      "description": "Applies log2 with pseudo-count, z-score or min-max transforms to a finite bulk gene or protein matrix; not count-model (CPM/TPM/DESeq2) normalization.",
+      "path": "skills/gene-protein-expression-matrix-normalization",
+      "content_digest": "059eccb371e43bed1b9ddf7e2a0fcabc6dd96151220ce8a86690eaa5de8e5914",
+      "file_count": 14,
+      "uncompressed_bytes": 1080779
+    },
+    {
+      "id": "batch-effect-correction",
+      "name": "batch-effect-correction",
+      "display_name": "ComBat Batch Correction",
+      "description": "Corrects known batch effects in merged bulk expression matrices with ComBat while modeling biological group, then exports the matrix and before/after QC plots.",
+      "path": "skills/batch-effect-correction",
+      "content_digest": "9c2947db05baabdba2f6337dc45d3634effbcb0db8f00ca22e17e28e370fca45",
+      "file_count": 17,
+      "uncompressed_bytes": 168729
+    },
+    {
+      "id": "km-survival-curve",
+      "name": "km-survival-curve",
+      "display_name": "Kaplan-Meier Survival Curve",
+      "description": "Draws a Kaplan-Meier curve with log-rank or Wald p-value and risk table from time, event status and a precomputed categorical group such as immune subtype.",
+      "path": "skills/km-survival-curve",
+      "content_digest": "ab327020edf9f5303882d2bffa1af9d05d7fc8d6ff5a4e4eacce6ac0b6e89315",
+      "file_count": 12,
+      "uncompressed_bytes": 92604
+    }
+  ],
+  "connectors": [
+    {
+      "id": "expression",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "omics-archives",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "cancer-models",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "genes",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "cellguide",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

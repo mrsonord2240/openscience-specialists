@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "specialist_id": "clinical-prediction-model-specialist",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/aipoch/medical-research-skills",
+    "commit": "f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/clinical-prediction-model-specialist/1.0.0/clinical-prediction-model-specialist-1.0.0.zip",
+    "github_release": {
+      "tag": "clinical-prediction-model-specialist-v1.0.0",
+      "asset_name": "clinical-prediction-model-specialist-1.0.0.zip"
+    },
+    "sha256": "59b92f51f92434725fb88524a6e96bb573959cd21870d7e6ffb541ba70398574",
+    "compressed_bytes": 648933,
+    "uncompressed_bytes": 1565908,
+    "file_count": 262
+  },
+  "defaults": {
+    "skill_ids": [
+      "prognostic-biomarker-protocol-designer",
+      "validation-strategy-designer",
+      "sample-size-and-power-planning-assistant",
+      "lasso-logistics-analysis",
+      "univariate-multivariable-cox-regression",
+      "nomogram-construction",
+      "model-calibration-curve",
+      "decision-curve-analysis",
+      "external-model-validation",
+      "roc-diagnostic-performance",
+      "time-dependent-roc",
+      "elastic-net-feature-selection",
+      "rf-model-importance-analysis",
+      "svm-model-importance-analysis",
+      "xgboost-analysis",
+      "lightgbm-analysis",
+      "km-survival-curve",
+      "reporting-guideline-compliance-checker"
+    ],
+    "connector_ids": [
+      "pubmed",
+      "literature",
+      "expression",
+      "omics-archives"
+    ]
+  },
+  "skills": [
+    {
+      "id": "prognostic-biomarker-protocol-designer",
+      "name": "prognostic-biomarker-protocol-designer",
+      "display_name": "Prognostic Biomarker Protocol Designer",
+      "description": "Plans prognostic biomarker and risk-model studies: cohort backbone, endpoint and time scale, marker screening, modeling line, validation, and leakage review.",
+      "path": "skills/prognostic-biomarker-protocol-designer",
+      "content_digest": "bbb223d6d099b22b87c11d00454b3f37c16b4215fdcdd8b63bfc5410b9e72c3e",
+      "file_count": 12,
+      "uncompressed_bytes": 29007
+    },
+    {
+      "id": "validation-strategy-designer",
+      "name": "validation-strategy-designer",
+      "display_name": "Validation Strategy Designer",
+      "description": "Plans protocol-stage internal, temporal, site-based, external, and functional validation tiers and states what each tier can and cannot support.",
+      "path": "skills/validation-strategy-designer",
+      "content_digest": "fad52ea8f5f9a3fcd40e2455c78d2c9117b4042f0e75b24f0fa87c5f8d740eba",
+      "file_count": 6,
+      "uncompressed_bytes": 14227
+    },
+    {
+      "id": "sample-size-and-power-planning-assistant",
+      "name": "sample-size-and-power-planning-assistant",
+      "display_name": "Sample Size and Power Planning Assistant",
+      "description": "Plans assumption-audited sample size, event-driven, and fixed-N feasibility logic, including model-development and external-validation families.",
+      "path": "skills/sample-size-and-power-planning-assistant",
+      "content_digest": "a62869b8ae470dc66bb4ca50301b823746c13649717763d5305fa5940a7aecfb",
+      "file_count": 6,
+      "uncompressed_bytes": 16879
+    },
+    {
+      "id": "lasso-logistics-analysis",
+      "name": "lasso-logistics-analysis",
+      "display_name": "LASSO Logistic Regression Analysis",
+      "description": "Runs binary LASSO logistic regression on a numeric feature-by-sample matrix with cv.glmnet lambda selection, coefficient export, and CV and path plots.",
+      "path": "skills/lasso-logistics-analysis",
+      "content_digest": "22ac45da3abbcac8b2b000aecc9323d8fe12dd8376c712e2b55770667cbed534",
+      "file_count": 20,
+      "uncompressed_bytes": 98599
+    },
+    {
+      "id": "univariate-multivariable-cox-regression",
+      "name": "univariate-multivariable-cox-regression",
+      "display_name": "Univariable and Multivariable Cox Regression",
+      "description": "Fits univariable and multivariable Cox models on a complete-case clinical survival CSV and exports hazard-ratio tables and forest plots.",
+      "path": "skills/univariate-multivariable-cox-regression",
+      "content_digest": "7e3947a050475912d0d2b28d7e6ac084be85a7dec4fbe862471e662bd95e3743",
+      "file_count": 21,
+      "uncompressed_bytes": 113892
+    },
+    {
+      "id": "nomogram-construction",
+      "name": "nomogram-construction",
+      "display_name": "Nomogram Construction",
+      "description": "Builds an rms Cox nomogram from preselected survival predictors and exports the model bundle, an apparent C-index table, and a nomogram PDF.",
+      "path": "skills/nomogram-construction",
+      "content_digest": "e8ee924ab4d632fa0a55549359a420a2a3a3c92f30dd716579a6cbab7dd4860f",
+      "file_count": 20,
+      "uncompressed_bytes": 123599
+    },
+    {
+      "id": "model-calibration-curve",
+      "name": "model-calibration-curve",
+      "display_name": "Survival Model Calibration Curve",
+      "description": "Refits a Cox model on a clinical CSV and produces bootstrap-corrected calibration curves and summary statistics at chosen survival horizons.",
+      "path": "skills/model-calibration-curve",
+      "content_digest": "a046cebda2a4f4788e7ab7594cb90b1f7f3607b8ce3f7659ee4af2ee9654e248",
+      "file_count": 11,
+      "uncompressed_bytes": 83308
+    },
+    {
+      "id": "decision-curve-analysis",
+      "name": "decision-curve-analysis",
+      "display_name": "Decision Curve Analysis",
+      "description": "Computes net benefit and clinical-impact curves for one numeric predictor of a binary outcome with rmda, handling cohort or case-control prevalence.",
+      "path": "skills/decision-curve-analysis",
+      "content_digest": "f34622e89e739d4d7d86b1de3079fd6efc9b03a94d810f62684bd49890702ed8",
+      "file_count": 11,
+      "uncompressed_bytes": 59619
+    },
+    {
+      "id": "external-model-validation",
+      "name": "external-model-validation",
+      "display_name": "External Signature Validation",
+      "description": "Applies a fixed gene-coefficient prognostic signature to an external bulk expression cohort and outputs risk scores, KM, heatmap, and time-dependent ROC.",
+      "path": "skills/external-model-validation",
+      "content_digest": "a95dfa782a67a99c8ce1697df7b3cc2f6e2865d4bf9508f9b0de718b59791b8a",
+      "file_count": 17,
+      "uncompressed_bytes": 232185
+    },
+    {
+      "id": "roc-diagnostic-performance",
+      "name": "roc-diagnostic-performance",
+      "display_name": "ROC Diagnostic Performance",
+      "description": "Fits a logistic model on case-control expression markers and reports in-sample ROC curves and AUCs for the combined model and each marker.",
+      "path": "skills/roc-diagnostic-performance",
+      "content_digest": "566d1967f466aeb511db7271f2b0a999a92576501852960b3d3835586290c735",
+      "file_count": 21,
+      "uncompressed_bytes": 77278
+    },
+    {
+      "id": "time-dependent-roc",
+      "name": "time-dependent-roc",
+      "display_name": "Time-Dependent ROC Analysis",
+      "description": "Estimates IPCW time-dependent ROC curves and AUCs for a numeric risk marker against censored survival outcomes at chosen horizons.",
+      "path": "skills/time-dependent-roc",
+      "content_digest": "004b1f975a9b0231a5bd85df6089a48430b899002a1583120b3899f93c0225b4",
+      "file_count": 11,
+      "uncompressed_bytes": 82855
+    },
+    {
+      "id": "elastic-net-feature-selection",
+      "name": "elastic-net-feature-selection",
+      "display_name": "Elastic Net Feature Selection",
+      "description": "Selects molecular features from bulk expression matrices for binary classification with elastic net logistic regression and alpha and lambda tuning.",
+      "path": "skills/elastic-net-feature-selection",
+      "content_digest": "40cf83e409bc9c83aef879a92ade26a9b923ad5dad4c783e7ebc124633d35527",
+      "file_count": 20,
+      "uncompressed_bytes": 65302
+    },
+    {
+      "id": "rf-model-importance-analysis",
+      "name": "rf-model-importance-analysis",
+      "display_name": "Random Forest Importance Analysis",
+      "description": "Trains a two-class random forest on a complete numeric feature matrix and reports OOB error curves and ranked variable importance.",
+      "path": "skills/rf-model-importance-analysis",
+      "content_digest": "73606781b343995e014ff620498e648e8c45c28e0bc848d90a5fd5f359db64dd",
+      "file_count": 20,
+      "uncompressed_bytes": 69584
+    },
+    {
+      "id": "svm-model-importance-analysis",
+      "name": "svm-model-importance-analysis",
+      "display_name": "SVM-RFE Feature Ranking",
+      "description": "Ranks features for a two-class problem by linear SVM recursive feature elimination with cross-validated error across feature counts.",
+      "path": "skills/svm-model-importance-analysis",
+      "content_digest": "5a2a906efe463f9732c1c0b4a4c9a16fde6347db9d060f0c61105d20052235c8",
+      "file_count": 21,
+      "uncompressed_bytes": 60280
+    },
+    {
+      "id": "xgboost-analysis",
+      "name": "xgboost-analysis",
+      "display_name": "XGBoost Modeling and Importance",
+      "description": "Trains an XGBoost binary or regression model on tabular data with one random train-test split and exports performance and feature-importance outputs.",
+      "path": "skills/xgboost-analysis",
+      "content_digest": "958913af0085f44591b4b3b322399806e9edf1904075005078a18f3b505bb5ce",
+      "file_count": 11,
+      "uncompressed_bytes": 138021
+    },
+    {
+      "id": "lightgbm-analysis",
+      "name": "lightgbm-analysis",
+      "display_name": "LightGBM Modeling and Importance",
+      "description": "Trains a LightGBM model on tabular data with train, validation, and test splits and exports metrics, quality flags, and feature-importance rankings.",
+      "path": "skills/lightgbm-analysis",
+      "content_digest": "4367aea037f23c89f1f9be598e9af83fa6ff778df4a50e79da3883e3551179c7",
+      "file_count": 11,
+      "uncompressed_bytes": 166336
+    },
+    {
+      "id": "km-survival-curve",
+      "name": "km-survival-curve",
+      "display_name": "Kaplan-Meier Survival Curve",
+      "description": "Plots Kaplan-Meier curves with log-rank or Wald statistics and a risk table for precomputed risk groups in tabular survival data.",
+      "path": "skills/km-survival-curve",
+      "content_digest": "ab327020edf9f5303882d2bffa1af9d05d7fc8d6ff5a4e4eacce6ac0b6e89315",
+      "file_count": 12,
+      "uncompressed_bytes": 92604
+    },
+    {
+      "id": "reporting-guideline-compliance-checker",
+      "name": "reporting-guideline-compliance-checker",
+      "display_name": "Reporting Guideline Compliance Checker",
+      "description": "Reviews manuscripts against reporting guidelines such as TRIPOD, STROBE, CONSORT, and PRISMA and ranks gaps by severity and submission risk.",
+      "path": "skills/reporting-guideline-compliance-checker",
+      "content_digest": "6b26120f533e5e123f12aa21bf4d0ff552badd887fe2cf38e7512745e8d008c3",
+      "file_count": 8,
+      "uncompressed_bytes": 16365
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "expression",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "omics-archives",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

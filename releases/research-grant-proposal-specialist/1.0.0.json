@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "specialist_id": "research-grant-proposal-specialist",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/aipoch/medical-research-skills",
+    "commit": "f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/research-grant-proposal-specialist/1.0.0/research-grant-proposal-specialist-1.0.0.zip",
+    "github_release": {
+      "tag": "research-grant-proposal-specialist-v1.0.0",
+      "asset_name": "research-grant-proposal-specialist-1.0.0.zip"
+    },
+    "sha256": "f764378b3ed3f3c2057de34e85cc691a30c0d511afc1b1afcfa73cb5b8a48514",
+    "compressed_bytes": 143849,
+    "uncompressed_bytes": 327154,
+    "file_count": 71
+  },
+  "defaults": {
+    "skill_ids": [
+      "grant-proposal-assistant",
+      "grant-specific-aims-writer",
+      "aim-and-hypothesis-designer",
+      "grant-mock-reviewer",
+      "grant-budget-justification",
+      "novelty-vs-feasibility-assessor",
+      "feasibility-aware-study-planner",
+      "sample-size-and-power-planning-assistant"
+    ],
+    "connector_ids": [
+      "pubmed",
+      "literature",
+      "biorxiv",
+      "research-resources",
+      "clinical-trials"
+    ]
+  },
+  "skills": [
+    {
+      "id": "grant-proposal-assistant",
+      "name": "grant-proposal-assistant",
+      "display_name": "Grant Proposal Assistant",
+      "description": "Drafts and revises NIH, NSF, and similar proposal sections from structured templates, with a heuristic structure checklist for existing drafts.",
+      "path": "skills/grant-proposal-assistant",
+      "content_digest": "31928041d6ab38ff9f2b705b2bf539d041243b1d1497bad5c4d43a3ec3159eb3",
+      "file_count": 8,
+      "uncompressed_bytes": 60882
+    },
+    {
+      "id": "grant-specific-aims-writer",
+      "name": "grant-specific-aims-writer",
+      "display_name": "Grant Specific Aims Writer",
+      "description": "Writes or revises a one-page NIH Specific Aims page or NSF Project Summary using a problem, gap, hypothesis, and aims logic chain.",
+      "path": "skills/grant-specific-aims-writer",
+      "content_digest": "2b0380538039d72932693c0a4110bbae4a1ef4a5b9e71142a9c928237beb53b6",
+      "file_count": 7,
+      "uncompressed_bytes": 56833
+    },
+    {
+      "id": "aim-and-hypothesis-designer",
+      "name": "aim-and-hypothesis-designer",
+      "display_name": "Aim and Hypothesis Designer",
+      "description": "Turns a broad research idea into one primary aim, bounded secondary aims, and testable hypotheses separated from exploratory work.",
+      "path": "skills/aim-and-hypothesis-designer",
+      "content_digest": "f33b493267234640dcaae7f88fe92752762fdcb8be8e307d07896583a9716665",
+      "file_count": 8,
+      "uncompressed_bytes": 21164
+    },
+    {
+      "id": "grant-mock-reviewer",
+      "name": "grant-mock-reviewer",
+      "display_name": "Grant Mock Reviewer",
+      "description": "Simulates structured NIH-style critique of significance, innovation, approach, investigators, and environment to prioritize revisions.",
+      "path": "skills/grant-mock-reviewer",
+      "content_digest": "cead835c7a110306ff87450f99d44a44c1d50e0e38297c0f3ddbcb6dd99c3bdb",
+      "file_count": 8,
+      "uncompressed_bytes": 89072
+    },
+    {
+      "id": "grant-budget-justification",
+      "name": "grant-budget-justification",
+      "display_name": "Grant Budget Justification",
+      "description": "Writes narrative justifications for personnel, equipment, supplies, and travel lines that the applicant has already costed.",
+      "path": "skills/grant-budget-justification",
+      "content_digest": "325c2320280cd3ba7bdda2cf96214a250e0967f5046c645495a685711518adcc",
+      "file_count": 4,
+      "uncompressed_bytes": 16075
+    },
+    {
+      "id": "novelty-vs-feasibility-assessor",
+      "name": "novelty-vs-feasibility-assessor",
+      "display_name": "Novelty vs. Feasibility Assessor",
+      "description": "Separates true from pseudo-novelty, audits feasibility under stated constraints, and forces a start, narrow, redesign, or stop decision.",
+      "path": "skills/novelty-vs-feasibility-assessor",
+      "content_digest": "d8137f2f4b8e01d35e980641c3bf4671f0dd6320c8a63b06e2816dcc72a17208",
+      "file_count": 15,
+      "uncompressed_bytes": 20057
+    },
+    {
+      "id": "feasibility-aware-study-planner",
+      "name": "feasibility-aware-study-planner",
+      "display_name": "Feasibility-Aware Study Planner",
+      "description": "Scales a study idea to the best executable version under stated sample, time, budget, data-access, and team constraints.",
+      "path": "skills/feasibility-aware-study-planner",
+      "content_digest": "1baaf116e9da6dabaf636b7e52f1d3b128865fb71b2d50c413b85551cdacff76",
+      "file_count": 12,
+      "uncompressed_bytes": 21304
+    },
+    {
+      "id": "sample-size-and-power-planning-assistant",
+      "name": "sample-size-and-power-planning-assistant",
+      "display_name": "Sample Size and Power Planning Assistant",
+      "description": "Plans sample-size logic, power assumptions, and fallback enrollment scenarios without fabricating exact calculations from missing inputs.",
+      "path": "skills/sample-size-and-power-planning-assistant",
+      "content_digest": "a62869b8ae470dc66bb4ca50301b823746c13649717763d5305fa5940a7aecfb",
+      "file_count": 6,
+      "uncompressed_bytes": 16879
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "biorxiv",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "research-resources",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "clinical-trials",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

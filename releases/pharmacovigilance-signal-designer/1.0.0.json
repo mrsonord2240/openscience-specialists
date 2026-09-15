@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "specialist_id": "pharmacovigilance-signal-designer",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/aipoch/medical-research-skills",
+    "commit": "f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/pharmacovigilance-signal-designer/1.0.0/pharmacovigilance-signal-designer-1.0.0.zip",
+    "github_release": {
+      "tag": "pharmacovigilance-signal-designer-v1.0.0",
+      "asset_name": "pharmacovigilance-signal-designer-1.0.0.zip"
+    },
+    "sha256": "94c2dc1c77cd4c1614d0b84aaa029f6b8b97b817ad194ad711d841e3f405068c",
+    "compressed_bytes": 80915,
+    "uncompressed_bytes": 169846,
+    "file_count": 40
+  },
+  "defaults": {
+    "skill_ids": [
+      "faers-pharmacovigilance-disproportionality-research-planner",
+      "single-drug-faers-safety-profile-research-planner",
+      "active-comparator-single-soc-faers-safety-comparison",
+      "confounder-and-bias-control-planner"
+    ],
+    "connector_ids": [
+      "drug-regulatory",
+      "pubmed",
+      "literature",
+      "chembl"
+    ]
+  },
+  "skills": [
+    {
+      "id": "faers-pharmacovigilance-disproportionality-research-planner",
+      "name": "faers-pharmacovigilance-disproportionality-research-planner",
+      "display_name": "FAERS Disproportionality Research Planner",
+      "description": "Plans FAERS-style ROR studies for a drug or class with comparator benchmarking, indication strata, serious-case filters, and follow-up signal prioritization.",
+      "path": "skills/faers-pharmacovigilance-disproportionality-research-planner",
+      "content_digest": "7799428324a3dc2a8a024b24b556f5dcee39e3eb34b26eb8ebb79dc2cdaa2dcb",
+      "file_count": 9,
+      "uncompressed_bytes": 37386
+    },
+    {
+      "id": "single-drug-faers-safety-profile-research-planner",
+      "name": "single-drug-faers-safety-profile-research-planner",
+      "display_name": "Single-Drug FAERS Safety Profile Planner",
+      "description": "Plans one-drug whole-profile FAERS SOC/PT signal atlases with subgroup, onset, and seriousness characterization and conservative label-gap framing.",
+      "path": "skills/single-drug-faers-safety-profile-research-planner",
+      "content_digest": "aa6366456310eb90ba901e9d1d4b7262ab95273db13bf87566e06b7dc5850fe3",
+      "file_count": 9,
+      "uncompressed_bytes": 42882
+    },
+    {
+      "id": "active-comparator-single-soc-faers-safety-comparison",
+      "name": "active-comparator-single-soc-faers-safety-comparison",
+      "display_name": "Active-Comparator Single-SOC FAERS Comparison Planner",
+      "description": "Plans multi-drug or class FAERS comparisons inside one predefined SOC or PT family using active-comparator restriction and tiered evidence labels.",
+      "path": "skills/active-comparator-single-soc-faers-safety-comparison",
+      "content_digest": "1aa72e3416a3de4ea603343e8a53758cbb71c274e02e288a52b2118552b98715",
+      "file_count": 9,
+      "uncompressed_bytes": 43291
+    },
+    {
+      "id": "confounder-and-bias-control-planner",
+      "name": "confounder-and-bias-control-planner",
+      "display_name": "Confounder and Bias Control Planner",
+      "description": "Plans protocol-stage variable-role classification, adjustment sets, and bias mitigation, flagging overadjustment, collider, selection, and indication bias.",
+      "path": "skills/confounder-and-bias-control-planner",
+      "content_digest": "f222689ab95b2083c6dac2e04cfba4286e01c038cf4910841be5c7e3a1817e9f",
+      "file_count": 10,
+      "uncompressed_bytes": 21637
+    }
+  ],
+  "connectors": [
+    {
+      "id": "drug-regulatory",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "chembl",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}
