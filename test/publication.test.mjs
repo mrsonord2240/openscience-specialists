@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdtemp } from "node:fs/promises";
+import { mkdtemp, readdir, readFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -15,6 +15,33 @@ import {
   resolvePublicationVersion,
 } from "../scripts/lib/immutability.mjs";
 import { buildRelease } from "../scripts/lib/release.mjs";
+
+test("every authored Specialist version uses this repository's publisher", async () => {
+  const specialistsRoot = path.resolve("specialists");
+  let count = 0;
+  for (const specialistId of await readdir(specialistsRoot)) {
+    if (specialistId === "README.md") continue;
+    const versionsRoot = path.join(specialistsRoot, specialistId, "versions");
+    for (const version of await readdir(versionsRoot)) {
+      const config = JSON.parse(
+        await readFile(
+          path.join(versionsRoot, version, "release.config.json"),
+          "utf8",
+        ),
+      );
+      assert.deepEqual(config.marketplace.publisher, {
+        id: "mrsonord2240",
+        name: "Samuel Nord",
+        url: "https://github.com/mrsonord2240",
+      });
+      count += 1;
+    }
+  }
+  assert.ok(
+    count >= 10,
+    `expected at least 10 authored versions, found ${count}`,
+  );
+});
 
 const fixtureVersion = path.resolve(
   "protocol/fixtures/valid/example-specialist/versions/1.0.0",
