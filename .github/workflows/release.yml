@@ -80,7 +80,7 @@ jobs:
           version="${tag#v}"
           release_args=(
             --verify-tag
-            --title "Open Science Specialist Marketplace $tag"
+            --title "OpenScience Specialists $tag"
             --generate-notes
           )
           if [[ "${version%%+*}" == *-* ]]; then

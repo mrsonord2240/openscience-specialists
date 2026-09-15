@@ -61,7 +61,7 @@ test("GitHub workflows are valid YAML documents", async () => {
   );
   assert.equal(workflows["publish.yml"].jobs.publish.environment, "production");
   assert.deepEqual(workflows["publish.yml"].concurrency, {
-    group: "openscience-specialist-marketplace-publication",
+    group: "openscience-specialists-publication",
     "cancel-in-progress": false,
   });
   assert.equal(
@@ -76,16 +76,13 @@ test("GitHub workflows are valid YAML documents", async () => {
   for (const name of [
     "GH_TOKEN",
     "MARKETPLACE_SIGNING_PRIVATE_KEY_PKCS8_BASE64",
-    "MARKETPLACE_CDN_BASE_URL",
-    "MARKETPLACE_BUCKET",
-    "AWS_ACCESS_KEY_ID",
-    "AWS_SECRET_ACCESS_KEY",
   ]) {
     assert.equal(workflows["publish.yml"].jobs.publish.env[name], undefined);
   }
-  assert.equal(
-    workflows["publish.yml"].jobs.publish.env.MARKETPLACE_CDN_PREFIX,
-    "/open-science/specialist-marketplace/v1/",
+  const everyWorkflow = JSON.stringify(workflows);
+  assert.doesNotMatch(
+    everyWorkflow,
+    /AWS_|aws |s3:\/\/|s3api|cloudfront|MARKETPLACE_CDN|MARKETPLACE_BUCKET/i,
   );
   assert.equal(
     workflows["publish.yml"].jobs.publish.env.MARKETPLACE_AUTHOR_POLICY,
@@ -95,18 +92,6 @@ test("GitHub workflows are valid YAML documents", async () => {
     workflows["publish.yml"].jobs.publish.env
       .MARKETPLACE_MIN_OPEN_SCIENCE_VERSION,
     "${{ vars.MARKETPLACE_MIN_OPEN_SCIENCE_VERSION }}",
-  );
-  assert.equal(
-    workflows["verify-published.yml"].jobs.verify.steps.find(
-      (step) => step.name === "Download and verify exact CDN mirror",
-    ).env.MARKETPLACE_CDN_PREFIX,
-    "/open-science/specialist-marketplace/v1/",
-  );
-  assert.equal(
-    workflows["publish.yml"].jobs.publish.steps.find(
-      (step) => step.name === "Prove GitHub and CDN byte equality",
-    ).env.MARKETPLACE_CDN_BASE_URL,
-    "${{ secrets.MARKETPLACE_CDN_BASE_URL }}",
   );
 
   for (const workflow of Object.values(workflows)) {
@@ -130,21 +115,6 @@ test("GitHub workflows are valid YAML documents", async () => {
     true,
   );
 
-  const awsCredentials = workflows["publish.yml"].jobs.publish.steps.find(
-    (step) => step.name === "Configure AWS credentials",
-  );
-  assert.equal(awsCredentials, undefined);
-  const protectedConfiguration = workflows[
-    "publish.yml"
-  ].jobs.publish.steps.find(
-    (step) => step.name === "Require protected publication configuration",
-  );
-  assert.equal(protectedConfiguration.env.AWS_REGION, undefined);
-  assert.doesNotMatch(protectedConfiguration.run, /\bAWS_REGION\b/);
-  assert.doesNotMatch(
-    JSON.stringify(workflows["publish.yml"]),
-    /AWS_REGION|aws-region/,
-  );
   const publishSteps = workflows["publish.yml"].jobs.publish.steps;
   const resolvePlan = publishSteps.find(
     (step) => step.name === "Resolve Specialist publication plan",
@@ -160,48 +130,16 @@ test("GitHub workflows are valid YAML documents", async () => {
     JSON.stringify(workflows["publish.yml"]),
     /inputs\.version|source_commit_or_tag/,
   );
-  const maskAwsIdentity = publishSteps.find(
-    (step) => step.name === "Mask AWS identity metadata",
+  const proof = publishSteps.find(
+    (step) => step.name === "Prove GitHub byte equality",
   );
+  assert.match(proof.run, /raw\.githubusercontent\.com/);
+  assert.match(proof.run, /gh release download/);
+  const verifySteps = workflows["verify-published.yml"].jobs.verify.steps;
   assert.equal(
-    maskAwsIdentity.env.AWS_ACCESS_KEY_ID,
-    "${{ secrets.AWS_ACCESS_KEY_ID }}",
+    verifySteps.some((step) => /CDN/i.test(step.name || "")),
+    false,
   );
-  assert.equal(
-    maskAwsIdentity.env.AWS_SECRET_ACCESS_KEY,
-    "${{ secrets.AWS_SECRET_ACCESS_KEY }}",
-  );
-  assert.match(maskAwsIdentity.run, /sts get-caller-identity/);
-  assert.match(maskAwsIdentity.run, /2>\/dev\/null/);
-  assert.match(maskAwsIdentity.run, /::add-mask::/);
-  assert.equal(
-    publishSteps.indexOf(maskAwsIdentity) <
-      publishSteps.findIndex(
-        (step) => step.name === "Stage and verify exact CDN bytes",
-      ),
-    true,
-  );
-  assert.doesNotMatch(JSON.stringify(workflows["publish.yml"]), /\b\d{12}\b/);
-  assert.doesNotMatch(
-    JSON.stringify(workflows["publish.yml"]),
-    /arn:aws:iam::/,
-  );
-  for (const name of [
-    "Stage and verify exact CDN bytes",
-    "Promote immutable CDN objects and stable root",
-  ]) {
-    const awsStep = workflows["publish.yml"].jobs.publish.steps.find(
-      (step) => step.name === name,
-    );
-    assert.equal(
-      awsStep.env.AWS_ACCESS_KEY_ID,
-      "${{ secrets.AWS_ACCESS_KEY_ID }}",
-    );
-    assert.equal(
-      awsStep.env.AWS_SECRET_ACCESS_KEY,
-      "${{ secrets.AWS_SECRET_ACCESS_KEY }}",
-    );
-  }
   const publishCommands = workflows["publish.yml"].jobs.publish.steps
     .map((step) => step.run || "")
     .join("\n");
@@ -210,8 +148,6 @@ test("GitHub workflows are valid YAML documents", async () => {
   assert.match(publishCommands, /--marketplace dist\/base-marketplace\.json/);
   assert.match(publishCommands, /release-exists/);
   assert.match(publishCommands, /Existing GitHub Release must be public/);
-  assert.match(publishCommands, /Existing CDN object bytes do not match/);
-  assert.match(publishCommands, /cloudfront wait invalidation-completed/);
   assert.match(publishCommands, /--retry-all-errors/);
   assert.match(publishCommands, /PUBLISHED_COMMIT=/);
   assert.match(
@@ -240,17 +176,6 @@ test("GitHub workflows are valid YAML documents", async () => {
     /gh release download "\$tag"[\s\S]{0,240}--skip-existing/,
   );
 
-  const promotionCommands = workflows["publish.yml"].jobs.publish.steps.find(
-    (step) => step.name === "Promote immutable CDN objects and stable root",
-  ).run;
-  const s3Copies = promotionCommands
-    .split("\n")
-    .filter((line) => line.trimStart().startsWith('aws s3 cp "s3://'));
-  assert.equal(s3Copies.length, 2);
-  for (const command of s3Copies) {
-    assert.match(command, /--copy-props none/);
-  }
-
   const verificationCommands = workflows[
     "verify-published.yml"
   ].jobs.verify.steps
@@ -271,8 +196,5 @@ test("GitHub workflows are valid YAML documents", async () => {
   assert.match(releaseCommands, /--verify-tag/);
   assert.match(releaseCommands, /--generate-notes/);
   assert.match(releaseCommands, /release_args\+=\(--prerelease\)/);
-  assert.match(
-    releaseCommands,
-    /--title "Open Science Specialist Marketplace \$tag"/,
-  );
+  assert.match(releaseCommands, /--title "OpenScience Specialists \$tag"/);
 });
