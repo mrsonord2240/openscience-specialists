@@ -8,7 +8,7 @@ Open recommendations from the latest audit of each Skill, most severe first and 
 
 None open.
 
-## P1 (33)
+## P1 (34)
 
 ### `bio-proteomics-protein-inference` — Basic inference mislabelled as parsimony; FDP 8.6% at 1%
 
@@ -274,7 +274,15 @@ None open.
 - Root cause: Ensemble options belong to the -align (PPP) command; -super5 only accepts -perm/-perturb for single replicates.
 - Fix: Use 'muscle -align in.fa -stratified -output ens.efa' (and -diversified); for >1000 sequences say to run -super5 with several -perm/-perturb values and combine with -fa2efa. Correct the MUSCLE5 table's Output column.
 
-## P2 (56)
+### `bio-variant-annotation` — csq --phase modes m and s are described wrongly
+
+- Skill: 86, Limited Release · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/variant-annotation) · [viewer](skills/bio-variant-annotation/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 9
+- Problem: The Skill says -p m merges only phased hets and -p s keeps unphased hets separate. bcftools 1.21/1.24: m merges all GTs into one haplotype regardless of phase (merged a trans pair); s skips unphased hets (no consequence emitted).
+- Root cause: Mode semantics written from memory, not from 'bcftools csq' help.
+- Fix: Use the help text: a = take GTs as is (0/1 -> 0\|1), m = merge all GTs into one haplotype, r = require phase, R = non-reference haplotypes, s = skip unphased hets; recommend -p a for phased data (SKILL.md and usage guide).
+
+## P2 (85)
 
 ### `bio-proteomics-protein-inference` — picked_group_fdr: exact-set pairing, prefix, tiny counts
 
@@ -532,6 +540,54 @@ None open.
 - Root cause: Monolithic layout.
 - Fix: Keep the decision rules in SKILL.md and move per-tool command blocks to references/.
 
+### `bio-clinical-databases-clinvar-lookup` — Batch CA-ID helper aborts on non-400 Registry errors
+
+- Skill: 84, Limited Release · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/clinvar-lookup) · [viewer](skills/bio-clinical-databases-clinvar-lookup/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 6
+- Problem: An unknown RefSeq accession returns HTTP 500 'Unknown reference'; car_record raises a generic HTTPError and batch_resolve_to_car_then_clinvar returns nothing for the whole list.
+- Root cause: Only HTTP 400 is caught and the response body is discarded on other errors.
+- Fix: Catch requests.HTTPError per input in the batch loop and record the Registry 'message' (e.g. 'Unknown reference: NC_000013.14') in the row's error column.
+
+### `bio-clinical-databases-clinvar-lookup` — No privacy or API-key guidance for bulk queries
+
+- Skill: 84, Limited Release · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/clinvar-lookup) · [viewer](skills/bio-clinical-databases-clinvar-lookup/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: —
+- Problem: Variant lists from patients or participants are sent to NCBI and ClinGen without a governance note, and higher NCBI rate limits need an API key the Skill does not mention.
+- Root cause: Written as a public-data query recipe.
+- Fix: Add a consent/approvals note for participant-derived variants and the `api_key` parameter for E-utilities.
+
+### `bio-clinical-databases-clinvar-lookup` — SKILL.md is long for single lookups
+
+- Skill: 84, Limited Release · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/clinvar-lookup) · [viewer](skills/bio-clinical-databases-clinvar-lookup/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: —
+- Problem: 345 lines load reviewer pushback and reconciliation tables for a one-variant query.
+- Root cause: All material kept in SKILL.md.
+- Fix: Move pushback, reconciliation and tripartite schema tables to the usage guide.
+
+### `bio-clinical-databases-myvariant-queries` — State that myvariant _id HGVS-g is GRCh37
+
+- Skill: 84, Limited Release · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/myvariant-queries) · [viewer](skills/bio-clinical-databases-myvariant-queries/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 6, 7
+- Problem: A GRCh38 HGVS-g (chr17:g.43106487A>C) returns notfound; myvariant keys the record as chr17:g.41258504A>C (hg19).
+- Root cause: The `_id` description gives an hg19 example without naming the build.
+- Fix: Say that `_id` uses hg19 coordinates; for GRCh38 input query `clinvar.hg38.start`/`dbnsfp.hg38` or convert via rsID/SPDI first.
+
+### `bio-clinical-databases-myvariant-queries` — Lucene escape advice returns 0 hits
+
+- Skill: 84, Limited Release · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/myvariant-queries) · [viewer](skills/bio-clinical-databases-myvariant-queries/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 6
+- Problem: The Skill recommends `chr7\:140453136`; the service returns 0 hits for it and 5 for `chr7:140453136`.
+- Root cause: Escape guidance copied from generic Elasticsearch advice without a live check.
+- Fix: Remove the escape example; recommend quoting a full HGVS id (`"chr7:g.140453136A>T"`, total 1) or the unescaped chrom:pos term.
+
+### `bio-clinical-databases-myvariant-queries` — No consent note for participant-derived variants
+
+- Skill: 84, Limited Release · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/myvariant-queries) · [viewer](skills/bio-clinical-databases-myvariant-queries/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: —
+- Problem: The Skill routes PHI-sensitive work to OpenCRAVAT but does not say that sending participant variants to a public API needs consent and approvals.
+- Root cause: Governance mentioned only as a tool choice.
+- Fix: Add a one-line consent/approvals note beside the batch workflow.
+
 ### `bio-phylo-tree-visualization` — Correct the gheatmap line in the version block
 
 - Skill: 84, Limited Release · [mrsonord2240/bioSkills@966f838](https://github.com/mrsonord2240/bioSkills/tree/966f838b0ba32918310bd223a34f71d78f190560/phylogenetics/tree-visualization) · [viewer](skills/bio-phylo-tree-visualization/mrsonord2240-bioSkills@966f838/viewer.md)
@@ -572,6 +628,54 @@ None open.
 - Root cause: No progressive-disclosure layer.
 - Fix: Keep the decision tables and MAFFT/MUSCLE/PAL2NAL core in SKILL.md; move per-tool detail to references/*.md loaded on demand.
 
+### `bio-clinical-databases-dbsnp-queries` — Batch table drops annotations for merged rsIDs
+
+- Skill: 86, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/dbsnp-queries) · [viewer](skills/bio-clinical-databases-dbsnp-queries/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 7
+- Problem: batch_normalize_rsids resolves rs630496 to rs429358 but reads myvariant hits for the old id, so every annotation column is empty.
+- Root cause: Annotation lookup keyed on the input rsID, not on the resolved one.
+- Fix: Query myvariant with the canonical rsID (or the resolved SPDI) after resolve_merge_chain.
+
+### `bio-clinical-databases-dbsnp-queries` — Duplicate input rsIDs double the per-allele values
+
+- Skill: 86, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/dbsnp-queries) · [viewer](skills/bio-clinical-databases-dbsnp-queries/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 7
+- Problem: A repeated rsID yields one row whose ids and AFs are joined twice ('0.138498;0.138498').
+- Root cause: Hits from the repeated query are appended under the same key.
+- Fix: De-duplicate the input before getvariants, or de-duplicate hits by _id per rsID.
+
+### `bio-clinical-databases-dbsnp-queries` — Inconsistent not-found contract between SKILL.md and example
+
+- Skill: 86, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/dbsnp-queries) · [viewer](skills/bio-clinical-databases-dbsnp-queries/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 3, 7
+- Problem: SKILL.md resolve_merge_chain returns {'error': 'not found'}; the example returns {'status': 'not_found'}.
+- Root cause: The two copies evolved separately.
+- Fix: Use one key and value in both.
+
+### `bio-clinical-databases-gnomad-frequencies` — No rate-limit handling for the gnomAD API
+
+- Skill: 86, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/gnomad-frequencies) · [viewer](skills/bio-clinical-databases-gnomad-frequencies/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 4, 6
+- Problem: The browser API answered HTTP 429 after one gene variant list and a few lookups; query_variant's raise_for_status aborts the run with no retry or pacing guidance.
+- Root cause: Code written for single interactive lookups.
+- Fix: Add a sleep between requests and a bounded retry with backoff on 429, and point batch users to the sites VCF/Hail table.
+
+### `bio-clinical-databases-gnomad-frequencies` — GRCh37 ids declared as GRCh38 still read as absent
+
+- Skill: 86, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/gnomad-frequencies) · [viewer](skills/bio-clinical-databases-gnomad-frequencies/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: —
+- Problem: The build check trusts the caller; a GRCh37 id passed with build='GRCh38' returns 'Variant not found' and source 'absent'.
+- Root cause: The API cannot tell a wrong-build id from an absent variant.
+- Fix: Suggest confirming a known common variant or the reference allele (e.g. via Variation Services) before reading 'absent' for a batch.
+
+### `bio-clinical-databases-gnomad-frequencies` — SKILL.md is long for single lookups
+
+- Skill: 86, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/clinical-databases/gnomad-frequencies) · [viewer](skills/bio-clinical-databases-gnomad-frequencies/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: —
+- Problem: 430 lines load SV/CNV/mtDNA catalogs and pushback tables for one-variant queries.
+- Root cause: All material kept in SKILL.md.
+- Fix: Move catalogs and pushback tables to the usage guide.
+
 ### `bio-phylo-species-trees` — Add a leaf-name consistency check before ASTRAL
 
 - Skill: 86, Production Ready · [mrsonord2240/bioSkills@966f838](https://github.com/mrsonord2240/bioSkills/tree/966f838b0ba32918310bd223a34f71d78f190560/phylogenetics/species-trees) · [viewer](skills/bio-phylo-species-trees/mrsonord2240-bioSkills@966f838/viewer.md)
@@ -611,6 +715,22 @@ None open.
 - Problem: RootDigger is recommended without a command.
 - Root cause: Named only.
 - Fix: Add 'rootdigger --msa aln --tree tree --exhaustive' or route to the IQ-TREE command.
+
+### `bio-variant-annotation` — SKILL.md annotate line needs an indexed target
+
+- Skill: 86, Limited Release · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/variant-annotation) · [viewer](skills/bio-variant-annotation/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 1
+- Problem: The three-line csq/annotate block runs `annotate -a gnomad.vcf.gz ... rsid.vcf.gz` on a file it never indexed; bcftools 1.24 and 1.21 stop with 'could not load index'.
+- Root cause: The fix added the line without the `bcftools index` step its own next sentence requires.
+- Fix: Insert `bcftools index -f rsid.vcf.gz` before the gnomAD line.
+
+### `bio-variant-annotation` — No warning at the annotate step for contig-name mismatch
+
+- Skill: 86, Limited Release · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/variant-annotation) · [viewer](skills/bio-variant-annotation/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 8
+- Problem: With chr1 vs 1 naming, annotate exits 0 and annotates nothing; the fix lives only in Common Errors.
+- Root cause: Silent zero-match behaviour of bcftools annotate.
+- Fix: Add a one-line pre-check (compare `bcftools index -s` contig names of target and source) next to the annotate commands.
 
 ### `bio-phylo-bayesian-inference` — Make the example refuse a single .p file
 
@@ -723,3 +843,123 @@ None open.
 - Problem: Bio.Phylo writes NeXML without confidences or taxonomy.
 - Root cause: Format table covers capability, not writer behaviour.
 - Fix: Add a row: use DendroPy to write annotated NeXML.
+
+### `bio-variant-calling-filtering-best-practices` — Tumor-column block has no guard for a missing header
+
+- Skill: 88, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/filtering-best-practices) · [viewer](skills/bio-variant-calling-filtering-best-practices/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 8
+- Problem: With no ##tumor_sample header TUMOR is empty, T becomes -1 and bcftools segfaults (exit 139 on both 1.21 and 1.24) instead of stopping with a message.
+- Root cause: The block assumes the ##tumor_sample header exists.
+- Fix: Add `[ -n "$TUMOR" ] && [ "$T" -ge 0 ] \|\| { echo 'tumor sample not found; pass it explicitly'; exit 1; }` before the filter.
+
+### `bio-variant-calling-filtering-best-practices` — Usage-guide allele-balance recipe deletes hom-alt sites
+
+- Skill: 88, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/filtering-best-practices) · [viewer](skills/bio-variant-calling-filtering-best-practices/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 9
+- Problem: `bcftools filter -i 'GT="het" & AB...'` is a site include, so every site with no het genotype is removed: 24 of 25 true hom-alt-only sites and 31 true SNPs were lost.
+- Root cause: A per-genotype check was written as a site-level include, contradicting the Skill's own hom-alt rule.
+- Fix: Apply it at genotype level: `bcftools filter -S . -e 'GT="het" & (FMT/AD[:1]/(FMT/AD[:0]+FMT/AD[:1])<=0.2 \| FMT/AD[:1]/(FMT/AD[:0]+FMT/AD[:1])>=0.8)'` (kept 22/25 hom-alt sites here).
+
+### `bio-variant-calling-filtering-best-practices` — cyvcf2 block is still only a partial filter
+
+- Skill: 88, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/filtering-best-practices) · [viewer](skills/bio-variant-calling-filtering-best-practices/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 2
+- Problem: The block is now labelled minimal, but an agent asked for a Python equivalent still has to write the QD/SOR/RankSum terms itself (26/60 artifacts kept vs 4/60).
+- Root cause: The Python counterpart was never extended to the full expression.
+- Fix: Add the QD, SOR and None-guarded RankSum checks so the block matches the bcftools expression.
+
+### `bio-vcf-statistics` — Het allele-balance one-liner ignores 1\|0 genotypes
+
+- Skill: 88, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/vcf-statistics) · [viewer](skills/bio-vcf-statistics/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 6
+- Problem: The awk test matches 0/1 and 0\|1 only, so on a phased VCF every 1\|0 het is dropped (per-sample n halved, means shifted).
+- Root cause: Phased genotype orientations were not enumerated.
+- Fix: Match `$2 ~ /^(0[\/\|]1\|1\\|0)$/` (or normalise with `gsub(/\\|/,"/")` and accept 0/1 and 1/0).
+
+### `bio-vcf-statistics` — Quick PASS count treats FILTER '.' as not passing
+
+- Skill: 88, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/vcf-statistics) · [viewer](skills/bio-vcf-statistics/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 7
+- Problem: `bcftools view -f PASS` counts 0 on an unfiltered callset (FILTER '.'), while examples/vcf_stats.py counts those records as PASS (361).
+- Root cause: The two idioms differ on missing FILTER and the Skill does not say so.
+- Fix: Use `bcftools view -f .,PASS` for 'not failed', or state that '.' means unfiltered and is excluded by `-f PASS`.
+
+### `bio-vcf-statistics` — State the site-panel needs of peddy and somalier
+
+- Skill: 88, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/vcf-statistics) · [viewer](skills/bio-vcf-statistics/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 2
+- Problem: peddy fails on non-human or small targets; somalier needs a build-matched sites file.
+- Root cause: Tool requirements not stated (left unfixed in this round).
+- Fix: Note the bundled human site panels, the chrX requirement and `somalier find-sites` for custom targets.
+
+### `bio-population-genetics-rare-variant-association` — SAIGE bgen command omits --chrom or --LOCO=FALSE
+
+- Skill: 89, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/population-genetics/rare-variant-association) · [viewer](skills/bio-population-genetics-rare-variant-association/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 4
+- Problem: The printed step2_SPAtests.R bgen command now parses but stops: 'chrom needs to be specified in order to apply Leave-one-chromosome-out on gene- or region-based tests'.
+- Root cause: LOCO is on by default in SAIGE 1.3.1 and the set-test command gives no chromosome.
+- Fix: Add `--chrom <chr>` (one run per chromosome with a LOCO null) or `--LOCO=FALSE`, and state which applies.
+
+### `bio-population-genetics-rare-variant-association` — SSD route does not warn about sample order
+
+- Skill: 89, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/population-genetics/rare-variant-association) · [viewer](skills/bio-population-genetics-rare-variant-association/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 6
+- Problem: SKAT_Null_Model data are matched to SSD genotypes by position; the Skill never says the covariate table must follow the .fam order.
+- Root cause: Sample alignment is implicit in the SKAT API.
+- Fix: Add a one-line check, e.g. `stopifnot(identical(fam$V2, covar_df$IID))`, before fitting the null model.
+
+### `bio-population-genetics-rare-variant-association` — Common Errors misses step-1 trait-type and variance traps
+
+- Skill: 89, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/population-genetics/rare-variant-association) · [viewer](skills/bio-population-genetics-rare-variant-association/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 1
+- Problem: The regenie errors 'very few unique values' (no --bt) and 'low variance' (rare SNPs in step 1) are explained only in code comments.
+- Root cause: The table predates the fixes.
+- Fix: Add both rows with their fixes (--bt; fit step 1 on QC'd common variants).
+
+### `bio-variant-normalization` — csq --phase m and s described wrongly
+
+- Skill: 89, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/variant-normalization) · [viewer](skills/bio-variant-normalization/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 5
+- Problem: The caveat says -p m merges only where phase is known and -p s treats unphased hets as separate haplotypes; bcftools 1.21/1.24 help: m merges all GTs into a single haplotype, s skips unphased hets (no consequence emitted in the run).
+- Root cause: Mode semantics were paraphrased, not copied from 'bcftools csq' help.
+- Fix: Replace with the help text (a = GTs as is, 0/1 -> 0\|1; m = merge all GTs; r = require phase; s = skip unphased hets) and recommend -p a for phased input.
+
+### `bio-variant-normalization` — Database-annotation block leaves an empty file on REF error
+
+- Skill: 89, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/variant-normalization) · [viewer](skills/bio-variant-normalization/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 2, 6
+- Problem: On a REF mismatch the last pipe step aborts after creating a 0-record non-BGZF file; the next 'bcftools index' fails with 'not BGZF compressed', hiding the real cause.
+- Root cause: The workflow blocks omit the REF pre-check the example now has.
+- Fix: Add `set -o pipefail` and a `bcftools norm -f ref.fa -c w` pre-check (or the example's MISMATCH count) before the pipeline.
+
+### `bio-vcf-basics` — Wrong bcftools query -H tip in usage guide
+
+- Skill: 90, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/vcf-basics) · [viewer](skills/bio-vcf-basics/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 1
+- Problem: usage-guide.md says '-H with bcftools query skips the header line'; for query -H prints a header.
+- Root cause: view -H (skip header) and query -H (print header) were conflated.
+- Fix: Change the tip to 'bcftools view -H skips the header; bcftools query -H adds a column header'.
+
+### `bio-vcf-basics` — Update the bgzip error string
+
+- Skill: 90, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/vcf-basics) · [viewer](skills/bio-vcf-basics/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 5
+- Problem: Common Errors quotes 'no BGZF EOF marker'; current bcftools reports 'not compressed with bgzip' or 'not BGZF compressed, cannot index'.
+- Root cause: Error text from an older htslib.
+- Fix: List the current messages alongside the old one.
+
+### `bio-vcf-basics` — Add a gVCF variant-site extraction recipe
+
+- Skill: 90, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/vcf-basics) · [viewer](skills/bio-vcf-basics/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 4
+- Problem: The gVCF section explains the model but gives no command to list candidate sites; ALT="<NON_REF>" expressions also match multi-ALT records.
+- Root cause: Section is conceptual only.
+- Fix: Add 'bcftools view -i "N_ALT>1" sample.g.vcf' and note that string tests on ALT match any allele.
+
+### `bio-vcf-manipulation` — Sample-reorder advice does not make --naive work
+
+- Skill: 90, Production Ready · [mrsonord2240/bioSkills@c1237cd](https://github.com/mrsonord2240/bioSkills/tree/c1237cdbc9bb199947696f3909de26a55d259116/variant-calling/vcf-manipulation) · [viewer](skills/bio-vcf-manipulation/mrsonord2240-bioSkills@c1237cd/viewer.md)
+- Observed in inputs: 2
+- Problem: `bcftools view -s <order>` adds INFO/AC and INFO/AN header lines, so `concat --naive` then refuses with 'incompatible headers' (also with -I). Plain concat after the reorder works.
+- Root cause: The fix was checked against plain concat, not --naive.
+- Fix: Say: reorder with view -s, then use plain `bcftools concat` (or re-create every file with the same view -s so headers match) before --naive.
