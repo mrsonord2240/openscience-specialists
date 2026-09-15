@@ -7,8 +7,6 @@
     "node": ">=22"
   },
   "scripts": {
-    "audits:check": "node scripts/audit-index.mjs --check",
-    "audits:index": "node scripts/audit-index.mjs",
     "build:release": "node scripts/build-release.mjs",
     "check:immutability": "node scripts/check-published-immutability.mjs",
     "format": "prettier --write .",

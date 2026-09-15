@@ -97,9 +97,13 @@ A Skill can therefore score 84 and still be graded Beta Only.
 
 ### Audit records
 
-Every audit is published in [audits/](audits/README.md) — including Skills that failed, earlier
-versions that were later fixed, and Specialist candidates that were not viable — with each Skill's
-author, source commit and license, and a [backlog](audits/BACKLOG.md) of open improvements.
+Every audit is published in
+[mrsonord2240/optimizing-agent-science-skills](https://github.com/mrsonord2240/optimizing-agent-science-skills)
+— including Skills that failed, earlier versions that were later fixed, and Specialist candidates
+that were not viable — with each Skill's author, source commit and license, and a
+[backlog](https://github.com/mrsonord2240/optimizing-agent-science-skills/blob/main/audits/BACKLOG.md)
+of open improvements. That repository is where Skills are audited, fixed and re-audited before they
+are bundled here.
 
 ### How to read the numbers
 
