@@ -27,8 +27,8 @@ async function validateAuthoring() {
     "marketplace.config.json marketplace",
   );
   if (
-    config.marketplace.id !== "openscience" ||
-    config.marketplace.name !== "OpenScience Specialist Marketplace"
+    config.marketplace.id !== "openscience-specialists" ||
+    config.marketplace.name !== "OpenScience Specialists (Samuel Nord)"
   ) {
     throw new Error(
       "marketplace.config.json contains the wrong Marketplace identity",

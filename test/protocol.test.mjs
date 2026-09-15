@@ -44,8 +44,8 @@ const emptyMarketplace = {
   schema_version: 1,
   revision: "0",
   marketplace: {
-    id: "openscience",
-    name: "OpenScience Specialist Marketplace",
+    id: "openscience-specialists",
+    name: "OpenScience Specialists (Samuel Nord)",
   },
   specialists: [],
 };
