@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "11",
+  "revision": "12",
   "marketplace": {
     "id": "openscience-specialists",
     "name": "OpenScience Specialists (Samuel Nord)"
@@ -71,6 +71,23 @@
         "release": {
           "path": "releases/manuscript-revision-specialist/1.0.0.json",
           "sha256": "7b203de6619deee08e2bd21da2bd7ecc592f191b086c2d589606e582eccaba9e"
+        }
+      }
+    },
+    {
+      "id": "mass-spec-proteomics-analyst",
+      "display_name": "Mass-Spec Proteomics Analyst",
+      "summary": "Takes bottom-up proteomics from a search engine's output or raw DIA runs to differential protein abundance: imports MaxQuant, DIA-NN and mzML and strips search-engine bookkeeping, runs DDA target-decoy search and DIA-NN q-value filtering at the right level and context, resolves protein groups and protein-level FDR, rolls peptides up to proteins, tests differential abundance with missingness modelled rather than imputed, localises PTM sites, and carries QC throughout. Research use only.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/mass-spec-proteomics-analyst/1.0.0.json",
+          "sha256": "5cb8f52ed800af39e9ea5f981dd6e14d7919cebbf28a33e011e5082b916f260e"
         }
       }
     },

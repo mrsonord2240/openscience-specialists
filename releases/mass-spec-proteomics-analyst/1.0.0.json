@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "specialist_id": "mass-spec-proteomics-analyst",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/mrsonord2240/optimizing-agent-science-skills",
+    "commit": "567cab000f3728427c4c8a18e36d2f794a9def7d",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/mass-spec-proteomics-analyst/1.0.0/mass-spec-proteomics-analyst-1.0.0.zip",
+    "github_release": {
+      "tag": "mass-spec-proteomics-analyst-v1.0.0",
+      "asset_name": "mass-spec-proteomics-analyst-1.0.0.zip"
+    },
+    "sha256": "2ae28a7883755c2230ef7b708decbb89b2b6c58e88d0e7953faf0df2bb1c9ce9",
+    "compressed_bytes": 217200,
+    "uncompressed_bytes": 510557,
+    "file_count": 41
+  },
+  "defaults": {
+    "skill_ids": [
+      "bio-proteomics-data-import",
+      "bio-proteomics-dia-analysis",
+      "bio-proteomics-peptide-identification",
+      "bio-proteomics-protein-inference",
+      "bio-proteomics-quantification",
+      "bio-proteomics-differential-abundance",
+      "bio-proteomics-proteomics-qc",
+      "bio-proteomics-ptm-analysis",
+      "bio-pathway-go-enrichment",
+      "bio-experimental-design-batch-design",
+      "bio-workflows-proteomics-pipeline"
+    ],
+    "connector_ids": [
+      "pubmed",
+      "protein-annotation",
+      "omics-archives"
+    ]
+  },
+  "skills": [
+    {
+      "id": "bio-proteomics-data-import",
+      "name": "bio-proteomics-data-import",
+      "display_name": "MS Data Import and Bookkeeping Strip",
+      "description": "Loads MaxQuant proteinGroups.txt, DIA-NN report.parquet and mzML into Python/R, removes decoy, contaminant and site-only rows, picks the right quant column, and diagnoses the missingness contract before any number is trusted.",
+      "path": "skills/bio-proteomics-data-import",
+      "content_digest": "ed00a5abbd0aa4f87aeadf99cb7adcb622f2ce94ed9f8bba6fe06d2f59a0c7d0",
+      "file_count": 3,
+      "uncompressed_bytes": 29580
+    },
+    {
+      "id": "bio-proteomics-dia-analysis",
+      "name": "bio-proteomics-dia-analysis",
+      "display_name": "DIA Search and q-Value Filtering",
+      "description": "Runs DIA-NN in predicted-library or library-based mode and filters its report at the correct q-value level (precursor/protein-group) and context (run vs experiment-wide), with the window-design and demultiplexing decisions the analyst inherits.",
+      "path": "skills/bio-proteomics-dia-analysis",
+      "content_digest": "2c1ee651b223b3e172cae4d5010b1af9c2dd1c3c445ea38098e692c428129061",
+      "file_count": 3,
+      "uncompressed_bytes": 32756
+    },
+    {
+      "id": "bio-proteomics-peptide-identification",
+      "name": "bio-proteomics-peptide-identification",
+      "display_name": "Peptide Identification and PSM-Level FDR",
+      "description": "Target-decoy database search with Sage, Comet or MS-GF+, Percolator rescoring, and q-value or separate-search FDR estimation at the PSM and peptide level.",
+      "path": "skills/bio-proteomics-peptide-identification",
+      "content_digest": "5cd4fac90c02e917014540b588ee0fdf6bd590079427569bd6f0d32a5a1fe93a",
+      "file_count": 5,
+      "uncompressed_bytes": 53591
+    },
+    {
+      "id": "bio-proteomics-protein-inference",
+      "name": "bio-proteomics-protein-inference",
+      "display_name": "Protein Inference and Protein-Level FDR",
+      "description": "Groups proteins from peptide evidence under parsimony or a probability model and controls protein-level FDR separately from peptide-level FDR, reporting groups rather than proteins.",
+      "path": "skills/bio-proteomics-protein-inference",
+      "content_digest": "31e0157c7d41bed2dbdbe85ba3259c5b6a041bed348907080f74bd9948ac4fe3",
+      "file_count": 3,
+      "uncompressed_bytes": 42526
+    },
+    {
+      "id": "bio-proteomics-quantification",
+      "name": "bio-proteomics-quantification",
+      "display_name": "Protein Quantification and Roll-Up",
+      "description": "Computes label-free (MaxLFQ, DIA fragment-level), isobaric (TMT/iTRAQ, MS2 vs SPS-MS3) and SILAC quantities and summarises peptides to proteins with ratio-compression and normalisation handled explicitly.",
+      "path": "skills/bio-proteomics-quantification",
+      "content_digest": "14b9b6f892ef1472a632cde1375ae709c9c1a15ab1f484d723109078159ae251",
+      "file_count": 3,
+      "uncompressed_bytes": 44378
+    },
+    {
+      "id": "bio-proteomics-differential-abundance",
+      "name": "bio-proteomics-differential-abundance",
+      "display_name": "Differential Protein Abundance",
+      "description": "Tests for differentially abundant proteins with limma/DEqMS moderation and proDA/msqrob2/MSstats missingness modelling, treating missing values as left-censored rather than imputing them away.",
+      "path": "skills/bio-proteomics-differential-abundance",
+      "content_digest": "313ebad011dd6237625c8dc0d447c0588aa778f5adf15cf2b61c74a9ba1fdde7",
+      "file_count": 5,
+      "uncompressed_bytes": 60593
+    },
+    {
+      "id": "bio-proteomics-proteomics-qc",
+      "name": "bio-proteomics-proteomics-qc",
+      "display_name": "Proteomics QC",
+      "description": "Instrument-, identification- and quantification-level QC: mass accuracy, RT and peak shape, % MS2 identified, missed cleavages, contaminant load, missing-value rates and batch structure across a run series.",
+      "path": "skills/bio-proteomics-proteomics-qc",
+      "content_digest": "5e81e2a7816484927852bf74d8e528f427962914317264554e81671d3027009d",
+      "file_count": 3,
+      "uncompressed_bytes": 46887
+    },
+    {
+      "id": "bio-proteomics-ptm-analysis",
+      "name": "bio-proteomics-ptm-analysis",
+      "display_name": "PTM and Phosphoproteomics Analysis",
+      "description": "Site localisation with false-localisation-rate control, protein-level-adjusted PTM quantification with MSstatsPTM, and kinase-activity and functional triage on an enrichment that is biased by construction.",
+      "path": "skills/bio-proteomics-ptm-analysis",
+      "content_digest": "dc76b46ebb8614f629d1c3cf25469c464b7504e6e59bd192349bdcc3f6516529",
+      "file_count": 3,
+      "uncompressed_bytes": 53648
+    },
+    {
+      "id": "bio-pathway-go-enrichment",
+      "name": "bio-pathway-go-enrichment",
+      "display_name": "GO Over-Representation Analysis",
+      "description": "Gene Ontology over-representation on a protein hit list with clusterProfiler enrichGO, with the background universe treated as the decision it is.",
+      "path": "skills/bio-pathway-go-enrichment",
+      "content_digest": "ad8e2c3bfe511dd4d0361e300d5588dc6a53f8e428f7bb2fc38c744f2ac80c63",
+      "file_count": 4,
+      "uncompressed_bytes": 30726
+    },
+    {
+      "id": "bio-experimental-design-batch-design",
+      "name": "bio-experimental-design-batch-design",
+      "display_name": "Batch and Confounding Design",
+      "description": "Balances batch, plate, operator and processing-day nuisance variation against the biological variable so it stays estimable rather than confounded, before any sample is run.",
+      "path": "skills/bio-experimental-design-batch-design",
+      "content_digest": "dd24282c4695ff5cded477da38398f0b020cabfbef2f305bddf89fd4ba68b41a",
+      "file_count": 3,
+      "uncompressed_bytes": 23672
+    },
+    {
+      "id": "bio-workflows-proteomics-pipeline",
+      "name": "bio-workflows-proteomics-pipeline",
+      "display_name": "End-to-End Proteomics Workflow",
+      "description": "Orchestrates a full run from MaxQuant, DIA-NN or MSstats input through raw-distribution QC, completeness filtering and normalization to a tested contrast.",
+      "path": "skills/bio-workflows-proteomics-pipeline",
+      "content_digest": "402fc995f774406171273e4692d48a8914aca12314c3f9dce2a8ea76d41e124a",
+      "file_count": 3,
+      "uncompressed_bytes": 51564
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "protein-annotation",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "omics-archives",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "genes",
+      "required": false,
+      "default_selected": false
+    }
+  ]
+}
