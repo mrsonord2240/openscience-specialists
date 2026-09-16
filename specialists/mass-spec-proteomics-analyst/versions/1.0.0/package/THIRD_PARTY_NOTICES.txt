@@ -1,0 +1,41 @@
+Bundled Skills are taken from https://github.com/mrsonord2240/optimizing-agent-science-skills at commit 567cab000f3728427c4c8a18e36d2f794a9def7d, under skills/bioSkills/.
+
+These Skills originate in https://github.com/GPTomics/bioSkills at commit d91ed3d563019e649dc854c56ccd62551359488a (MIT).
+They have been MODIFIED: defects found by audit were fixed in https://github.com/mrsonord2240/bioSkills at commit a62c7097f37cde2f1d44763ac22c3f5c6d5350bb, then exported to the repository named above. Files change only where an audit
+demonstrated a defect; every change has a fix log and a post-fix audit report.
+
+- bio-proteomics-data-import: author unstated, license unstated (repository MIT)
+- bio-proteomics-dia-analysis: author unstated, license unstated (repository MIT)
+- bio-proteomics-peptide-identification: author unstated, license unstated (repository MIT)
+- bio-proteomics-protein-inference: author unstated, license unstated (repository MIT)
+- bio-proteomics-quantification: author unstated, license unstated (repository MIT)
+- bio-proteomics-differential-abundance: author unstated, license unstated (repository MIT)
+- bio-proteomics-proteomics-qc: author unstated, license unstated (repository MIT)
+- bio-proteomics-ptm-analysis: author unstated, license unstated (repository MIT)
+- bio-pathway-go-enrichment: author unstated, license unstated (repository MIT)
+- bio-experimental-design-batch-design: author unstated, license unstated (repository MIT)
+- bio-workflows-proteomics-pipeline: author unstated, license unstated (repository MIT)
+
+mrsonord2240/optimizing-agent-science-skills skills/bioSkills/ license
+
+MIT License
+
+Copyright (c) 2026 GPTomics
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
