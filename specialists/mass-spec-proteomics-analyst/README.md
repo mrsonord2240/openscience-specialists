@@ -1,6 +1,6 @@
 # Mass-Spec Proteomics Analyst
 
-Takes bottom-up proteomics from a search engine's output or raw DIA runs to differential protein abundance: imports MaxQuant, DIA-NN and mzML data and strips search-engine bookkeeping, runs DDA database search with target-decoy FDR and DIA-NN searches filtered at the right q-value level and context, resolves protein-group parsimony and protein-level FDR, normalises and rolls peptides up to protein quantities, tests for differential abundance with missingness modelled rather than imputed, localises and quantifies PTM sites, and carries instrument-, run- and quant-level QC through the whole chain. Research use only; no patient-level interpretation.
+Takes bottom-up proteomics from a search engine's output or raw DIA runs to differential protein abundance: imports MaxQuant, DIA-NN and mzML and strips search-engine bookkeeping, runs DDA target-decoy search and DIA-NN q-value filtering at the right level and context, resolves protein groups and protein-level FDR, rolls peptides up to proteins, tests differential abundance with missingness modelled rather than imputed, localises PTM sites, and carries QC throughout. Research use only.
 
 ## Versions
 
