@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "specialist_id": "molecular-phylogenetics-analyst",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/mrsonord2240/optimizing-agent-science-skills",
+    "commit": "2f7bc21efd510c4c500eee1f3df2ce29eeeff026",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/molecular-phylogenetics-analyst/1.0.0/molecular-phylogenetics-analyst-1.0.0.zip",
+    "github_release": {
+      "tag": "molecular-phylogenetics-analyst-v1.0.0",
+      "asset_name": "molecular-phylogenetics-analyst-1.0.0.zip"
+    },
+    "sha256": "21b6b8a9f1e53f286af4d9f5b6878decead198b9619bf231bd1373ccd05cc953",
+    "compressed_bytes": 170123,
+    "uncompressed_bytes": 383462,
+    "file_count": 49
+  },
+  "defaults": {
+    "skill_ids": [
+      "bio-alignment-multiple",
+      "bio-phylo-modern-tree-inference",
+      "bio-phylo-bayesian-inference",
+      "bio-phylo-species-trees",
+      "bio-alignment-trimming",
+      "bio-phylo-divergence-dating",
+      "bio-phylo-distance-calculations",
+      "bio-phylo-tree-manipulation",
+      "bio-phylo-tree-io",
+      "bio-phylo-tree-visualization"
+    ],
+    "connector_ids": [
+      "pubmed",
+      "protein-annotation"
+    ]
+  },
+  "skills": [
+    {
+      "id": "bio-alignment-multiple",
+      "name": "bio-alignment-multiple",
+      "display_name": "Multiple Sequence Alignment",
+      "description": "Choose and run MAFFT, MUSCLE5, Clustal Omega or T-Coffee by dataset size, divergence and downstream use, including codon-aware and confidence-assessed alignments.",
+      "path": "skills/bio-alignment-multiple",
+      "content_digest": "ab207807cf521e8f821b2f0065815f3ac16126427ec42292003e6d4895f9e109",
+      "file_count": 4,
+      "uncompressed_bytes": 42655
+    },
+    {
+      "id": "bio-phylo-modern-tree-inference",
+      "name": "bio-phylo-modern-tree-inference",
+      "display_name": "Maximum-Likelihood Tree Inference",
+      "description": "IQ-TREE and RAxML-NG trees with ModelFinder, UFBoot2 and SH-aLRT support, concordance factors, partitioning, topology tests and long-branch-attraction checks.",
+      "path": "skills/bio-phylo-modern-tree-inference",
+      "content_digest": "e4542849577400ea92600b4019dd3965380bf57819fb0be65c890db57fcaa1a2",
+      "file_count": 5,
+      "uncompressed_bytes": 33378
+    },
+    {
+      "id": "bio-phylo-bayesian-inference",
+      "name": "bio-phylo-bayesian-inference",
+      "display_name": "Bayesian Phylogenetic Inference",
+      "description": "MrBayes posteriors gated on scalar and topology convergence, prior checks, stepping-stone model comparison and site-heterogeneous models for deep data.",
+      "path": "skills/bio-phylo-bayesian-inference",
+      "content_digest": "2ef5f150e1b08a5789dc14bcb4ca8ec005e2cc18c5af21760ff4f2667a323e96",
+      "file_count": 3,
+      "uncompressed_bytes": 41997
+    },
+    {
+      "id": "bio-phylo-species-trees",
+      "name": "bio-phylo-species-trees",
+      "display_name": "Coalescent Species Trees",
+      "description": "ASTRAL, wASTRAL and ASTRAL-Pro species trees from gene trees, concordance factors, polytomy tests and minority-quartet checks for introgression.",
+      "path": "skills/bio-phylo-species-trees",
+      "content_digest": "a382dd8836d32ce5f9f938ce9c18bf11ac09042b210bea8d08a1cf60adde783a",
+      "file_count": 3,
+      "uncompressed_bytes": 35915
+    },
+    {
+      "id": "bio-alignment-trimming",
+      "name": "bio-alignment-trimming",
+      "display_name": "Alignment Trimming",
+      "description": "ClipKIT, trimAl and BMGE trimming chosen by downstream goal, with retention rules, column maps and trimmed-versus-untrimmed tree checks.",
+      "path": "skills/bio-alignment-trimming",
+      "content_digest": "5018612b097beace7e07418887a575270c710896b405e404776018b876ca1c92",
+      "file_count": 6,
+      "uncompressed_bytes": 42330
+    },
+    {
+      "id": "bio-phylo-divergence-dating",
+      "name": "bio-phylo-divergence-dating",
+      "display_name": "Divergence Time Estimation",
+      "description": "MCMCTree, BEAST2 and LSD2 dating with fossils as soft minima, prior-only runs and temporal-signal tests before tip-dating.",
+      "path": "skills/bio-phylo-divergence-dating",
+      "content_digest": "cc35d60f6628b03221da3f0c4a84c9f5b67ecb50e0f853c97d344c996c765d7a",
+      "file_count": 3,
+      "uncompressed_bytes": 40258
+    },
+    {
+      "id": "bio-phylo-distance-calculations",
+      "name": "bio-phylo-distance-calculations",
+      "display_name": "Distance Trees",
+      "description": "Model-corrected distance matrices and NJ, BIONJ or FastME trees with saturation checks, LogDet for compositional bias and valid bootstrap support.",
+      "path": "skills/bio-phylo-distance-calculations",
+      "content_digest": "416dbb2aa78a0b715a99e4de5d9750e3d61dfabb62806a1a7eb6832796ab4e2c",
+      "file_count": 6,
+      "uncompressed_bytes": 32457
+    },
+    {
+      "id": "bio-phylo-tree-manipulation",
+      "name": "bio-phylo-tree-manipulation",
+      "display_name": "Rooting and Tree Editing",
+      "description": "Outgroup, MAD, MinVar and non-reversible rooting with stated uncertainty, distance-preserving pruning and support-based collapsing.",
+      "path": "skills/bio-phylo-tree-manipulation",
+      "content_digest": "c071380febdf12e01bd54ec6698882f25fe1f72a98d3e610905eb713a0630a5e",
+      "file_count": 6,
+      "uncompressed_bytes": 33546
+    },
+    {
+      "id": "bio-phylo-tree-io",
+      "name": "bio-phylo-tree-io",
+      "display_name": "Tree File I/O",
+      "description": "Read, convert and write Newick, Nexus, phyloXML and NeXML trees without losing posteriors, HPD intervals or support values.",
+      "path": "skills/bio-phylo-tree-io",
+      "content_digest": "67d05592ce097f058bb4b40a6625a77882a59aceb0f75e818d7651be572e5db3",
+      "file_count": 5,
+      "uncompressed_bytes": 23058
+    },
+    {
+      "id": "bio-phylo-tree-visualization",
+      "name": "bio-phylo-tree-visualization",
+      "display_name": "Tree Figures",
+      "description": "Publication tree figures with named support measures, HPD bars, correct rooting and vector export via Bio.Phylo or ggtree.",
+      "path": "skills/bio-phylo-tree-visualization",
+      "content_digest": "b4c80b60bd1c2152062f41834489a67def6fd4c34efab77d709ae37962942d78",
+      "file_count": 5,
+      "uncompressed_bytes": 32136
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "protein-annotation",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "genes",
+      "required": false,
+      "default_selected": false
+    },
+    {
+      "id": "genomes",
+      "required": false,
+      "default_selected": false
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "10",
+  "revision": "11",
   "marketplace": {
     "id": "openscience-specialists",
     "name": "OpenScience Specialists (Samuel Nord)"
@@ -88,6 +88,23 @@
         "release": {
           "path": "releases/mendelian-randomization-specialist/1.0.0.json",
           "sha256": "a9515ea56c383192b64f79c050b103758a6f4f135451b5913d7f773a3e8ebd33"
+        }
+      }
+    },
+    {
+      "id": "molecular-phylogenetics-analyst",
+      "display_name": "Molecular Phylogenetics Analyst",
+      "summary": "Takes homologous sequences to a defensible phylogeny: alignment and trimming, model selection, maximum-likelihood and Bayesian trees with honest support and convergence checks, coalescent species trees, divergence dating, and publication-ready tree figures.",
+      "publisher": {
+        "id": "mrsonord2240",
+        "name": "Samuel Nord",
+        "url": "https://github.com/mrsonord2240"
+      },
+      "latest": {
+        "version": "1.0.0",
+        "release": {
+          "path": "releases/molecular-phylogenetics-analyst/1.0.0.json",
+          "sha256": "1b30a9317d26191fb392a8fe4347493f3e014551212f53ac7b6cd98fc6b9a29f"
         }
       }
     },
