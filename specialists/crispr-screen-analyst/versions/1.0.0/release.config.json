@@ -1,0 +1,157 @@
+{
+  "source": {
+    "repository": "https://github.com/mrsonord2240/optimizing-agent-science-skills",
+    "commit": "f5ad8c583206a9124732d9518ace53ab17a9be3b",
+    "license": "MIT"
+  },
+  "marketplace": {
+    "display_name": "CRISPR Screen Analyst",
+    "summary": "Analyzes pooled CRISPR knockout/CRISPRi/CRISPRa screens end to end: library design, screen QC, MAGeCK/BAGEL2/drugZ/JACKS hit calling, copy-number and batch correction, cross-method reconciliation, pipeline orchestration, pathway interpretation of hit lists, and CRISPResso2-based quantification of nuclease, base-editing, and prime-editing outcomes.",
+    "publisher": {
+      "id": "mrsonord2240",
+      "name": "Samuel Nord",
+      "url": "https://github.com/mrsonord2240"
+    }
+  },
+  "skills": [
+    {
+      "id": "bio-crispr-screens-library-design",
+      "name": "bio-crispr-screens-library-design",
+      "display_name": "CRISPR Library Design",
+      "description": "Designs pooled sgRNA libraries for CRISPR knockout, interference (CRISPRi), activation (CRISPRa), Cas12a multiplex, base-editor, and prime-editor screens: on-target/off-target scoring, TSS-relative positioning, control-guide composition, oligo cloning architecture.",
+      "path": "skills/bio-crispr-screens-library-design"
+    },
+    {
+      "id": "bio-crispr-screens-screen-qc",
+      "name": "bio-crispr-screens-screen-qc",
+      "display_name": "CRISPR Screen QC",
+      "description": "Quality control for pooled CRISPR screens: library representation, Gini index, replicate concordance, essentialome precision-recall against CEGv2, Cas9 cut-toxicity, copy-number amplicon detection, bottleneck propagation, and MOI verification.",
+      "path": "skills/bio-crispr-screens-screen-qc"
+    },
+    {
+      "id": "bio-crispr-screens-mageck-analysis",
+      "name": "bio-crispr-screens-mageck-analysis",
+      "display_name": "MAGeCK Analysis",
+      "description": "Analyzes pooled CRISPR screens with MAGeCK: RRA two-condition and MLE multi-condition workflows, normalization choice, sgRNA efficiency injection, paired/time-course/drug-screen design, MAGeCKFlute visualization, and decision logic vs JACKS/BAGEL2/drugZ/Chronos.",
+      "path": "skills/bio-crispr-screens-mageck-analysis"
+    },
+    {
+      "id": "bio-crispr-screens-bagel-essentiality",
+      "name": "bio-crispr-screens-bagel-essentiality",
+      "display_name": "BAGEL2 Essentiality",
+      "description": "Identifies essential genes from CRISPR-Cas9 fitness screens using BAGEL2's Bayesian classifier over per-sgRNA fold changes, calibrated against CEGv2/NEGv1: fc+bf+pr workflow, tumor-suppressor detection, BF calibration, and reproducibility.",
+      "path": "skills/bio-crispr-screens-bagel-essentiality"
+    },
+    {
+      "id": "bio-crispr-screens-drugz-chemogenomic",
+      "name": "bio-crispr-screens-drugz-chemogenomic",
+      "display_name": "drugZ Chemogenomic Screens",
+      "description": "Analyzes CRISPR drug-modifier (chemogenomic) screens with drugZ, a bidirectional Z-score method identifying synthetic-lethal sensitizing genes and resistance-conferring suppressor genes from vehicle vs drug comparisons.",
+      "path": "skills/bio-crispr-screens-drugz-chemogenomic"
+    },
+    {
+      "id": "bio-crispr-screens-jacks-analysis",
+      "name": "bio-crispr-screens-jacks-analysis",
+      "display_name": "JACKS Analysis",
+      "description": "Runs JACKS (Joint Analysis of CRISPR/Cas9 Knockout Screens), modeling per-sgRNA log-fold-change as gene-essentiality times guide-efficacy, with hierarchical efficacy priors shared across screens using the same library.",
+      "path": "skills/bio-crispr-screens-jacks-analysis"
+    },
+    {
+      "id": "bio-crispr-screens-copy-number-correction",
+      "name": "bio-crispr-screens-copy-number-correction",
+      "display_name": "CRISPR Copy-Number Correction",
+      "description": "Corrects the gene-independent copy-number artifact in CRISPR-Cas9 screens where amplified loci appear essential from DNA-damage burden: CRISPRcleanR, CERES, Chronos, the decision tree, and a two-rule copy-number-bias diagnostic.",
+      "path": "skills/bio-crispr-screens-copy-number-correction"
+    },
+    {
+      "id": "bio-crispr-screens-hit-calling",
+      "name": "bio-crispr-screens-hit-calling",
+      "display_name": "CRISPR Screen Hit Calling",
+      "description": "Cross-method decision tree for calling hits in pooled CRISPR screens: catalogs MAGeCK RRA/MLE, BAGEL2, drugZ, JACKS, Chronos, CERES, their designs, failure modes, reconciliation on disagreement, multiple-testing thresholds, and consensus-hit strategy.",
+      "path": "skills/bio-crispr-screens-hit-calling"
+    },
+    {
+      "id": "bio-workflows-crispr-screen-pipeline",
+      "name": "bio-workflows-crispr-screen-pipeline",
+      "display_name": "CRISPR Screen Pipeline",
+      "description": "End-to-end pooled CRISPR screen analysis from FASTQ to hit genes: library QC, guide counting, six-stage screen QC, method-matched hit calling across MAGeCK/BAGEL2/drugZ/JACKS/Chronos, copy-number and batch correction, and tier-based cross-method consensus.",
+      "path": "skills/bio-workflows-crispr-screen-pipeline"
+    },
+    {
+      "id": "bio-crispr-screens-batch-correction",
+      "name": "bio-crispr-screens-batch-correction",
+      "display_name": "CRISPR Screen Batch Correction",
+      "description": "Batch effect correction for CRISPR screens covering ComBat empirical-Bayes, RUV, SVA, control-sgRNA normalization, and the model-based alternative of batch-as-covariate in MAGeCK MLE or Chronos, plus diagnosis and decision-tree guidance.",
+      "path": "skills/bio-crispr-screens-batch-correction"
+    },
+    {
+      "id": "bio-experimental-design-batch-design",
+      "name": "bio-experimental-design-batch-design",
+      "display_name": "Batch Design",
+      "description": "Designs genomics experiments so technical nuisance variation (batch, lane, plate, operator, reagent lot) is balanced against the biological variable of interest, using constrained sample-to-batch assignment and a decision table for downstream correction.",
+      "path": "skills/bio-experimental-design-batch-design"
+    },
+    {
+      "id": "bio-pathway-go-enrichment",
+      "name": "bio-pathway-go-enrichment",
+      "display_name": "GO Enrichment",
+      "description": "Runs Gene Ontology over-representation analysis (ORA) on a gene list with clusterProfiler enrichGO: universe/background handling, ontology defaults, p-value adjustment, GO-DAG redundancy, gene-length bias, and ID mapping.",
+      "path": "skills/bio-pathway-go-enrichment"
+    },
+    {
+      "id": "bio-pathway-gsea",
+      "name": "bio-pathway-gsea",
+      "display_name": "Gene Set Enrichment Analysis",
+      "description": "Tests a ranked gene vector for coordinated expression shifts in GO/KEGG/Reactome/MSigDB gene sets with clusterProfiler's gseGO/gseKEGG/gsePathway/GSEA and scores per-sample pathway activity with ssGSEA and GSVA.",
+      "path": "skills/bio-pathway-gsea"
+    },
+    {
+      "id": "bio-crispr-screens-crispresso-editing",
+      "name": "bio-crispr-screens-crispresso-editing",
+      "display_name": "CRISPResso Editing Outcomes",
+      "description": "Quantifies CRISPR editing outcomes with CRISPResso2 across Cas9-nuclease (indels, HDR), CBE/ABE base editors, and prime editor modes: single-amplicon, batch, pooled, WGS off-target, and comparison workflows plus quantification-window math and failure diagnosis.",
+      "path": "skills/bio-crispr-screens-crispresso-editing"
+    },
+    {
+      "id": "bio-crispr-screens-base-editing-analysis",
+      "name": "bio-crispr-screens-base-editing-analysis",
+      "display_name": "Base-Editing Screen Analysis",
+      "description": "Analyzes base-editing screens for variant function: library design, CBE vs ABE chemistry choice, editing-window math, bystander-edit quantification, sgRNA-efficiency filtering before hit calling, indel byproduct interpretation, and ClinVar/COSMIC annotation.",
+      "path": "skills/bio-crispr-screens-base-editing-analysis"
+    },
+    {
+      "id": "bio-crispr-screens-prime-editing-screens",
+      "name": "bio-crispr-screens-prime-editing-screens",
+      "display_name": "Prime-Editing Screens",
+      "description": "Designs and analyzes pooled prime-editor (PE) screens: pegRNA design with PRIDICT/PRIDICT2, PE2/PE3/PE3b/PEmax chemistry choice, MOSAIC saturation mutagenesis, CRISPResso2 quantification of intended-edit vs scaffold-incorporation vs indel, and cross-modal validation with base-editor screens.",
+      "path": "skills/bio-crispr-screens-prime-editing-screens"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "genes",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "genomes",
+      "required": false,
+      "default_selected": false
+    },
+    {
+      "id": "variants",
+      "required": false,
+      "default_selected": false
+    },
+    {
+      "id": "cancer-models",
+      "required": false,
+      "default_selected": false
+    }
+  ]
+}

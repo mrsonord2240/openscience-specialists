@@ -4,14 +4,14 @@ Takes bottom-up proteomics from a search engine's output or raw DIA runs to diff
 
 ## Versions
 
-- `1.0.0` - initial release with 11 bundled Skills and 4 Connector references.
+- `1.0.1` - initial release with 11 bundled Skills and 4 Connector references.
 
 The package uses the OpenScience App export/import v1 layout. Connector entries are references only;
 credentials and executable Connector configuration are not included.
 
 ## Bundled Skills
 
-Scores come from skill-auditor runs made for this release on 2026-09-15; the upstream
+Scores come from skill-auditor runs made for this release between 2026-09-15 and 2026-09-16; the upstream
 repository ships no audits. Where the generated code could not run here, the output was
 graded by inspection; the table says how many test inputs actually ran.
 
@@ -25,8 +25,8 @@ graded by inspection; the table says how many test inputs actually ran.
 | `bio-proteomics-differential-abundance` | Differential Protein Abundance           | core       | 89 (Production Ready, 2026-09-15; code ran for 10/11 test inputs) |
 | `bio-proteomics-proteomics-qc`          | Proteomics QC                            | core       | 88.1 (Production Ready, 2026-09-15; code ran for 8/8 test inputs) |
 | `bio-proteomics-ptm-analysis`           | PTM and Phosphoproteomics Analysis       | supporting | 86.4 (Production Ready, 2026-09-15; code ran for 6/6 test inputs) |
-| `bio-pathway-go-enrichment`             | GO Over-Representation Analysis          | supporting | 90 (Production Ready, 2026-09-15; code ran for 5/5 test inputs)   |
-| `bio-experimental-design-batch-design`  | Batch and Confounding Design             | supporting | 82 (Limited Release, 2026-09-15; code ran for 5/5 test inputs)    |
+| `bio-pathway-go-enrichment`             | GO Over-Representation Analysis          | supporting | 90 (Production Ready, 2026-09-16; code ran for 7/7 test inputs)   |
+| `bio-experimental-design-batch-design`  | Batch and Confounding Design             | supporting | 87 (Production Ready, 2026-09-16; code ran for 7/7 test inputs)   |
 | `bio-workflows-proteomics-pipeline`     | End-to-End Proteomics Workflow           | supporting | 87.7 (Production Ready, 2026-09-15; code ran for 7/8 test inputs) |
 
 ## Connector references
@@ -35,10 +35,10 @@ graded by inspection; the table says how many test inputs actually ran.
 
 ## Source
 
-Skills from [https://github.com/mrsonord2240/optimizing-agent-science-skills](https://github.com/mrsonord2240/optimizing-agent-science-skills) at `567cab000f3728427c4c8a18e36d2f794a9def7d`, under `skills/bioSkills/` (MIT).
+Skills from [https://github.com/mrsonord2240/optimizing-agent-science-skills](https://github.com/mrsonord2240/optimizing-agent-science-skills) at `f5ad8c583206a9124732d9518ace53ab17a9be3b`, under `skills/bioSkills/` (MIT).
 
 These Skills originate in https://github.com/GPTomics/bioSkills at commit d91ed3d563019e649dc854c56ccd62551359488a (MIT).
-They have been MODIFIED: defects found by audit were fixed in https://github.com/mrsonord2240/bioSkills at commit a62c7097f37cde2f1d44763ac22c3f5c6d5350bb, then exported to the repository named above. Files change only where an audit
+They have been MODIFIED: defects found by audit were fixed in https://github.com/mrsonord2240/bioSkills-Improved at commit 9d31109159d4d490ec375d4ae88c9b77570f3840, then exported to the repository named above. Files change only where an audit
 demonstrated a defect; every change has a fix log and a post-fix audit report.
 
 Packaging notes (Skill files are otherwise byte-identical to that commit; audit reports are not
