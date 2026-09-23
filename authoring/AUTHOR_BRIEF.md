@@ -24,11 +24,11 @@ honestly how the result could be better.
 - Audit evidence per Skill: `F:\OpenScience\audits\<skill-id>\eval_report_*_result.json` and
   `eval_viewer_<skill-id>.md` (what the auditor ran, what executed, the P1/P2 findings).
 - Bundled Skills: under the `upstream` `path` (plus `prefix`) your `spec.json` pins — fixed Skills
-  at `F:\optimizing-agent-science-skills\skills\bioSkills\<source>\`, unmodified ones at
+  on the shelf at `F:\optimized-scientific-skills\skills\<skill-id>\`, unmodified ones at
   `F:\OpenScience\external\GPTomics__bioSkills\<source>\` (`SKILL.md`, `usage-guide.md`,
   `examples/`). Read-only.
 - Builder: `python F:\OpenScience\specialist-src\build_specialist.py <id>` → writes
-  `F:\OpenScience\specialists\<id>\...`. It enforces the threshold and fails loudly.
+  `F:\openscience-specialists\specialists\<id>\...` (this repo). It enforces the threshold and fails loudly.
 - Clean marketplace worktree with dependencies installed: `F:\osa` (read-only for you).
   - Protocol: `protocol/README.md`; authoring guide `specialists/README.md`.
   - Exemplar system prompts (read at least one fully before writing):
@@ -79,7 +79,7 @@ honestly how the result could be better.
 4. **Build**: run the builder until it passes. Then build the release twice and confirm identical
    artifact SHA-256:
    ```
-   cd F:/osa && npm run build:release --silent -- --specialist-id <id> --version 1.0.0 --version-directory F:/OpenScience/specialists/<id>/versions/1.0.0 --output F:/OpenScience/builds/<id>-a
+   cd F:/osa && npm run build:release --silent -- --specialist-id <id> --version 1.0.0 --version-directory F:/openscience-specialists/specialists/<id>/versions/1.0.0 --output F:/OpenScience/builds/<id>-a
    (repeat with F:/OpenScience/builds/<id>-b)
    ```
    Do NOT copy anything into `F:\osa` and do not run `npm run validate`; central validation runs
