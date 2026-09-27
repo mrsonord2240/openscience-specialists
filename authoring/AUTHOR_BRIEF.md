@@ -25,7 +25,7 @@ honestly how the result could be better.
   `eval_viewer_<skill-id>.md` (what the auditor ran, what executed, the P1/P2 findings).
 - Bundled Skills: under the `upstream` `path` (plus `prefix`) your `spec.json` pins — fixed Skills
   on the shelf at `F:\optimized-scientific-skills\skills\<skill-id>\`, unmodified ones at
-  `F:\OpenScience\external\GPTomics__bioSkills\<source>\` (`SKILL.md`, `usage-guide.md`,
+  `F:\optimizing-agent-science-skills\external\GPTomics__bioSkills\<source>\` (`SKILL.md`, `usage-guide.md`,
   `examples/`). Read-only.
 - Builder: `python F:\openscience-specialists\specialist-src\build_specialist.py <id>` → writes
   `F:\openscience-specialists\specialists\<id>\...` (this repo). It enforces the threshold and fails loudly.

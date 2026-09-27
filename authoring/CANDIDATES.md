@@ -11,7 +11,7 @@ uses one. So a Specialist cannot mix AIPOCH and bioSkills Skills. Each candidate
 - repository `https://github.com/GPTomics/bioSkills`
 - commit `d91ed3d563019e649dc854c56ccd62551359488a`
 - license MIT
-- local clone `F:\OpenScience\external\GPTomics__bioSkills`
+- local clone `F:\optimizing-agent-science-skills\external\GPTomics__bioSkills`
 
 **What round 2 actually ships (2026-09-15).** Skills the audits found defective were fixed in
 `mrsonord2240/bioSkills` and exported into this repository under `skills/bioSkills/`, with the

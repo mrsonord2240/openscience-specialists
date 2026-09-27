@@ -5,7 +5,7 @@
     "repository": "https://github.com/GPTomics/bioSkills",
     "commit": "d91ed3d563019e649dc854c56ccd62551359488a",
     "license": "MIT",
-    "path": "F:/OpenScience/external/GPTomics__bioSkills"
+    "path": "F:/optimizing-agent-science-skills/external/GPTomics__bioSkills"
   },
   "display_name": "Single-Cell Transcriptomics Analyst",
   "summary": "Takes droplet scRNA-seq from Cell Ranger count matrices to a defended biological answer: ambient-RNA removal on the raw matrix, per-sample MAD-adaptive QC and doublet calling before any merge, batch integration scored on both axes, resolution-swept clustering that is never reported as proof of a cell type, reference and marker-based annotation with a rejection bin, and then the two cross-condition questions asked correctly and separately - pseudobulk DE with the biological sample as the unit of replication, and simplex-aware differential abundance. Droplet scRNA-seq only; not spatial. Research use only.",

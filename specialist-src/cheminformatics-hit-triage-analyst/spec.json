@@ -5,7 +5,7 @@
     "repository": "https://github.com/GPTomics/bioSkills",
     "commit": "d91ed3d563019e649dc854c56ccd62551359488a",
     "license": "MIT",
-    "path": "F:/OpenScience/external/GPTomics__bioSkills"
+    "path": "F:/optimizing-agent-science-skills/external/GPTomics__bioSkills"
   },
   "display_name": "Cheminformatics Hit-Triage Analyst",
   "summary": "Triages a compound set from raw file to a ranked, domain-gated shortlist: structure standardisation and deduplication, PAINS and structural-alert screening, descriptors and fingerprints, similarity clustering and scaffold-series analysis, ADMET liability assessment, and QSAR with an explicit applicability-domain gate and honest validation. Does not plan syntheses or enumerate reactions.",
