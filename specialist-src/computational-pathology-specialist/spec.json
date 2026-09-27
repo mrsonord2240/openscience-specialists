@@ -1,0 +1,79 @@
+{
+  "id": "computational-pathology-specialist",
+  "version": "1.0.0",
+  "display_name": "Computational Pathology Whole-Slide Image Specialist",
+  "summary": "",
+  "skills": [
+    {
+      "id": "histolab",
+      "source": "scientific/Data Analysis/histolab",
+      "core": true,
+      "display_name": "",
+      "description": "",
+      "_audit": 88,
+      "_upstream_description": "Digital pathology image processing toolkit for whole slide images (WSI). Supports WSI formats (SVS, TIFF, NDPI), tile-based analysis, and histological image preprocessing workflows."
+    },
+    {
+      "id": "pathml",
+      "source": "scientific/Data Analysis/pathml",
+      "core": true,
+      "display_name": "",
+      "description": "",
+      "_audit": 87,
+      "_upstream_description": "A full-featured computational pathology toolkit for advanced WSI analysis, including multiplexed immunofluorescence (CODEX, Vectra), nuclei segmentation, tissue graph construction, and machine learning model training on pathology data. Supports over 160 slide formats. For simp..."
+    },
+    {
+      "id": "pathology-roi-selector",
+      "source": "scientific/Data Analysis/pathology-roi-selector",
+      "core": true,
+      "display_name": "",
+      "description": "",
+      "_audit": 89,
+      "_upstream_description": "Use pathology roi selector for data analysis workflows that need structured execution, explicit assumptions, and clear output boundaries."
+    },
+    {
+      "id": "pydicom",
+      "source": "scientific/Data Analysis/pydicom",
+      "core": false,
+      "display_name": "",
+      "description": "",
+      "_audit": 88,
+      "_upstream_description": "A Python library for working with DICOM (Digital Imaging and Communications in Medicine) files. Use this skill when you need to read, write, or modify DICOM format medical imaging data, extract pixel data from medical images (CT, MRI, X-ray, ultrasound), anonymize DICOM files,..."
+    },
+    {
+      "id": "statistical-analysis",
+      "source": "scientific/Data Analysis/statistical-analysis",
+      "core": false,
+      "display_name": "",
+      "description": "",
+      "_audit": 90,
+      "_upstream_description": "Guided statistical analysis for test selection, assumption checks, power analysis, and APA-style reporting. Use when you need to choose an appropriate statistical test for your data and produce publication-ready results (including effect sizes and diagnostics)."
+    },
+    {
+      "id": "validation-strategy-designer",
+      "source": "medical/Protocol Design/validation-strategy-designer",
+      "core": false,
+      "display_name": "",
+      "description": "",
+      "_audit": 88,
+      "_upstream_description": "Designs internal, external, temporal, and functional validation strategies at the protocol stage for medical research studies."
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "cancer-models",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

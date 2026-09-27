@@ -1,0 +1,144 @@
+{
+  "id": "real-world-evidence-epidemiologist",
+  "version": "1.0.0",
+  "display_name": "Real-World Evidence and Observational Epidemiology Specialist",
+  "summary": "Designs and audits target-trial-aligned cohort, case-control, and survey studies on EHR, claims, registry, and NHANES-type data with explicit time zero, DAG-justified confounding control, and bias sensitivity analyses, without drawing individual patient conclusions.",
+  "_decisions": "2026-09-10: Dropped tooluniverse-statistical-modeling (THRESHOLD gate 8: SKILL.md routes to six references/*.md that were never shipped; it needed no ToolUniverse service). clinical-data-cleaner core->supporting (SDTM DM/LB/VS trial-domain QC helper; every run applies a missing-value strategy, so it cannot be the central RWE operation). reporting-guideline-compliance-checker supporting->core (91; the reporting leg of gate 4). Gate 4 core set: design/framing = real-world-evidence-study-designer, clinical-cohort-protocol-designer, case-control-study-planner; central operation (target-trial-aligned design and confounding control) = real-world-evidence-study-designer, confounder-and-bias-control-planner; reporting = reporting-guideline-compliance-checker. Execution Skills (Cox, KM, Table 1, data cleaner) stay supporting; the prompt never lets a planning Skill stand in for them. Added sample-size-and-power-planning-assistant (audit 90, no P0, no missing references) for fixed-N feasibility and precision planning. Kept table-1-generator-advanced over table-1-generator: scripts are byte-identical, advanced has the explicit trigger phrases and workflow. Added drug-regulatory connector for approval dates, labels, and agency RWE guidance versions.",
+  "skills": [
+    {
+      "id": "real-world-evidence-study-designer",
+      "source": "medical/Protocol Design/real-world-evidence-study-designer",
+      "core": true,
+      "display_name": "Real-World Evidence Study Designer",
+      "description": "Designs EHR, claims, or registry RWE studies with explicit time zero, exposure and outcome windows, censoring, confounding control, and target trial emulation.",
+      "_audit": 88,
+      "_upstream_description": "Designs a structured real-world evidence study using EHR, claims, or registry data, with explicit handling of time zero, eligibility windows, exposure definitions, outcome windows, censoring, confounding control, and target-trial-emulation logic. Use this skill when the user needs study-type design "
+    },
+    {
+      "id": "clinical-cohort-protocol-designer",
+      "source": "medical/Protocol Design/clinical-cohort-protocol-designer",
+      "core": true,
+      "display_name": "Clinical Cohort Protocol Designer",
+      "description": "Builds retrospective or prospective cohort protocol frameworks: eligibility, time zero, follow-up, endpoints, variable tiers, and one primary analysis line.",
+      "_audit": 90,
+      "_upstream_description": "Designs retrospective or prospective clinical cohort study protocols for biomedical and clinical research. Always use this skill when the user needs a cohort-based study plan rather than a general study idea, evidence summary, or mechanistic experiment design. Focus on cohort appropriateness, enroll"
+    },
+    {
+      "id": "confounder-and-bias-control-planner",
+      "source": "medical/Protocol Design/confounder-and-bias-control-planner",
+      "core": true,
+      "display_name": "Confounder and Bias Control Planner",
+      "description": "Classifies variable roles, selects a minimal adjustment set and control strategy, and flags mediator, collider, immortal-time, and selection bias before analysis.",
+      "_audit": 89,
+      "_upstream_description": "Plans confounder control, variable adjustment logic, and bias mitigation strategies at the protocol stage for clinical, epidemiologic, translational, observational, and biomarker studies. Always use this skill when a user needs to identify major confounders, decide which variables should or should n"
+    },
+    {
+      "id": "case-control-study-planner",
+      "source": "medical/Protocol Design/case-control-study-planner",
+      "core": true,
+      "display_name": "Case-Control Study Planner",
+      "description": "Frames case-control designs with source-population logic, control sampling, matching decisions, exposure timing, and a bias-control matrix.",
+      "_audit": 86,
+      "_upstream_description": "Design a structured case-control study framework with explicit source population logic, control selection rules, matching decisions, exposure measurement planning, and bias-control checkpoints."
+    },
+    {
+      "id": "clinical-data-cleaner",
+      "source": "scientific/Data Analysis/clinical-data-cleaner",
+      "core": false,
+      "display_name": "Clinical Data Cleaner",
+      "description": "Runs SDTM-style DM, LB, and VS data checks: required-field validation, outlier flagging, ISO 8601 date standardization, and a JSON audit trail.",
+      "_audit": 91,
+      "_upstream_description": "Use when cleaning clinical trial data, preparing data for FDA/EMA submission, standardizing SDTM datasets, handling missing values in clinical studies, detecting outliers in lab results, or converting raw CRF data to CDISC format. Cleans and standardizes clinical trial data fo..."
+    },
+    {
+      "id": "nhanes-clinical-retrospective-biomarker-research-planner",
+      "source": "medical/Protocol Design/nhanes-clinical-retrospective-biomarker-research-planner",
+      "core": false,
+      "display_name": "NHANES Biomarker Research Planner",
+      "description": "Plans NHANES-style cross-sectional biomarker association studies with spline and subgroup modules, optional hospital validation, and four workload tiers.",
+      "_audit": 89,
+      "_upstream_description": "Generates complete NHANES-style cross-sectional epidemiology + retrospective clinical validation research designs from a user-provided disease and biomarker direction. Always use this skill whenever a user wants to design, plan, or build a population-level biomarker association study using NHANES or"
+    },
+    {
+      "id": "sample-size-and-power-planning-assistant",
+      "source": "medical/Protocol Design/sample-size-and-power-planning-assistant",
+      "core": false,
+      "display_name": "Sample Size and Power Planning Assistant",
+      "description": "Writes assumption-audited sample size, event-count, precision, and fixed-N feasibility memos with fallback scenarios instead of false-precision numbers.",
+      "_audit": 90,
+      "_upstream_description": "Plans sample size estimation logic, power assumptions, feasibility checks, and fallback enrollment strategies for clinical and translational study protocols."
+    },
+    {
+      "id": "table-1-generator-advanced",
+      "source": "scientific/Data Analysis/table-1-generator-advanced",
+      "core": false,
+      "display_name": "Table 1 Generator",
+      "description": "Generates an unweighted baseline characteristics table from a CSV: mean and SD, median and IQR, n (%), with t-test, ANOVA, or chi-square by group.",
+      "_audit": 90,
+      "_upstream_description": "Generate publication-ready baseline characteristics tables (Table 1) for clinical research papers with automatic variable type detection, appropriate statistics (mean±SD, median[IQR, n(%)), group comparisons (t-test, chi-square), and APA formatting."
+    },
+    {
+      "id": "univariate-multivariable-cox-regression",
+      "source": "medical/Data Analysis/univariate-multivariable-cox-regression",
+      "core": false,
+      "display_name": "Univariate and Multivariable Cox Regression",
+      "description": "Runs complete-case univariate and multivariable Cox models in R, exports hazard ratio tables, and draws forest plots.",
+      "_audit": 86,
+      "_upstream_description": "Use when running prognostic survival analysis on a clinical cohort with time-to-event data to estimate univariate and multivariable Cox proportional hazards models, export result tables, and generate forest plots. NOT for: nomogram construction, calibration curves, time-dependent ROC analysis, or mo"
+    },
+    {
+      "id": "km-survival-curve",
+      "source": "medical/Data Analysis/km-survival-curve",
+      "core": false,
+      "display_name": "Kaplan-Meier Survival Curve",
+      "description": "Draws Kaplan-Meier curves in R for a precomputed categorical group with log-rank or Wald p-value, confidence bands, and a risk table.",
+      "_audit": 92,
+      "_upstream_description": "Use when generating Kaplan-Meier survival curves from tabular survival data containing time, event status, and a precomputed risk group. Supports command-line parameter input, parameter validation, automatic time-unit handling, single-file PDF figure export, and session metadata capture."
+    },
+    {
+      "id": "epidemiology",
+      "source": "scientific/Data Analysis/epidemiology",
+      "core": false,
+      "display_name": "Epidemiology",
+      "description": "Guides occurrence measures with person-time denominators, absolute and relative association measures, DAG-based confounder reasoning, and bias checklists.",
+      "_audit": 86,
+      "_upstream_description": "Performs epidemiological analyses including disease modeling (SIR/SEIR), outbreak investigation, risk factor identification, incidence/prevalence estimation, and causal inference from observational data; trigger when users discuss disease spread, public health data, or populat..."
+    },
+    {
+      "id": "reporting-guideline-compliance-checker",
+      "source": "medical/Academic Writing/reporting-guideline-compliance-checker",
+      "core": true,
+      "display_name": "Reporting Guideline Compliance Checker",
+      "description": "Checks manuscripts against STROBE, CONSORT, PRISMA, or TRIPOD and ranks missing or weak reporting items by submission risk.",
+      "_audit": 91,
+      "_upstream_description": "Checks biomedical manuscripts against reporting guidelines such as CONSORT, STROBE, PRISMA, and TRIPOD to identify missing or weak reporting elements before submission or revision."
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "clinical-trials",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "drug-regulatory",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "research-resources",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

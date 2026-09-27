@@ -1,0 +1,153 @@
+{
+  "id": "single-cell-transcriptomics-analyst",
+  "version": "1.0.0",
+  "upstream": {
+    "repository": "https://github.com/GPTomics/bioSkills",
+    "commit": "d91ed3d563019e649dc854c56ccd62551359488a",
+    "license": "MIT",
+    "path": "F:/OpenScience/external/GPTomics__bioSkills"
+  },
+  "display_name": "Single-Cell Transcriptomics Analyst",
+  "summary": "Takes droplet scRNA-seq from Cell Ranger count matrices to a defended biological answer: ambient-RNA removal on the raw matrix, per-sample MAD-adaptive QC and doublet calling before any merge, batch integration scored on both axes, resolution-swept clustering that is never reported as proof of a cell type, reference and marker-based annotation with a rejection bin, and then the two cross-condition questions asked correctly and separately - pseudobulk DE with the biological sample as the unit of replication, and simplex-aware differential abundance. Droplet scRNA-seq only; not spatial. Research use only.",
+  "skills": [
+    {
+      "id": "bio-workflows-scrnaseq-pipeline",
+      "source": "workflows/scrnaseq-pipeline",
+      "core": true,
+      "display_name": "scRNA-seq Pipeline Orchestration",
+      "description": "Owns the ordering that makes or breaks the result: correct-then-detect-then-normalize, demultiplex hashed pools first, per-sample QC and doublets before merge, integrate then cluster then annotate, and pair pseudobulk DE with a differential-abundance test. Hands mechanism to the component Skills.",
+      "_audit": 85,
+      "_grade": "Limited Release",
+      "_role": "framing and orchestration",
+      "_upstream_description": "Orchestrates the end-to-end single-cell RNA-seq pipeline from 10x Cell Ranger output to annotated cell types, chaining ambient-RNA removal, doublet detection, MAD-adaptive QC, normalization, integration, clustering, marker annotation, and (separately"
+    },
+    {
+      "id": "bio-single-cell-preprocessing",
+      "source": "single-cell/preprocessing",
+      "core": true,
+      "display_name": "QC, Ambient RNA and Normalization",
+      "description": "MAD-adaptive, tissue-aware QC computed per sample rather than globally; ambient-RNA removal on the raw droplet matrix with one tool, not three; a defensible normalization choice; and HVG selection fed the input type each flavor actually expects.",
+      "_audit": 85,
+      "_grade": "Limited Release",
+      "_role": "central operation - entry",
+      "_upstream_description": "Quality control, ambient-RNA handling, normalization, and feature selection for single-cell RNA-seq using Scanpy (Python) and Seurat (R). Use when filtering low-quality cells with MAD-adaptive thresholds, setting tissue-aware mito cutoffs, removing a"
+    },
+    {
+      "id": "bio-single-cell-doublet-detection",
+      "source": "single-cell/doublet-detection",
+      "core": true,
+      "display_name": "Doublet Detection",
+      "description": "Calls doublets per capture before integration, sets the expected rate from that lane's recovered cells (and from total lane loading for multiplexed pools), and reports only the detectable heterotypic fraction rather than claiming a doublet-free dataset.",
+      "_audit": 85,
+      "_grade": "Limited Release",
+      "_role": "central operation - artifact removal",
+      "_upstream_description": "Detect and remove doublets (two or more cells in one droplet) from single-cell RNA-seq using scDblFinder (R), Scrublet (Python), and DoubletFinder (R). Use when flagging artificial intermediate populations before clustering, setting the expected doub"
+    },
+    {
+      "id": "bio-single-cell-batch-integration",
+      "source": "single-cell/batch-integration",
+      "core": true,
+      "display_name": "Batch Integration",
+      "description": "Chooses an integration method for the design and size, scores it on batch mixing and bio-conservation together rather than on a batch metric alone, refuses confounded designs outright, and keeps corrected expression out of differential expression.",
+      "_audit": 90,
+      "_grade": "Limited Release",
+      "_role": "central operation - multi-sample",
+      "_upstream_description": "Integrate multiple scRNA-seq samples or batches with Harmony, scVI/scANVI, Seurat (CCA/RPCA), fastMNN, Scanorama, or BBKNN. Resolves which method to use for the dataset size and design, how strongly to correct, when integration is the wrong move (con"
+    },
+    {
+      "id": "bio-single-cell-clustering",
+      "source": "single-cell/clustering",
+      "core": true,
+      "display_name": "Clustering and Resolution Choice",
+      "description": "Builds the kNN graph on a defensible number of PCs, sweeps resolution instead of tuning it to taste, pins the Leiden backend so labels are reproducible, and treats post-clustering marker p-values as invalid inference rather than merely inflated.",
+      "_audit": 89,
+      "_grade": "Limited Release",
+      "_role": "central operation - partition",
+      "_upstream_description": "Dimensionality reduction and graph-based clustering for single-cell RNA-seq with Scanpy (Python) and Seurat (R). Resolves which algorithm to use (Leiden vs Louvain), how many PCs and neighbors to set, how to sweep and validate resolution, when a spli"
+    },
+    {
+      "id": "bio-single-cell-cell-annotation",
+      "source": "single-cell/cell-annotation",
+      "core": true,
+      "display_name": "Reference-Based Cell Annotation",
+      "description": "Transfers labels from a pretrained model or reference atlas with the normalization each tool silently requires, keeps a calibrated rejection bin because every annotator is closed-world, and triages an unexpected cluster against doublets, low quality, batch and ambient before novelty is entertained.",
+      "_audit": 87,
+      "_grade": "Limited Release",
+      "_role": "central operation - labelling",
+      "_upstream_description": "Automated reference-based cell type annotation for single-cell RNA-seq using CellTypist, SingleR, Azimuth, scANVI, and scmap to transfer labels from a reference. Use when annotating cell types from a reference atlas or pretrained model, transferring "
+    },
+    {
+      "id": "bio-single-cell-differential-abundance",
+      "source": "single-cell/differential-abundance",
+      "core": true,
+      "display_name": "Differential Abundance",
+      "description": "Tests whether cell-type proportions changed without pretending proportions are independent: simplex-aware models (propeller, scCODA, sccomp) or cluster-free neighbourhood testing, with the biological sample as the unit of replication and an explicit reference-cell-type choice.",
+      "_audit": 88,
+      "_grade": "Production Ready",
+      "_role": "validation - composition",
+      "_upstream_description": "Test whether cell-type proportions or composition changed between conditions in single-cell data using Milo (miloR), scCODA, sccomp, and propeller. Use when comparing cell-type proportions / composition between conditions, asking which populations ex"
+    },
+    {
+      "id": "bio-differential-expression-deseq2-basics",
+      "source": "differential-expression/deseq2-basics",
+      "core": true,
+      "display_name": "Pseudobulk Differential Expression",
+      "description": "The DE engine for counts aggregated per sample and cell type: explicit contrasts instead of bare results(), Wald versus LRT chosen for the hypothesis, apeglm shrinkage for ranking with the Wald p-value kept for inference, and the three distinct causes of padj=NA each with its own fix.",
+      "_audit": 92,
+      "_grade": "Production Ready",
+      "_role": "validation - expression",
+      "_upstream_description": "Performs differential expression on bulk RNA-seq count data with DESeq2's negative-binomial GLM, Wald and LRT testing, apeglm/ashr/normal LFC shrinkage, independent filtering, Cook's outlier handling, VST/rlog transforms, and design formulas includin"
+    },
+    {
+      "id": "bio-single-cell-markers-annotation",
+      "source": "single-cell/markers-annotation",
+      "core": false,
+      "display_name": "Marker Detection and Manual Labelling",
+      "description": "Ranks cluster markers by effect size and fraction-expressing rather than p-value, corrects the tool defaults that quietly change the answer, and keeps marker ranking strictly separate from condition DE, which is aggregated to pseudobulk instead.",
+      "_audit": 88,
+      "_grade": "Production Ready",
+      "_role": "supporting - annotation evidence",
+      "_upstream_description": "Detect cluster marker genes and assign manual cell type labels in single-cell RNA-seq using Scanpy (Python) and Seurat (R). Use when finding genes that distinguish clusters, ranking markers for annotation, scoring gene signatures, hand-labeling clust"
+    },
+    {
+      "id": "bio-pathway-gsea",
+      "source": "pathway-analysis/gsea",
+      "core": false,
+      "display_name": "GSEA on a Ranked Gene Vector",
+      "description": "Turns a pseudobulk DE result into a ranked-vector gene-set test with the right engine, ranking statistic and permutation scheme, and scores per-sample pathway activity where a per-cell-type summary is wanted.",
+      "_audit": 90,
+      "_grade": "Limited Release",
+      "_role": "supporting - interpretation",
+      "_upstream_description": "Tests a ranked gene vector for coordinated expression shifts in GO, KEGG, Reactome, or MSigDB gene sets with clusterProfiler's gseGO, gseKEGG, gsePathway, and GSEA (fgseaMultilevel engine), and scores per-sample pathway activity with ssGSEA and GSVA."
+    },
+    {
+      "id": "bio-pathway-go-enrichment",
+      "source": "pathway-analysis/go-enrichment",
+      "core": false,
+      "display_name": "GO Over-Representation Analysis",
+      "description": "Runs GO ORA on a gene list with the background universe chosen correctly - the expressed genes, not the genome - which is the difference between a real enrichment and an artefact of the gene list's length.",
+      "_audit": 90,
+      "_grade": "Production Ready",
+      "_role": "supporting - interpretation",
+      "_upstream_description": "Runs Gene Ontology over-representation analysis (ORA) on a gene LIST with clusterProfiler enrichGO, the one-sided hypergeometric/Fisher 2x2 test phyper(k-1, M, N-M, n, lower.tail=FALSE). Covers why the BACKGROUND universe (not the gene list) is the n"
+    },
+    {
+      "id": "bio-experimental-design-batch-design",
+      "source": "experimental-design/batch-design",
+      "core": false,
+      "display_name": "Batch Design and Confounding",
+      "description": "Lays out captures so batch is balanced against condition and therefore estimable, and says plainly when a design is already confounded and no computational step can recover the contrast.",
+      "_audit": 82,
+      "_grade": "Limited Release",
+      "_role": "supporting - design",
+      "_upstream_description": "Designs genomics experiments so technical nuisance variation (batch, lane, plate, flow cell, operator, reagent lot, processing day) is balanced against the biological variable of interest and therefore estimable rather than confounded, using constrai"
+    }
+  ],
+  "connectors": [
+    {"id": "cellguide", "required": false, "default_selected": true},
+    {"id": "genes", "required": false, "default_selected": true},
+    {"id": "biomart", "required": false, "default_selected": true},
+    {"id": "expression", "required": false, "default_selected": false},
+    {"id": "pubmed", "required": false, "default_selected": true}
+  ]
+}

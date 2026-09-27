@@ -1,0 +1,170 @@
+{
+  "id": "critical-appraisal-specialist",
+  "version": "1.0.0",
+  "display_name": "Biomedical Critical Appraisal Specialist",
+  "summary": "Appraises individual biomedical papers or small paper sets for journal club, peer review and citation decisions, routing by verified study design to risk-of-bias, claim, spin and registry checks without reconstructing papers from memory.",
+  "skills": [
+    {
+      "id": "study-design-identifier",
+      "source": "medical/Evidence Insight/study-design-identifier",
+      "core": true,
+      "display_name": "Study Design Identifier",
+      "description": "Identifies a paper's real study design from its methods, separates primary and secondary layers in hybrid papers, and corrects misleading author design labels.",
+      "_audit": 86,
+      "_upstream_description": "Identifies the real underlying study design used in a medical or biomedical paper, distinguishes primary and secondary design components when papers are hybrid, and converts the paper into an evidence-aware design label suitable for literature appraisal, evidence grading, and downstream review workf"
+    },
+    {
+      "id": "medical-research-literature-reader-pro",
+      "source": "medical/Evidence Insight/medical-research-literature-reader-pro",
+      "core": true,
+      "display_name": "Medical Research Literature Reader Pro",
+      "description": "Classifies a medical paper into clinical, computational, experimental or hybrid tracks and writes a structured critical appraisal with explicit claim boundaries.",
+      "_audit": 93,
+      "_upstream_description": "A medical-research-native literature reading skill for users with clinical, bioinformatics, translational, and basic experimental backgrounds. Use this skill whenever a user wants to read, analyze, critique, or interpret a medical or scientific paper — whether they provide a PDF, abstract, DOI, PMID"
+    },
+    {
+      "id": "rct-bias-assessment-rob2",
+      "source": "scientific/Evidence Insight/rct-bias-assessment-rob2",
+      "core": false,
+      "display_name": "RCT Risk of Bias Assessment (RoB 2)",
+      "description": "Applies the five RoB 2 domains to a randomized trial result and returns domain-level and overall risk-of-bias judgments in a fixed JSON schema.",
+      "_audit": 78,
+      "_upstream_description": "Automates Risk of Bias 2 (ROB2) assessment for RCT papers by analyzing text against specific domains and synthesizing a report. Use when you need to assess the quality of a clinical trial paper or evaluate risk of bias."
+    },
+    {
+      "id": "diagnostic-study-quality-assessment-quadas-2",
+      "source": "scientific/Evidence Insight/diagnostic-study-quality-assessment-quadas-2",
+      "core": false,
+      "display_name": "Diagnostic Accuracy Quality Assessment (QUADAS-2)",
+      "description": "Answers QUADAS-2 signalling questions for a diagnostic accuracy study across patient selection, index test, reference standard and flow/timing, with quotes.",
+      "_audit": 78,
+      "_upstream_description": "Analyzes clinical diagnostic accuracy studies for bias using the QUADAS-2 tool. Use when Claude needs to assess the quality, risk of bias, or applicability of diagnostic accuracy studies (e.g., \"Assess this paper using QUADAS-2\")."
+    },
+    {
+      "id": "result-reliability-checker",
+      "source": "medical/Evidence Insight/result-reliability-checker",
+      "core": true,
+      "display_name": "Result Reliability Checker",
+      "description": "Audits whether each main result is trustworthy by tracing design, bias control, statistics, validation chain and claim discipline to a per-claim reliability judgment.",
+      "_audit": 88,
+      "_upstream_description": "Assesses whether study results are trustworthy by auditing design integrity, sample structure, statistical handling, bias control, validation chain, and claim discipline. It identifies where results are robust, fragile, overfit, under-validated, or overclaimed. Always separate reported findings from"
+    },
+    {
+      "id": "paper-to-claim-verifier",
+      "source": "medical/Evidence Insight/paper-to-claim-verifier",
+      "core": true,
+      "display_name": "Paper-to-Claim Verifier",
+      "description": "Checks whether a claim is supported by the paper it cites, diagnosing citation drift, context transfer and causality inflation, and proposes citation-safe wording.",
+      "_audit": 89,
+      "_upstream_description": "Verifies whether a scientific or biomedical claim is actually supported by the cited original papers rather than by citation drift, overstatement, selective citation, or correlation-to-causation inflation. Use this skill whenever a user wants to check whether a repeated statement, slide claim, manus"
+    },
+    {
+      "id": "high-value-paper-screener",
+      "source": "medical/Evidence Insight/high-value-paper-screener",
+      "core": false,
+      "display_name": "High-Value Paper Screener",
+      "description": "Reading-priority triage: judges a paper's question fit and screening value and returns full read, skim, skip or uncertain, keeping relevance apart from quality.",
+      "_audit": 88,
+      "_upstream_description": "Quickly judges whether a biomedical paper is worth deep reading by screening for question fit, design quality, sample adequacy, methodological novelty, and reproducibility value."
+    },
+    {
+      "id": "figure-first-paper-reader",
+      "source": "medical/Evidence Insight/figure-first-paper-reader",
+      "core": false,
+      "display_name": "Figure-First Paper Reader",
+      "description": "Reads a paper figure by figure, maps each figure to the claim it is meant to carry, and judges whether the visual evidence supports that claim.",
+      "_audit": 87,
+      "_upstream_description": "Reads a paper figure by figure before re-integrating the full narrative, so the user can identify the core findings quickly and check whether each visual actually supports the authors' main claims. Always separate figure content, figure-linked claim, evidentiary strength, and unsupported interpretat"
+    },
+    {
+      "id": "methods-reverse-engineer",
+      "source": "medical/Evidence Insight/methods-reverse-engineer",
+      "core": false,
+      "display_name": "Methods Reverse Engineer",
+      "description": "Reconstructs a paper's methods into an ordered, reproducible workflow, labelling explicit, inferred and missing steps, and builds a replication checklist.",
+      "_audit": 90,
+      "_upstream_description": "Reverse-engineers the methods section of a biomedical paper into a structured, reproducible workflow. Use this skill when a user wants to understand how a study was actually executed, extract data sources, inclusion/exclusion logic, preprocessing, analytical sequence, software/tools, validation path"
+    },
+    {
+      "id": "reproducibility-check",
+      "source": "scientific/Other/reproducibility-check",
+      "core": false,
+      "display_name": "Reproducibility Check",
+      "description": "Audits a supplied Methods section for replication-critical omissions and ambiguities, rates reproducibility risk, and gives open-science practice guidance.",
+      "_audit": 76,
+      "_upstream_description": "Comprehensive reproducibility tool — audit Methods completeness for replication AND promote open science best practices (pre-registration, FAIR data, code sharing, replication design, reporting transparency); trigger when preparing a manuscript, reviewing methodological comple..."
+    },
+    {
+      "id": "reporting-guideline-compliance-checker",
+      "source": "medical/Academic Writing/reporting-guideline-compliance-checker",
+      "core": false,
+      "display_name": "Reporting Guideline Compliance Checker",
+      "description": "Checks a manuscript against its matching reporting guideline family (CONSORT, STROBE, PRISMA, TRIPOD) and ranks missing or weak reporting items by severity.",
+      "_audit": 91,
+      "_upstream_description": "Checks biomedical manuscripts against reporting guidelines such as CONSORT, STROBE, PRISMA, and TRIPOD to identify missing or weak reporting elements before submission or revision."
+    },
+    {
+      "id": "scientific-critical-thinking",
+      "source": "scientific/Evidence Insight/scientific-critical-thinking",
+      "core": false,
+      "display_name": "Scientific Critical Thinking",
+      "description": "General rigor checklist for methodology, bias, confounding, statistical pitfalls, logical fallacies and claim proportionality when no design-specific tool fits.",
+      "known_missing": {
+        "scripts/generate_schematic.py": "schematic generator not shipped upstream; appraisal method is in SKILL.md and references"
+      },
+      "_audit": 78,
+      "_upstream_description": "Evaluate research rigor. Assess methodology, experimental design, statistical validity, biases, confounding, evidence quality (GRADE, Cochrane ROB), for critical analysis of scientific claims."
+    },
+    {
+      "id": "contradictory-findings-resolver",
+      "source": "medical/Evidence Insight/contradictory-findings-resolver",
+      "core": false,
+      "display_name": "Contradictory Findings Resolver",
+      "description": "Explains why studies on one topic disagree by comparing population, endpoint, sample source, platform, model, validation depth and interpretation.",
+      "_audit": 86,
+      "_upstream_description": "Explains why studies on the same biomedical topic reach different or opposing conclusions by auditing differences in population, endpoint definition, sample source, assay or platform, study design, statistical model, adjustment strategy, validation chain, and bias control. It separates true contradi"
+    },
+    {
+      "id": "retraction-watcher",
+      "source": "scientific/Evidence Insight/retraction-watcher",
+      "core": false,
+      "display_name": "Retraction Watcher",
+      "description": "Parses a reference list and queries Crossref, PubMed and Open Retractions by DOI or PMID for retractions and expressions of concern; needs network access.",
+      "known_missing": {
+        "references/citation-formats.md": "supplementary format notes never shipped upstream; parsing logic lives in scripts/main.py",
+        "references/api-documentation.md": "supplementary API notes never shipped upstream; endpoints are hard-coded in scripts/main.py",
+        "references/example-reports/": "sample reports never shipped upstream; output format is specified in SKILL.md",
+        "requirements.txt": "never shipped upstream; scripts/main.py uses only the standard library except optional PyPDF2 for PDF input"
+      },
+      "_audit": 76,
+      "_upstream_description": "Automatically scan reference lists and check whether cited papers have been retracted, corrected, or flagged; use before submission, review, or evidence synthesis to reduce citation risk."
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "biorxiv",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "clinical-trials",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "drug-regulatory",
+      "required": false,
+      "default_selected": false
+    }
+  ]
+}

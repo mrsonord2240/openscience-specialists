@@ -1,0 +1,66 @@
+{
+  "id": "pharmacovigilance-signal-designer",
+  "version": "1.0.0",
+  "display_name": "Pharmacovigilance Signal Study Design Specialist",
+  "summary": "Designs deduplicated, MedDRA-versioned FAERS disproportionality, single-drug safety-atlas, and active-comparator signal studies with reporting-bias controls, without inventing reporting ratios, case counts, case facts, or causal claims.",
+  "skills": [
+    {
+      "id": "faers-pharmacovigilance-disproportionality-research-planner",
+      "source": "medical/Protocol Design/faers-pharmacovigilance-disproportionality-research-planner",
+      "core": true,
+      "display_name": "FAERS Disproportionality Research Planner",
+      "description": "Plans FAERS-style ROR studies for a drug or class with comparator benchmarking, indication strata, serious-case filters, and follow-up signal prioritization.",
+      "_audit": 89,
+      "_upstream_description": "Generates complete FAERS-style pharmacovigilance disproportionality research designs from a user-provided drug class, comparator strategy, adverse-event domain, and patient-group stratification. Always use this skill whenever a user wants to design, plan, or build a spontaneous-report safety signal "
+    },
+    {
+      "id": "single-drug-faers-safety-profile-research-planner",
+      "source": "medical/Protocol Design/single-drug-faers-safety-profile-research-planner",
+      "core": true,
+      "display_name": "Single-Drug FAERS Safety Profile Planner",
+      "description": "Plans one-drug whole-profile FAERS SOC/PT signal atlases with subgroup, onset, and seriousness characterization and conservative label-gap framing.",
+      "_audit": 89,
+      "_upstream_description": "Generates complete FAERS pharmacovigilance study designs for one-drug whole-profile safety mapping using signal detection, subgroup analysis, onset/seriousness characterization, and conservative label-gap interpretation."
+    },
+    {
+      "id": "active-comparator-single-soc-faers-safety-comparison",
+      "source": "medical/Protocol Design/active-comparator-single-soc-faers-safety-comparison",
+      "core": true,
+      "display_name": "Active-Comparator Single-SOC FAERS Comparison Planner",
+      "description": "Plans multi-drug or class FAERS comparisons inside one predefined SOC or PT family using active-comparator restriction and tiered evidence labels.",
+      "_audit": 89,
+      "_upstream_description": "Generates complete FAERS pharmacovigilance study designs for multi-drug or class-level safety comparison inside one predefined SOC or AE family using active comparators, disproportionality analysis, subgroup characterization, and reviewer-facing evidence control."
+    },
+    {
+      "id": "confounder-and-bias-control-planner",
+      "source": "medical/Protocol Design/confounder-and-bias-control-planner",
+      "core": false,
+      "display_name": "Confounder and Bias Control Planner",
+      "description": "Plans protocol-stage variable-role classification, adjustment sets, and bias mitigation, flagging overadjustment, collider, selection, and indication bias.",
+      "_audit": 89,
+      "_upstream_description": "Plans confounder control, variable adjustment logic, and bias mitigation strategies at the protocol stage for clinical, epidemiologic, translational, observational, and biomarker studies. Always use this skill when a user needs to identify major confounders, decide which variables should or should n"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "drug-regulatory",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "chembl",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

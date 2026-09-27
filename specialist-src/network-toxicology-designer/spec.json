@@ -1,0 +1,131 @@
+{
+  "id": "network-toxicology-designer",
+  "version": "1.0.0",
+  "display_name": "Network Toxicology and Pharmacology Design Specialist",
+  "summary": "",
+  "skills": [
+    {
+      "id": "single-compound-network-toxicology-disease-link-reference-grounded",
+      "source": "medical/Protocol Design/single-compound-network-toxicology-disease-link-reference-grounded",
+      "core": true,
+      "display_name": "",
+      "description": "",
+      "_audit": 89,
+      "_upstream_description": "Generates complete single-compound network-toxicology research designs from one exposure, one disease or toxic phenotype, and a validation direction. Use when a study centers on one compound–one disease link and needs target collection, overlap construction, enrichment, PPI hub prioritization, docki"
+    },
+    {
+      "id": "comparative-network-toxicology-shared-mechanism-reference-grounded",
+      "source": "medical/Protocol Design/comparative-network-toxicology-shared-mechanism-reference-grounded",
+      "core": true,
+      "display_name": "",
+      "description": "",
+      "_audit": 89,
+      "_upstream_description": "Generates complete comparative network-toxicology research designs from a user-provided exposure pair, shared toxic phenotype, and validation direction. Use when a study centers on two related exposures under one outcome and needs target collection, shared-vs-specific target decomposition, enrichmen"
+    },
+    {
+      "id": "single-drug-adverse-effect-hub-first-network-pharmacology",
+      "source": "medical/Protocol Design/single-drug-adverse-effect-hub-first-network-pharmacology",
+      "core": true,
+      "display_name": "",
+      "description": "",
+      "_audit": 89,
+      "_upstream_description": "Generates complete reference-grounded single-drug adverse-effect network-pharmacology research designs from a user-provided drug, adverse event, and desired evidence depth. Always use this skill when a user wants to design, plan, or upgrade a conventional network-pharmacology study centered on one f"
+    },
+    {
+      "id": "single-drug-adverse-effect-pathway-anchored-network-pharmacology",
+      "source": "medical/Protocol Design/single-drug-adverse-effect-pathway-anchored-network-pharmacology",
+      "core": true,
+      "display_name": "",
+      "description": "",
+      "_audit": 89,
+      "_upstream_description": "Generates complete reference-grounded single-drug adverse-effect network-pharmacology research designs from a user-provided drug, adverse event, and desired evidence depth. Always use this skill when a user wants to design, plan, or upgrade a conventional network-pharmacology study centered on one f"
+    },
+    {
+      "id": "ppi-network-analysis",
+      "source": "medical/Data Analysis/ppi-network-analysis",
+      "core": true,
+      "display_name": "",
+      "description": "",
+      "_audit": 90,
+      "_upstream_description": "Use when you need a standardized R CLI workflow to build a protein-protein interaction network from a local gene list and an offline STRING cache, export node and edge tables, and render a reproducible PDF network plot. NOT for online API fetching, arbitrary graph databases, multi-omics integration,"
+    },
+    {
+      "id": "gokegg",
+      "source": "medical/Data Analysis/gokegg",
+      "core": true,
+      "display_name": "",
+      "description": "",
+      "_audit": 86,
+      "_upstream_description": "Use when performing GO and KEGG enrichment on a gene list from bulk RNA-seq or microarray studies, then generating a combined GO/KEGG dot chart. NOT for single-cell RNA-seq, methylation data, or non-expression data."
+    },
+    {
+      "id": "drug-repurposing-study-planner",
+      "source": "medical/Protocol Design/drug-repurposing-study-planner",
+      "core": false,
+      "display_name": "",
+      "description": "",
+      "_audit": 87,
+      "_upstream_description": "Design evidence-discovery and validation workflows for drug repurposing studies by integrating disease mechanisms, drug-target logic, expression reversal, real-world evidence, and validation routes into a closed-loop study blueprint."
+    },
+    {
+      "id": "animal-and-cell-validation-planner",
+      "source": "medical/Protocol Design/animal-and-cell-validation-planner",
+      "core": false,
+      "display_name": "",
+      "description": "",
+      "_audit": 88,
+      "_upstream_description": "Designs cell-based and animal-based validation plans that translate computational, omics, biomarker, genetic, or clinical findings into experimentally testable validation routes. Always use this skill whenever a user wants to move from an in silico, statistical, or clinical association finding towar"
+    },
+    {
+      "id": "tf-target-gene-regulatory-network",
+      "source": "medical/Data Analysis/tf-target-gene-regulatory-network",
+      "core": false,
+      "display_name": "",
+      "description": "",
+      "_audit": 94,
+      "_upstream_description": "Use when analyzing transcription factor (TF) regulatory networks using Dorothea database. Input gene list, identify regulating transcription factors, generate TF-Target network visualization. For: transcription factor enrichment analysis, gene regulatory network research."
+    }
+  ],
+  "connectors": [
+    {
+      "id": "chembl",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "chemistry",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "molecule",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "structures",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "protein-annotation",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "genes",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

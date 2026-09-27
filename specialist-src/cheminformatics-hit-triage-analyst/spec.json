@@ -1,0 +1,126 @@
+{
+  "id": "cheminformatics-hit-triage-analyst",
+  "version": "1.0.0",
+  "upstream": {
+    "repository": "https://github.com/GPTomics/bioSkills",
+    "commit": "d91ed3d563019e649dc854c56ccd62551359488a",
+    "license": "MIT",
+    "path": "F:/OpenScience/external/GPTomics__bioSkills"
+  },
+  "display_name": "Cheminformatics Hit-Triage Analyst",
+  "summary": "Triages a compound set from raw file to a ranked, domain-gated shortlist: structure standardisation and deduplication, PAINS and structural-alert screening, descriptors and fingerprints, similarity clustering and scaffold-series analysis, ADMET liability assessment, and QSAR with an explicit applicability-domain gate and honest validation. Does not plan syntheses or enumerate reactions.",
+  "skills": [
+    {
+      "id": "bio-molecular-io",
+      "source": "chemoinformatics/molecular-io",
+      "core": false,
+      "display_name": "Molecular I/O",
+      "description": "Read, write and convert SMILES, SDF, MOL2, PDB and PDBQT with explicit control of aromaticity perception, stereochemistry and InChI identity. Use to load a compound file and prove nothing was silently lost before triage begins.",
+      "_audit": 91,
+      "_upstream_description": "Reads, writes, and converts molecular file formats (SMILES, InChI, SDF V2000/V3000, MOL2, PDB, and BinaryCIF) using RDKit and Open Babel with rigorous handling of aromaticity perception, stereochemistry, implicit/explicit hydrogens, kekulization, and"
+    },
+    {
+      "id": "bio-molecular-standardization",
+      "source": "chemoinformatics/molecular-standardization",
+      "core": true,
+      "display_name": "Structure Standardization",
+      "description": "Standardise a compound set with the ChEMBL pipeline or an explicit RDKit rdMolStandardize pipeline: salts, charges, tautomers, stereo and isotopes, then deduplicate on InChIKey. Use before descriptors, similarity or QSAR training.",
+      "_audit": 90,
+      "_upstream_description": "Standardizes molecular structures using the ChEMBL structure pipeline for normalization and parent selection plus RDKit rdMolStandardize for explicit custom steps such as tautomer canonicalization, salt/solvent stripping, charge handling, stereochemi"
+    },
+    {
+      "id": "bio-substructure-search",
+      "source": "chemoinformatics/substructure-search",
+      "core": true,
+      "display_name": "Substructure and Alert Screening",
+      "description": "Screen a compound set with SMARTS and the PAINS, BRENK, NIH and ZINC alert catalogs, flagging assay-interference liabilities rather than deleting them. Use to triage screening hits and prepare an HTS-ready library.",
+      "_audit": 88,
+      "_upstream_description": "Searches molecular libraries for substructure matches using SMARTS patterns with explicit handling of recursive SMARTS, ring membership, aromaticity dialect, vector binding, atom map indices, and reactive/PAINS/REOS/Brenk filter catalogs. Use when fi"
+    },
+    {
+      "id": "bio-molecular-descriptors",
+      "source": "chemoinformatics/molecular-descriptors",
+      "core": true,
+      "display_name": "Descriptors and Fingerprints",
+      "description": "Compute ECFP/FCFP/MACCS/AtomPair fingerprints and the physicochemical panel (MW, cLogP, TPSA, HBD/HBA, Fsp3, QED) with explicit bit-versus-count semantics. Use to featurise a set for similarity, clustering or QSAR.",
+      "_audit": 86,
+      "_upstream_description": "Calculates molecular fingerprints (ECFP/Morgan, FCFP, MACCS, RDKit, AtomPair, TopologicalTorsion, Avalon, MAP4, MHFP6) and physicochemical descriptors (Lipinski, QED, TPSA, Crippen LogP, 3D shape) with explicit choice tables, bit vs count semantics, "
+    },
+    {
+      "id": "bio-similarity-searching",
+      "source": "chemoinformatics/similarity-searching",
+      "core": true,
+      "display_name": "Similarity and Clustering",
+      "description": "Rank and cluster compounds with Tanimoto, Tversky and Dice coefficients, Butina clustering, MaxMin diversity selection and activity-cliff detection. Use to find analogues of a hit, group a library by chemotype or diagnose SAR discontinuity.",
+      "_audit": 90,
+      "_upstream_description": "Performs molecular similarity searching using Tanimoto, Tversky, Dice, and cosine coefficients on bit/count fingerprints with explicit choice rules for symmetric vs asymmetric measures, scaffold-hopping vs lead-optimization regimes, activity-cliff di"
+    },
+    {
+      "id": "bio-scaffold-analysis",
+      "source": "chemoinformatics/scaffold-analysis",
+      "core": true,
+      "display_name": "Scaffold and Series Analysis",
+      "description": "Group a library by Bemis-Murcko scaffold, decompose series into R-groups, mine matched molecular pairs with mmpdb, and build chemotype-aware train/test splits. Use to find the series in a set and to split it without chemotype leakage.",
+      "_audit": 88,
+      "_upstream_description": "Analyzes chemical libraries by scaffold using Bemis-Murcko scaffolds, generic frameworks, cyclic skeletons, matched molecular pair (MMP) analysis via mmpdb, R-group decomposition, Free-Wilson analysis, scaffold hopping, and chemotype-aware ML train/t"
+    },
+    {
+      "id": "bio-qsar-modeling",
+      "source": "chemoinformatics/qsar-modeling",
+      "core": true,
+      "display_name": "QSAR with an Applicability-Domain Gate",
+      "description": "Build and grade a QSAR model on in-house assay data with scaffold-aware splits, a fingerprint baseline against chemprop D-MPNN, conformal or similarity-based applicability-domain gating, and probability calibration. Use to predict an endpoint and to say which predictions are inside the domain.",
+      "_audit": 88,
+      "_upstream_description": "Builds QSAR / QSPR models using chemprop D-MPNN, MolFormer, Uni-Mol, ChemBERTa, random forest baselines, and Gaussian processes with explicit handling of OECD 5 principles, applicability domain (kNN, leverage, conformal prediction, Mahalanobis), scaf"
+    },
+    {
+      "id": "bio-admet-prediction",
+      "source": "chemoinformatics/admet-prediction",
+      "core": true,
+      "display_name": "ADMET Triage",
+      "description": "Assess ADMET liability for a compound set: drug-likeness rules, structural alerts, hERG and CYP interpretation, and the applicability-domain and evidence-triangulation rules that stop a model score becoming a kill decision. Use to prioritise leads by predicted safety.",
+      "_audit": 86,
+      "_upstream_description": "Predicts ADMET properties using ADMETlab 3.0 (119 platform features, including 77 prediction models with modeled-endpoint uncertainty), ADMET-AI, DeepChem MolNet, and chemprop D-MPNN with explicit handling of OECD QSAR principles, applicability domai"
+    },
+    {
+      "id": "bio-machine-learning-model-validation",
+      "source": "machine-learning/model-validation",
+      "core": true,
+      "display_name": "Honest Model Validation",
+      "description": "Estimate model performance without leakage: nested cross-validation, group- and time-aware splits, the full leakage taxonomy, calibration and decision-curve net benefit. Use to grade a predictive model or to find out why a reported number is too good.",
+      "_audit": 93,
+      "_upstream_description": "Validates predictive models on omics and biomedical data with nested cross-validation, group/batch/temporal-aware splits, the full data-leakage taxonomy, probability calibration, decision-curve net benefit, optimism correction, sample-size planning, "
+    },
+    {
+      "id": "bio-machine-learning-prediction-explanation",
+      "source": "machine-learning/prediction-explanation",
+      "core": false,
+      "display_name": "Prediction Attribution",
+      "description": "Interpret a trained model with SHAP, LIME and permutation importance, choosing the Shapley conditioning deliberately and aggregating over correlated feature modules before ranking. Use to see which substructures a model keys on, and to catch shortcut learning.",
+      "_audit": 89,
+      "_upstream_description": "Explains ML predictions on omics data with SHAP, LIME, and permutation importance, handling the correlated-feature trap, the conditional-vs-interventional Shapley choice, and the attribution-is-not-causation boundary. Use when interpreting an omics c"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "chembl",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "chemistry",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "molecule",
+      "required": false,
+      "default_selected": false
+    }
+  ]
+}

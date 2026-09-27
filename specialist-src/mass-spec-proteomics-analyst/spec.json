@@ -1,0 +1,156 @@
+{
+  "id": "mass-spec-proteomics-analyst",
+  "version": "1.0.1",
+  "upstream": {
+    "repository": "https://github.com/mrsonord2240/optimizing-agent-science-skills",
+    "commit": "f5ad8c583206a9124732d9518ace53ab17a9be3b",
+    "license": "MIT",
+    "path": "F:/optimizing-agent-science-skills",
+    "prefix": "skills/bioSkills"
+  },
+  "display_name": "Mass-Spec Proteomics Analyst",
+  "summary": "Takes bottom-up proteomics from a search engine's output or raw DIA runs to differential protein abundance: imports MaxQuant, DIA-NN and mzML and strips search-engine bookkeeping, runs DDA target-decoy search and DIA-NN q-value filtering at the right level and context, resolves protein groups and protein-level FDR, rolls peptides up to proteins, tests differential abundance with missingness modelled rather than imputed, localises PTM sites, and carries QC throughout. Research use only.",
+  "skills": [
+    {
+      "id": "bio-proteomics-data-import",
+      "source": "proteomics/data-import",
+      "core": true,
+      "display_name": "MS Data Import and Bookkeeping Strip",
+      "description": "Loads MaxQuant proteinGroups.txt, DIA-NN report.parquet and mzML into Python/R, removes decoy, contaminant and site-only rows, picks the right quant column, and diagnoses the missingness contract before any number is trusted.",
+      "_audit": 85.2,
+      "_grade": "Limited Release",
+      "_role": "central operation - entry",
+      "_upstream_description": "Loads mass-spectrometry data into Python/R and strips the search engine's bookkeeping before any number is trusted -- removes decoys (REV__/Reverse), contaminants (CON__/Potential contaminant), Only-identified-by-site groups, and resolves semicolon r"
+    },
+    {
+      "id": "bio-proteomics-dia-analysis",
+      "source": "proteomics/dia-analysis",
+      "core": true,
+      "display_name": "DIA Search and q-Value Filtering",
+      "description": "Runs DIA-NN in predicted-library or library-based mode and filters its report at the correct q-value level (precursor/protein-group) and context (run vs experiment-wide), with the window-design and demultiplexing decisions the analyst inherits.",
+      "_audit": 86.2,
+      "_grade": "Limited Release",
+      "_role": "central operation - DIA identification",
+      "_upstream_description": "Analyzes data-independent acquisition (DIA) proteomics by scoring reconstructed fragment-chromatogram peak groups against a decoy null with DIA-NN (library-free search against a deep-learning predicted library, or library-based search), Spectronaut, "
+    },
+    {
+      "id": "bio-proteomics-peptide-identification",
+      "source": "proteomics/peptide-identification",
+      "core": true,
+      "display_name": "Peptide Identification and PSM-Level FDR",
+      "description": "Target-decoy database search with Sage, Comet or MS-GF+, Percolator rescoring, and q-value or separate-search FDR estimation at the PSM and peptide level.",
+      "_audit": 90,
+      "_grade": "Production Ready",
+      "_upstream_description": "Peptide-spectrum matching from MS/MS with target-decoy FDR control, framing identification confidence as a property of a ranked list (q-value/PEP) rather than a raw engine score (XCorr, hyperscore, Andromeda, SpecEValue). Covers sequence-database sea"
+    },
+    {
+      "id": "bio-proteomics-protein-inference",
+      "source": "proteomics/protein-inference",
+      "core": true,
+      "display_name": "Protein Inference and Protein-Level FDR",
+      "description": "Groups proteins from peptide evidence under parsimony or a probability model and controls protein-level FDR separately from peptide-level FDR, reporting groups rather than proteins.",
+      "_audit": 88.8,
+      "_grade": "Production Ready",
+      "_role": "central operation",
+      "_upstream_description": "Groups proteins from peptide identifications and controls protein-level FDR, framing inference as a chosen explanation (parsimony or a probability model) of underdetermined peptide evidence rather than a measurement. Reports protein GROUPS (proteins "
+    },
+    {
+      "id": "bio-proteomics-quantification",
+      "source": "proteomics/quantification",
+      "core": true,
+      "display_name": "Protein Quantification and Roll-Up",
+      "description": "Computes label-free (MaxLFQ, DIA fragment-level), isobaric (TMT/iTRAQ, MS2 vs SPS-MS3) and SILAC quantities and summarises peptides to proteins with ratio-compression and normalisation handled explicitly.",
+      "_audit": 89,
+      "_grade": "Production Ready",
+      "_role": "central operation",
+      "_upstream_description": "Quantifies protein abundance from mass spectrometry using label-free (LFQ/MaxLFQ, DIA fragment-level), isobaric (TMT/iTRAQ reporter ions, MS2 vs SPS-MS3), and metabolic (SILAC) approaches, including peptide-to-protein summarization (Tukey median poli"
+    },
+    {
+      "id": "bio-proteomics-differential-abundance",
+      "source": "proteomics/differential-abundance",
+      "core": true,
+      "display_name": "Differential Protein Abundance",
+      "description": "Tests for differentially abundant proteins with limma/DEqMS moderation and proDA/msqrob2/MSstats missingness modelling, treating missing values as left-censored rather than imputing them away.",
+      "_audit": 89,
+      "_grade": "Production Ready",
+      "_role": "central operation - terminal step",
+      "_upstream_description": "Tests for differentially abundant proteins between conditions with limma/DEqMS empirical-Bayes moderation, proDA/msqrob2/MSstats missingness modeling, and Python Welch+BH alternatives. Frames missing values as left-censored MNAR (model, do not impute"
+    },
+    {
+      "id": "bio-proteomics-proteomics-qc",
+      "source": "proteomics/proteomics-qc",
+      "core": true,
+      "display_name": "Proteomics QC",
+      "description": "Instrument-, identification- and quantification-level QC: mass accuracy, RT and peak shape, % MS2 identified, missed cleavages, contaminant load, missing-value rates and batch structure across a run series.",
+      "_audit": 88.1,
+      "_grade": "Production Ready",
+      "_role": "validation/reporting",
+      "_upstream_description": "Quality control for bottom-up proteomics across three levels -- instrument/raw-signal (mass accuracy, RT/iRT fit, FWHM, TIC vs injection time, % MS2 identified), identification/run (missed cleavages, charge states, PTM handling artifacts, contaminant"
+    },
+    {
+      "id": "bio-proteomics-ptm-analysis",
+      "source": "proteomics/ptm-analysis",
+      "core": false,
+      "display_name": "PTM and Phosphoproteomics Analysis",
+      "description": "Site localisation with false-localisation-rate control, protein-level-adjusted PTM quantification with MSstatsPTM, and kinase-activity and functional triage on an enrichment that is biased by construction.",
+      "_audit": 86.4,
+      "_grade": "Production Ready",
+      "_role": "supporting - PTM branch",
+      "_upstream_description": "Frames PTM/phosphoproteomics analysis as three stacked inference layers on a biased enrichment - chemistry selection, site localization (FLR), and protein-level-adjusted quantification with MSstatsPTM - plus kinase-activity and functional triage. Cov"
+    },
+    {
+      "id": "bio-pathway-go-enrichment",
+      "source": "pathway-analysis/go-enrichment",
+      "core": false,
+      "display_name": "GO Over-Representation Analysis",
+      "description": "Gene Ontology over-representation on a protein hit list with clusterProfiler enrichGO, with the background universe treated as the decision it is.",
+      "_audit": 90,
+      "_grade": "Production Ready",
+      "_role": "supporting - downstream interpretation",
+      "_upstream_description": "Runs Gene Ontology over-representation analysis (ORA) on a gene LIST with clusterProfiler enrichGO, the one-sided hypergeometric/Fisher 2x2 test phyper(k-1, M, N-M, n, lower.tail=FALSE). Covers why the BACKGROUND universe (not the gene list) is the n"
+    },
+    {
+      "id": "bio-experimental-design-batch-design",
+      "source": "experimental-design/batch-design",
+      "core": false,
+      "display_name": "Batch and Confounding Design",
+      "description": "Balances batch, plate, operator and processing-day nuisance variation against the biological variable so it stays estimable rather than confounded, before any sample is run.",
+      "_audit": 82,
+      "_grade": "Limited Release",
+      "_role": "framing/design",
+      "_upstream_description": "Designs genomics experiments so technical nuisance variation (batch, lane, plate, flow cell, operator, reagent lot, processing day) is balanced against the biological variable of interest and therefore estimable rather than confounded, using constrai"
+    },
+    {
+      "id": "bio-workflows-proteomics-pipeline",
+      "source": "workflows/proteomics-pipeline",
+      "core": false,
+      "display_name": "End-to-End Proteomics Workflow",
+      "description": "Orchestrates a full run from MaxQuant, DIA-NN or MSstats input through raw-distribution QC, completeness filtering and normalization to a tested contrast.",
+      "_audit": 87.7,
+      "_grade": "Production Ready",
+      "_upstream_description": "Orchestrates bottom-up proteomics from a search engine's output (MaxQuant/FragPipe/DIA-NN) to differential protein abundance with limma/DEqMS/MSstats. Use when committing the search database + acquisition mode (DDA vs DIA) up front, re-controlling FD"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "protein-annotation",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "omics-archives",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "genes",
+      "required": false,
+      "default_selected": false
+    }
+  ]
+}

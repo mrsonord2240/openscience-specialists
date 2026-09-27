@@ -1,0 +1,324 @@
+<title>OpenScience Specialist Slate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<style>
+:root {
+  --ground: #f3f5f4;
+  --surface: #ffffff;
+  --ink: #16201e;
+  --muted: #5b6965;
+  --rule: #d3dad7;
+  --rule-soft: #e4e9e7;
+  --accent: #1d5e63;
+  --accent-soft: #e1eeee;
+  --pass: #2e7650;
+  --pass-soft: #e2f0e7;
+  --warn: #93650f;
+  --warn-soft: #f6ecd6;
+  --fail: #a8423c;
+  --fail-soft: #f6e3e1;
+  --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0f1514; --surface: #161e1d; --ink: #e1e7e5; --muted: #8fa09b;
+    --rule: #2b3634; --rule-soft: #212a29; --accent: #7ab8b8; --accent-soft: #1b2e2f;
+    --pass: #6cc08e; --pass-soft: #17291f; --warn: #d9a745; --warn-soft: #2d2412;
+    --fail: #e07c73; --fail-soft: #2e1a18;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0f1514; --surface: #161e1d; --ink: #e1e7e5; --muted: #8fa09b;
+  --rule: #2b3634; --rule-soft: #212a29; --accent: #7ab8b8; --accent-soft: #1b2e2f;
+  --pass: #6cc08e; --pass-soft: #17291f; --warn: #d9a745; --warn-soft: #2d2412;
+  --fail: #e07c73; --fail-soft: #2e1a18;
+}
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--ink); font: 15px/1.6 var(--sans); margin: 0; }
+.page { max-width: 1040px; margin: 0 auto; padding: 48px 24px 80px; }
+h1, h2 { font-family: var(--serif); font-weight: 600; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: 2.35rem; line-height: 1.15; }
+h2 { font-size: 1.5rem; line-height: 1.25; }
+p { margin: 0; max-width: 68ch; }
+code, .mono { font-family: var(--mono); font-size: 0.86em; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.eyebrow { font: 500 0.72rem/1.4 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+header { display: grid; gap: 14px; padding-bottom: 28px; border-bottom: 1px solid var(--rule); }
+.lede { font-size: 1.06rem; color: var(--ink); }
+.tally { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.tally span { display: inline-flex; align-items: baseline; gap: 7px; color: var(--muted); font-size: 0.9rem; }
+.tally b { font: 600 1.3rem/1 var(--serif); color: var(--ink); }
+.tally .dot { width: 8px; height: 8px; border-radius: 50%; align-self: center; }
+
+section { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 24px; padding: 40px 0; border-bottom: 1px solid var(--rule); }
+section > .label { padding-top: 6px; }
+section > .body { display: grid; gap: 18px; min-width: 0; }
+@media (max-width: 760px) { section { grid-template-columns: 1fr; gap: 10px; } h1 { font-size: 1.9rem; } }
+
+.findings { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.findings li { display: grid; grid-template-columns: 4.2em minmax(0, 1fr); gap: 12px; }
+.findings .num { font: 600 1.15rem/1.5 var(--serif); color: var(--accent); font-variant-numeric: tabular-nums; text-align: right; }
+.findings p { max-width: 64ch; }
+
+figure { margin: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 18px 18px 12px; }
+figcaption { font-size: 0.86rem; color: var(--muted); margin-top: 8px; max-width: 70ch; }
+.chart { width: 100%; height: auto; display: block; }
+.chart text { fill: var(--muted); font: 11px var(--mono); }
+.chart .rowlabel { fill: var(--ink); font: 500 12px var(--sans); }
+.chart .axis { stroke: var(--rule); }
+.chart .floor { stroke: var(--muted); stroke-dasharray: 3 3; }
+
+details.defects { border-top: 1px solid var(--rule-soft); padding-top: 12px; }
+details.defects summary { cursor: pointer; font-weight: 500; color: var(--accent); }
+details.defects ul { margin: 10px 0 0; padding-left: 1.1em; display: grid; gap: 6px; max-width: 72ch; }
+.ok { color: var(--pass); font-weight: 600; }
+
+.roster { display: grid; gap: 0; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); overflow: hidden; }
+.roster details { border-top: 1px solid var(--rule-soft); }
+.roster details:first-child { border-top: 0; }
+.roster summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) 7.5em 1.2em; gap: 16px; align-items: baseline; padding: 14px 18px; }
+.roster summary::-webkit-details-marker { display: none; }
+.roster summary:hover { background: var(--accent-soft); }
+.roster .nm { font-weight: 600; }
+.roster .id { display: block; color: var(--muted); font: 0.8rem var(--mono); margin-top: 2px; overflow-wrap: anywhere; }
+.roster .count { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.88rem; text-align: right; white-space: nowrap; }
+.roster .count b { color: var(--ink); font-weight: 600; }
+.roster .chev { color: var(--muted); transition: transform 0.15s; }
+.roster details[open] .chev { transform: rotate(90deg); }
+.detail { display: grid; gap: 14px; padding: 4px 18px 20px; }
+.detail h4 { margin: 0 0 6px; font: 500 0.72rem/1.4 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 0.78rem/1.5 var(--mono); padding: 1px 8px; border-radius: 3px; background: var(--ground); border: 1px solid var(--rule-soft); color: var(--ink); }
+.chip.core { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+.detail ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; max-width: 72ch; }
+.sha { font: 0.76rem var(--mono); color: var(--muted); overflow-wrap: anywhere; }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-top: 1px solid var(--rule-soft); }
+th { border-top: 0; font: 500 0.72rem/1.4 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--surface); }
+td:first-child { font-weight: 500; white-space: nowrap; }
+.gates { display: flex; gap: 4px; flex-wrap: wrap; }
+.gate { font: 500 0.74rem/1.5 var(--mono); padding: 0 6px; border-radius: 3px; background: var(--fail-soft); color: var(--fail); white-space: nowrap; }
+.gate.blk { background: var(--warn-soft); color: var(--warn); }
+
+.stopped { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.stop { padding: 14px 16px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); display: grid; gap: 6px; align-content: start; }
+.stop .why { font: 500 0.72rem/1.4 var(--mono); letter-spacing: 0.05em; text-transform: uppercase; }
+.stop p { font-size: 0.9rem; }
+
+.decisions { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.decisions li { max-width: 70ch; }
+footer { padding-top: 28px; display: grid; gap: 6px; color: var(--muted); font-size: 0.86rem; }
+footer code { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .roster .chev { transition: none; } }
+</style>
+
+<div class="page">
+<header>
+  <div class="eyebrow">aipoch/medical-research-skills @ f5ef65b9 · Marketplace Protocol v1 · 2026-09-10</div>
+  <h1>OpenScience Specialist Slate</h1>
+  <p class="lede">I read all 604 skills and designed specialists from them. Ten passed the bar and validate against a clean marketplace clone. They pass <code>format:check</code>, all 28 tests and <code>validate</code>, and each builds to the same bytes twice. Three were designed and stopped. Sixteen more directions wait on real audits.</p>
+  <div class="tally">
+    <span><i class="dot" style="background:var(--pass)"></i><b>10</b> built</span>
+    <span><i class="dot" style="background:var(--fail)"></i><b>3</b> designed, not built</span>
+    <span><i class="dot" style="background:var(--warn)"></i><b>16</b> near-misses</span>
+    <span><b>157</b> referenced files never shipped</span>
+  </div>
+</header>
+
+<section>
+  <div class="label eyebrow">The scores, checked</div>
+  <div class="body">
+    <p>The bar is <code>THRESHOLD.md</code>. It has nine gates: every bundled skill has a real audit of 75 or more, core skills score 85 or more, and nothing a skill points to is missing. Most of the work was finding out which audit numbers could be believed.</p>
+    <figure>
+      <svg class="chart" id="scoreChart" viewBox="0 0 900 250" role="img" aria-label="Histogram of audit scores: scientific skills as reported cluster at 86 to 92, the same skills by polish changelog cluster at 75 to 79, medical skills as reported spread from 82 to 97."></svg>
+      <figcaption>Audit scores by skill, one bar per point. The 131 <code>scientific</code> reports were overwritten by a "polish" pass with a templated test section. The changelog that same pass wrote puts those skills 10–15 points lower. Dashed lines mark the 75 supporting floor and the 85 core floor.</figcaption>
+    </figure>
+    <ul class="findings">
+      <li><span class="num">131</span><p><strong>Scientific audit reports are templated.</strong> The inputs are named "Test case N", 104 reports share identical input totals, and they claim 86–92. The polish changelog says 75–79, so that number is used. The other 148 reports, including all 141 <code>medical</code> ones, are genuine.</p></li>
+      <li><span class="num">183</span><p><strong><code>*_audit_result_v2.json</code> files are backfill.</strong> Their test inputs are sentences from the skill's own description, their notes cite a "legacy review", and every one scores 85 or more. They are not counted.</p></li>
+      <li><span class="num">157</span><p><strong>Referenced files were never shipped,</strong> across 81 skills, 80 of them scripts. They are missing upstream too: the Downloads archive is exactly <code>f5ef65b9</code>, and the F: copy matches it byte for byte. Full list: <code>MISSING-FILES.md</code>.</p></li>
+      <li><span class="num">10</span><p><strong>Skill IDs are shared with the published auto-research specialist.</strong> The App refuses a second skill with the same ID and different bytes, so those ten ship the published bytes, digest-verified.</p></li>
+    </ul>
+    <details class="defects">
+      <summary>Script defects the authoring agents found (✓ confirmed independently)</summary>
+      <ul>
+        <li><span class="ok">✓</span> <code>model-calibration-curve</code> reports 1 − Harrell's C: <code>concordance()</code> without <code>reverse = TRUE</code>. Its sibling <code>nomogram-construction</code> gets this right.</li>
+        <li><span class="ok">✓</span> <code>meta-analysis</code> Egger test returns the slope's p-value and SE, not the intercept's.</li>
+        <li><span class="ok">✓</span> <code>protocol-deviation-classifier</code>'s <code>main.py</code> does not parse (line 793).</li>
+        <li><code>mendelian-randomisation</code>: the documented input keys crash it; F defaults to 0; MR-Egger shifts under allele recoding; "Steiger" uses no sample sizes.</li>
+        <li><code>adaptive-trial-simulator</code>: Pocock early boundaries give a false-positive rate of about 0.048 against a 0.025 target.</li>
+        <li><code>clinical-trial-protocol-skill</code>: 2:1 allocation sized at 239 instead of about 318.</li>
+        <li><code>sample-size-basic</code> undersizes small groups (7 where the exact t-test gives 9). <code>xgboost-analysis</code> early-stops on its own test split.</li>
+        <li><code>decision-curve-analysis</code> defaults to a case-control design with prevalence 0.3. <code>randomization-gen</code> has no seed option.</li>
+        <li><code>retraction-watcher</code> counts failed lookups as "clear". The rebuttal and tone Skills insert "We have revised…" whatever was done.</li>
+        <li><code>adverse-event-narrative</code> writes today's date as the report date. <code>nsfc-grant-writer</code>'s guide says to "generate plausible preliminary work".</li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="label eyebrow">Built</div>
+  <div class="body">
+    <p>Each prompt follows the structure of the nine published domain specialists, including the verbatim Open Science runtime contract. Open a row for its skills, connectors, artifact hash and how it could be better.</p>
+    <div class="roster" id="roster"></div>
+  </div>
+</section>
+
+<section>
+  <div class="label eyebrow">Not built</div>
+  <div class="body">
+    <div class="stopped">
+      <div class="stop"><span class="why" style="color:var(--fail)">Gate 3 · scores</span><strong>Systematic review &amp; meta-analysis</strong><p>Fully drafted. Every core skill comes from the inflated set (76–78), and three were dropped for missing files. The prompt is kept as a draft for when re-audits land.</p></div>
+      <div class="stop"><span class="why" style="color:var(--fail)">Gate 4 · coverage</span><strong>Computational pathology</strong><p><code>pathology-roi-selector</code> is an empty template and <code>pathml</code> points at six missing references. Nothing trains a slide-level model.</p></div>
+      <div class="stop"><span class="why" style="color:var(--warn)">Stopped in authoring</span><strong>Network toxicology</strong><p>The model's biology safety filter halted the authoring run. It was not retried. The skills themselves clear the score gates.</p></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Near-miss</th><th>Fails</th><th>What makes it viable</th></tr></thead>
+        <tbody id="near"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="label eyebrow">Your call</div>
+  <div class="body">
+    <ul class="decisions">
+      <li><strong>Publisher</strong> is <code>mrsonord2240</code> / Samuel Nord. The official <code>aipoch</code> ID belongs to AIPOCH. <code>author</code> is omitted.</li>
+      <li><strong>Never round-tripped through the App.</strong> The manifests say <code>exported_with_app_version: 0.19.0</code>, like the published ones, but these were assembled, not exported. One import-and-export would prove compatibility.</li>
+      <li><strong>Upstream issue list is ready.</strong> The missing-file list and the defects above are a clean report for <code>aipoch/medical-research-skills</code>.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div>Packages: <code>F:\OpenScience\specialists\</code> · Sources, prompts, per-specialist <code>improvements.md</code>: <code>F:\openscience-specialists\specialist-src\</code></div>
+  <div>Builder <code>build_specialist.py</code> · Validation <code>validate_all.sh</code> · <code>THRESHOLD.md</code> · <code>NEAR-MISSES.md</code> · <code>MISSING-FILES.md</code> · <code>REPORT.md</code></div>
+</footer>
+</div>
+
+<script>
+const REP = [86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 92.0, 94.0];
+const CL = [75.0, 76.0, 77.0, 78.0, 78.0, 78.0, 78.0, 78.0, 78.0, 78.0, 79.0, 75.0, 75.0, 76.0, 76.0, 77.0, 77.0, 78.0, 78.0, 78.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 76.0, 76.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 78.0, 78.0, 78.0, 78.0, 78.0, 78.0, 78.0, 78.0, 78.0, 79.0, 79.0, 79.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 76.0, 76.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 78.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 75.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 76.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 77.0, 78.0, 78.0, 78.0, 77.0, 94.0];
+const MED = [82.0, 82.0, 82.0, 83.0, 83.0, 84.0, 84.0, 84.0, 85.0, 85.0, 85.0, 85.0, 85.0, 85.0, 85.0, 85.0, 85.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 86.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 87.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 88.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 89.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 91.0, 92.0, 92.0, 92.0, 92.0, 92.0, 92.0, 93.0, 93.0, 93.0, 93.0, 93.0, 93.0, 94.0, 94.0, 94.0, 95.0, 95.0, 95.0, 95.0, 95.3, 96.0, 96.0, 97.0];
+const SPECS = [{"id": "clinical-prediction-model-specialist","name": "Clinical Prediction Model Development and Validation Specialist","summary": "Plans, develops, and validates diagnostic and prognostic clinical prediction models with leakage-safe selection, sample-size and optimism checks, calibration, decision curves, and TRIPOD-aligned reporting for research, without issuing individual patient risk predictions.","core": ["prognostic-biomarker-protocol-designer","validation-strategy-designer","lasso-logistics-analysis","univariate-multivariable-cox-regression","nomogram-construction","model-calibration-curve","decision-curve-analysis","external-model-validation","time-dependent-roc"],"supp": ["sample-size-and-power-planning-assistant","roc-diagnostic-performance","elastic-net-feature-selection","rf-model-importance-analysis","svm-model-importance-analysis","xgboost-analysis","lightgbm-analysis","km-survival-curve","reporting-guideline-compliance-checker"],"conn": ["pubmed","literature","expression","omics-archives"]},{"id": "clinical-trial-protocol-designer","name": "Clinical Trial Protocol Design Specialist","summary": "Designs estimand-anchored, registry-informed clinical trial protocols—endpoints, eligibility, sample size, randomization, interim rules, and reporting checks—for research and regulatory planning without giving individual treatment advice or implying ethics approval.","core": ["endpoint-definition-designer","inclusion-exclusion-criteria-builder","sample-size-and-power-planning-assistant","reporting-guideline-compliance-checker"],"supp": ["clinical-trial-protocol-skill","randomization-gen","adaptive-trial-simulator","tooluniverse-clinical-trial-design","sop-writer","clinicaltrials-database"],"conn": ["clinical-trials","drug-regulatory","pubmed","literature"]},{"id": "critical-appraisal-specialist","name": "Biomedical Critical Appraisal Specialist","summary": "Appraises individual biomedical papers or small paper sets for journal club, peer review and citation decisions, routing by verified study design to risk-of-bias, claim, spin and registry checks without reconstructing papers from memory.","core": ["study-design-identifier","medical-research-literature-reader-pro","result-reliability-checker","paper-to-claim-verifier"],"supp": ["rct-bias-assessment-rob2","diagnostic-study-quality-assessment-quadas-2","high-value-paper-screener","figure-first-paper-reader","methods-reverse-engineer","reproducibility-check","reporting-guideline-compliance-checker","scientific-critical-thinking","contradictory-findings-resolver","retraction-watcher"],"conn": ["pubmed","literature","biorxiv","clinical-trials","drug-regulatory"]},{"id": "manuscript-revision-specialist","name": "Manuscript Submission and Peer-Review Revision Specialist","summary": "Runs pre-submission QA, reporting-guideline, consistency and reference checks, anonymization, revision triage, and location-mapped reviewer responses for biomedical manuscripts without claiming experiments, analyses, or edits the authors have not supplied.","core": ["paper-sprint-review","revision-strategy-planner","reporting-guideline-compliance-checker","consistency-checker-across-manuscript","reference-integrity-checker"],"supp": ["response-letter","author-response-builder","rebuttal-letter-strategist","response-tone-polisher","claim-strength-calibrator","retraction-watcher","cover-letter-drafter","blind-review-sanitizer","figure-reference-checker","arxiv-preflight","journal-recommender"],"conn": ["pubmed","literature","clinical-trials","biorxiv"]},{"id": "mendelian-randomization-specialist","name": "Mendelian Randomization and Causal Genomics Specialist","summary": "Designs assumption-audited Mendelian randomization, pleiotropy-sensitivity, and QTL colocalization studies from GWAS summary statistics, with instrument, ancestry, overlap, and harmonization gates and supporting MR execution, without claiming proven causality or clinical advice.","core": ["mendelian-randomization-protocol-designer","two-sample-mr-exposure-screening-reference-grounded","qtl-colocalization-study-planner"],"supp": ["mendelian-randomisation","bio-causal-genomics-pleiotropy-detection","bidirectional-multi-phenotype-mr-research-planner","mr-scrna-research-planner","bio-causal-genomics-mediation-analysis","gwas-database"],"conn": ["human-genetics","variants","genes","expression","pubmed","literature","biorxiv"]},{"id": "pharmacovigilance-signal-designer","name": "Pharmacovigilance Signal Study Design Specialist","summary": "Designs deduplicated, MedDRA-versioned FAERS disproportionality, single-drug safety-atlas, and active-comparator signal studies with reporting-bias controls, without inventing reporting ratios, case counts, case facts, or causal claims.","core": ["faers-pharmacovigilance-disproportionality-research-planner","single-drug-faers-safety-profile-research-planner","active-comparator-single-soc-faers-safety-comparison"],"supp": ["confounder-and-bias-control-planner"],"conn": ["drug-regulatory","pubmed","literature","chembl"]},{"id": "preclinical-validation-designer","name": "Preclinical Mechanism Validation Design Specialist","summary": "Designs claim-locked cell and animal validation routes from computational or association findings, with defined experimental units, randomization, blinding, controls, and escalation gates, without inventing models, effect sizes, or ethics approvals.","core": ["mechanism-to-validation-planner","animal-and-cell-validation-planner","translational-study-blueprint"],"supp": ["experiment-design","sample-size-basic","randomization-gen","sop-writer","methodology-extractor"],"conn": ["cancer-models","research-resources","genes","protein-annotation","expression","pubmed","literature"]},{"id": "real-world-evidence-epidemiologist","name": "Real-World Evidence and Observational Epidemiology Specialist","summary": "Designs and audits target-trial-aligned cohort, case-control, and survey studies on EHR, claims, registry, and NHANES-type data with explicit time zero, DAG-justified confounding control, and bias sensitivity analyses, without drawing individual patient conclusions.","core": ["real-world-evidence-study-designer","clinical-cohort-protocol-designer","confounder-and-bias-control-planner","case-control-study-planner","reporting-guideline-compliance-checker"],"supp": ["clinical-data-cleaner","nhanes-clinical-retrospective-biomarker-research-planner","sample-size-and-power-planning-assistant","table-1-generator-advanced","univariate-multivariable-cox-regression","km-survival-curve","epidemiology"],"conn": ["pubmed","literature","clinical-trials","drug-regulatory","research-resources"]},{"id": "research-grant-proposal-specialist","name": "Research Grant Proposal Specialist","summary": "Frames testable aims, drafts agency-aligned proposal sections, and stress-tests them with structured mock review, verifying the current funding notice and never inventing preliminary data, citations, budgets, or reviewer scores.","core": ["grant-specific-aims-writer","aim-and-hypothesis-designer","feasibility-aware-study-planner"],"supp": ["grant-proposal-assistant","grant-mock-reviewer","grant-budget-justification","novelty-vs-feasibility-assessor","sample-size-and-power-planning-assistant"],"conn": ["pubmed","literature","biorxiv","research-resources","clinical-trials"]},{"id": "tumor-immune-microenvironment-analyst","name": "Tumor Immune Microenvironment Bulk-Transcriptome Specialist","summary": "Estimates, triangulates and interprets tumor immune microenvironment composition from bulk transcriptomes via CIBERSORT-style deconvolution, ssGSEA, ESTIMATE and consensus subtyping, without treating scores as measured infiltration or making patient-level claims.","core": ["tumor-immune-infiltration-diagnostic-ml-research-planner","cibersort-immune-infiltration-analysis","ssgsea-immune-infiltration-analysis","estimate-immune-score-analysis","consensus-clustering-analysis","deg-screening-analysis"],"supp": ["immune-pathway-analysis","gsva-analysis-and-visualization","gokegg-analysis","pcd-immune-oncology-research-planner","hierarchical-clustering-plot","sample-group-sankey-plot","gene-protein-expression-matrix-normalization","batch-effect-correction","km-survival-curve"],"conn": ["expression","omics-archives","cancer-models","genes","cellguide","pubmed","literature"]}];
+
+const EXTRA = {
+  "clinical-prediction-model-specialist": { sha: "f6e7a04ea0e1f9464599b73f6c6341676e798ff4fd044c942c1f4d3779afdb4d", imp: ["No skill does binary-outcome calibration or optimism-corrected AUC.", "No skill applies a frozen clinical model to an external cohort (external-model-validation is gene-signature only).", "Fix the calibration C-index and the XGBoost early-stopping leak upstream."] },
+  "tumor-immune-microenvironment-analyst": { sha: "fdde6635ca690b66cab7478adb6dac1c62b5e0684df9b032d76f5d91ca5072d8", imp: ["Add single-cell-reference deconvolution and TIDE/TMB-type scoring.", "Add count-model DE and Cox regression.", "ssGSEA and GSVA ship without their 25.5 MB test matrices (over the 10 MiB limit). Upstream should ship smaller fixtures."] },
+  "manuscript-revision-specialist": { sha: "6256b99cea48906d6ba83fd78ea4171ff7e739ffda89cf91d5c87defd924f63a", imp: ["Response-letter writing has no core-grade skill. author-response-builder is the best at 84.", "Fix the boilerplate \u201cWe have revised\u2026\u201d insertion in the rebuttal and tone skills.", "Word manuscripts get no reference-existence check (arxiv-preflight reads only BibTeX, LaTeX and PDF)."] },
+  "critical-appraisal-specialist": { sha: "2e31862ab5c3600c2bcf9c08da674dc02bb65a8cc9d58054c442f894cfb5056c", imp: ["Observational designs have no risk-of-bias tool. The NOS pair is broken upstream, and there is no ROBINS-I/E skill.", "Upgrade RoB 2 to a real 85+ skill. Its reference covers Domains 1\u20132 only.", "Patch retraction-watcher, which counts failed lookups as clear."] },
+  "real-world-evidence-epidemiologist": { sha: "65cb2bec5a0a815a6fda540dd8b8cdb386232fda1853fef50a45b8321ba10d27", imp: ["Nothing runs logistic, Poisson or linear regression. tooluniverse-statistical-modeling failed with six missing references.", "No propensity-score/IPTW, E-value, multiple-imputation or survey-weighting skill.", "The data cleaner imputes on every run, and the Cox skill has no proportional-hazards check."] },
+  "clinical-trial-protocol-designer": { sha: "553a61bafda73d3bf560ce1c55a6c3cf19c89c48bd0605255705e07d615aa9da", imp: ["No audited (85+) protocol-assembly skill.", "No validated engine for sample size or interim boundaries.", "No skills for the statistical analysis plan, DSMB charter, or consent/IRB package."] },
+  "mendelian-randomization-specialist": { sha: "b743be693791d23dd3e06eb8e4a59cf1c68aab3a5c30e5ba21d78007e430db14", imp: ["MR execution is supporting-grade (77) and defective. It needs an audited 85+ executor.", "No LD clumping or harmonisation against an ancestry-matched reference panel.", "No colocalisation or SMR executor. That arm can only be planned."] },
+  "research-grant-proposal-specialist": { sha: "3bcec6d6ba1721915a1808393e87f332cc0c174609cd8676a07106c2e5757e10", imp: ["No 85+ full-proposal drafting skill.", "The mock reviewer scores by counting keywords. It needs a real review-framework skill.", "No connector returns funder rules, so the user must paste the funding notice."] },
+  "preclinical-validation-designer": { sha: "00e5b63ea801f0e89136da9067e1316ffa0cd1733479623e03e3a869e81e84c8", imp: ["No ARRIVE 2.0 checker. The reporting checker never mentions animal work.", "The IACUC, western-blot, FACS and preclinical-PK skills have only backfilled audits.", "Fix sample-size-basic's undersizing and randomization-gen's missing seed."] },
+  "pharmacovigilance-signal-designer": { sha: "94c2dc1c77cd4c1614d0b84aaa029f6b8b97b817ad194ad711d841e3f405068c", imp: ["Design-only: nothing computes ROR, PRR, IC or EBGM.", "No audited FAERS extraction, deduplication and normalisation skill (fda-database is unaudited).", "No time-to-onset (Weibull) skill. adverse-event-narrative was dropped because 14 of its files were never shipped."] }
+};
+
+const NEAR = [
+  ["Single-cell transcriptomics", ["2", "3"], "Audit scanpy, anndata, scvi-tools, the cell-type annotator and the pseudotime skill. Only the planners have real audits."],
+  ["Cheminformatics hit triage", ["2", "3", "5"], "Audit the ADMET, Lipinski, structural-alert, datamol and PyTDC skills. Scope it away from the published synthesis-route specialist."],
+  ["Variant interpretation", ["2", "7"], "Audit the ClinVar, annotation, pathogenicity and HPO skills. Frame it as research curation, never a patient-level ACMG call."],
+  ["Clinical documentation", ["7"], "The skills are strong (90\u201391) but the work is patient care. It needs a clinician-in-the-loop trust model, not a research marketplace."],
+  ["Multi-omics integration", ["3", "4"], "Planners only. It needs an audited integration executor (MOFA/DIABLO-type) and MS preprocessing."],
+  ["Research landscape scouting", ["5"], "Duplicates auto-research's evidence loop. Viable as bibliometric monitoring once openalex and semantic-scholar are audited."],
+  ["Regulatory submissions", ["2"], "Audit the eCTD, MDR and ISO 13485 skills. Every regulatory claim must be verified against current guidance."],
+  ["CRISPR functional genomics", ["2", "3"], "Audit crispr-screen-analyzer and biogrid-orcs. Add MAGeCK-class hit calling."],
+  ["Proteomics / metabolomics", ["2", "3"], "Audit pyopenms, matchms, HMDB and Metabolomics Workbench. Add FDR-controlled identification."],
+  ["Phylogenetics", ["2", "3"], "Audit the Biopython phylo/alignment and ETE skills. Add model selection and tree inference."],
+  ["Microbiome", ["2", "3"], "Audit the diversity reporter and scikit-bio. Make compositional-data handling a gate."],
+  ["Wet-lab bench operations", ["2", "7"], "All unaudited. Chemical storage and disposal are safety-critical and must defer to institutional EHS."],
+  ["Scientific figure studio", ["2", "5"], "The plot skills are unaudited, and the published scientific-visualization skill covers the generic role."],
+  ["Science communication", ["2", "4"], "Two audited skills (lay summary, consent simplifier). The rest are unaudited and thin as a research workflow."],
+  ["Patent / IP landscape", ["2", "7"], "All unaudited. Freedom-to-operate borders on legal advice and needs an explicit boundary."],
+  ["Medical education", ["2", "7"], "All unaudited and outside research scope."]
+];
+
+function el(tag, attrs, html) {
+  const n = document.createElement(tag);
+  if (attrs) for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+  if (html !== undefined) n.innerHTML = html;
+  return n;
+}
+const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+// Score histogram: one row per population, one bar per integer score.
+(function chart() {
+  const svg = document.getElementById("scoreChart");
+  const NS = "http://www.w3.org/2000/svg";
+  const W = 900, left = 180, right = 20, x0 = 72, x1 = 98;
+  const x = v => left + (v - x0) / (x1 - x0) * (W - left - right);
+  const rows = [
+    { label: "scientific \u00b7 as reported", data: REP, color: "var(--warn)" },
+    { label: "scientific \u00b7 polish changelog", data: CL, color: "var(--accent)" },
+    { label: "medical \u00b7 as reported", data: MED, color: "var(--pass)" }
+  ];
+  const rowH = 78, top = 14;
+  const bins = rows.map(r => { const b = {}; r.data.forEach(v => { const k = Math.round(v); b[k] = (b[k] || 0) + 1; }); return b; });
+  const maxCount = Math.max(...bins.flatMap(b => Object.values(b)));
+  const bw = (W - left - right) / (x1 - x0) * 0.72;
+  const add = (tag, attrs, text) => { const n = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v); if (text !== undefined) n.textContent = text; svg.appendChild(n); return n; };
+  rows.forEach((r, i) => {
+    const base = top + (i + 1) * rowH;
+    add("line", { x1: left, x2: W - right, y1: base, y2: base, class: "axis" });
+    add("text", { x: 0, y: base - 26, class: "rowlabel" }, r.label);
+    add("text", { x: 0, y: base - 10 }, `n = ${r.data.length}`);
+    Object.entries(bins[i]).forEach(([k, c]) => {
+      const h = Math.max(2, c / maxCount * (rowH - 12));
+      const rect = add("rect", { x: x(+k) - bw / 2, y: base - h, width: bw, height: h, fill: r.color, rx: 1 });
+      const t = document.createElementNS(NS, "title"); t.textContent = `${r.label}: ${c} skill${c > 1 ? "s" : ""} at ${k}`; rect.appendChild(t);
+    });
+  });
+  const axisY = top + rows.length * rowH;
+  [75, 85].forEach(v => {
+    add("line", { x1: x(v), x2: x(v), y1: top + 4, y2: axisY, class: "floor" });
+    add("text", { x: x(v) + 4, y: top + 12 }, v === 75 ? "75 supporting" : "85 core");
+  });
+  for (let v = 75; v <= 95; v += 5) add("text", { x: x(v), y: axisY + 18, "text-anchor": "middle" }, v);
+  svg.setAttribute("viewBox", `0 0 ${W} ${axisY + 26}`);
+})();
+
+// Roster of built specialists.
+(function roster() {
+  const root = document.getElementById("roster");
+  const ordered = [...SPECS].sort((a, b) => (b.core.length + b.supp.length) - (a.core.length + a.supp.length));
+  ordered.forEach(s => {
+    const x = EXTRA[s.id] || { sha: "", imp: [] };
+    const d = el("details");
+    d.appendChild(el("summary", null,
+      `<span><span class="nm">${esc(s.name)}</span><span class="id">${s.id}</span></span>` +
+      `<span class="count"><b>${s.core.length + s.supp.length}</b> skills · ${s.core.length} core</span>` +
+      `<span class="chev" aria-hidden="true">\u203a</span>`));
+    const chips = (ids, cls) => `<div class="chips">${ids.map(i => `<span class="chip ${cls}">${i}</span>`).join("")}</div>`;
+    d.appendChild(el("div", { class: "detail" },
+      `<p>${esc(s.summary)}</p>` +
+      `<div><h4>Could be better</h4><ul>${x.imp.map(i => `<li>${esc(i)}</li>`).join("")}</ul></div>` +
+      `<div><h4>Core skills \u2265 85</h4>${chips(s.core, "core")}</div>` +
+      `<div><h4>Supporting skills \u2265 75</h4>${chips(s.supp, "")}</div>` +
+      `<div><h4>Connectors</h4>${chips(s.conn, "")}</div>` +
+      `<div><h4>Artifact SHA-256 (two builds, identical)</h4><div class="sha">${x.sha}</div></div>`));
+    root.appendChild(d);
+  });
+})();
+
+(function near() {
+  const tb = document.getElementById("near");
+  NEAR.forEach(([name, gates, need]) => {
+    const tr = el("tr");
+    tr.appendChild(el("td", null, esc(name)));
+    tr.appendChild(el("td", null, `<span class="gates">${gates.map(g => `<span class="gate${g === "2" ? " blk" : ""}" title="THRESHOLD.md gate ${g}">G${g}</span>`).join("")}</span>`));
+    tr.appendChild(el("td", null, esc(need)));
+    tb.appendChild(tr);
+  });
+})();
+</script>

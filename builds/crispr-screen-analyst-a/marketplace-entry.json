@@ -1,0 +1,17 @@
+{
+  "id": "crispr-screen-analyst",
+  "display_name": "CRISPR Screen Analyst",
+  "summary": "Analyzes pooled CRISPR knockout/CRISPRi/CRISPRa screens end to end: library design, screen QC, MAGeCK/BAGEL2/drugZ/JACKS hit calling, copy-number and batch correction, cross-method reconciliation, pipeline orchestration, pathway interpretation of hit lists, and CRISPResso2-based quantification of nuclease, base-editing, and prime-editing outcomes.",
+  "publisher": {
+    "id": "mrsonord2240",
+    "name": "Samuel Nord",
+    "url": "https://github.com/mrsonord2240"
+  },
+  "latest": {
+    "version": "1.0.0",
+    "release": {
+      "path": "releases/crispr-screen-analyst/1.0.0.json",
+      "sha256": "d630147949959e4c233e680e055a6e657f1a69e25a7a50e3b3099e04407c42fb"
+    }
+  }
+}

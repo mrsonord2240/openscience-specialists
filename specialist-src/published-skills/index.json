@@ -1,0 +1,290 @@
+{
+  "experimental-design": {
+    "published_in": [
+      "aerodynamics-cfd-validator@1.0.0",
+      "atmospheric-chemistry-modeler@1.0.0",
+      "high-throughput-dft-screener@1.0.0",
+      "precision-ag-phenotyping-designer@1.0.0",
+      "synthesis-route-optimizer@1.0.0"
+    ],
+    "content_digest": "0b0c009f12b72f8d3b5712c08ad21bfafded2310963a4c85aaa4add83d241933",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  },
+  "fluidsim": {
+    "published_in": [
+      "aerodynamics-cfd-validator@1.0.0"
+    ],
+    "content_digest": "2a41a8224baa9bd6c65c0b9776e2ddeacef45aeaa729ae021a739e37106a66d3",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  },
+  "uncertainty-and-units": {
+    "published_in": [
+      "aerodynamics-cfd-validator@1.0.0",
+      "astronomical-photometry-analyzer@1.0.0",
+      "atmospheric-chemistry-modeler@1.0.0",
+      "cryoem-structure-validator@1.0.0",
+      "high-throughput-dft-screener@1.0.0",
+      "pharmacometrics-pkpd-designer@1.0.0"
+    ],
+    "content_digest": "155fa7899bb8eb064a5195fdb799f57542cdcd0e6cc04e3ecbe4e695cfd146da",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  },
+  "astropy": {
+    "published_in": [
+      "astronomical-photometry-analyzer@1.0.0"
+    ],
+    "content_digest": "bc3e0007054e2b765886ee8948c95214b95235d742edd7dbc084e4d1a5d9224f",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  },
+  "statistical-analysis": {
+    "published_in": [
+      "astronomical-photometry-analyzer@1.0.0",
+      "cryoem-structure-validator@1.0.0",
+      "neuroimaging-connectomics-architect@1.0.0",
+      "pharmacometrics-pkpd-designer@1.0.0",
+      "precision-ag-phenotyping-designer@1.0.0"
+    ],
+    "content_digest": "e500941b3db38fc61cba704dc58e435ac1669ccb500e1a596e44c91861e39038",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  },
+  "geopandas": {
+    "published_in": [
+      "atmospheric-chemistry-modeler@1.0.0",
+      "precision-ag-phenotyping-designer@1.0.0"
+    ],
+    "content_digest": "58b6331e0173ce6f18fdba1584f02d9274a6d2cf9747829529c86d4d9d41cc8c",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  },
+  "batch-effect-correction": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "9c2947db05baabdba2f6337dc45d3634effbcb0db8f00ca22e17e28e370fca45",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "biomedical-search-strategy-builder": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "a01bef656ee0f98cec88cf8221dff04cfd4b811206804c0b1da52a349e9ac510",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "claim-strength-calibrator": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "1421449d55578371920aaceb90e97a3e43a1d71a68fe886fb5b5328e05c0334a",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "clinical-question-clarifier": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "321a356859e4a22d6745846f7a4098b70c09967a77e4a17e549cd44acc409019",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "differential-expression-analysis": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "6a1e53b62341ffaaf2b57924f0bba92ab3b769e20ae33eb5f2eae12f23a97e5f",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "discussion-composer": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "9266e6f6080af9a79bac0ce27e5aa9611a33a82f89752db668c46a00e1510de8",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "ena-database": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "807c13bfa82ef9e91a8757eb0124f6e123c57cd51383c3582f71e758b7f4b8ae",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "endpoint-definition-designer": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "f6ec94c36758d15749d3fc38e91476a7336f23a5f60047eb5cfac6e7315380f4",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "external-model-validation": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "a95dfa782a67a99c8ce1697df7b3cc2f6e2865d4bf9508f9b0de718b59791b8a",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "gene-protein-expression-matrix-normalization": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "059eccb371e43bed1b9ddf7e2a0fcabc6dd96151220ce8a86690eaa5de8e5914",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "geo-search-api": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "fc0b2bcef28870879a79d49105faa005c899dab6607d53790204f467433544b5",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "gsea": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "4714ee6317c82e03dcca64dde59c30684036ff6c6b18a3abc2ea19afe4e5fdee",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "lasso-logistics-analysis": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "22ac45da3abbcac8b2b000aecc9323d8fe12dd8376c712e2b55770667cbed534",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "medical-research-algorithm-matcher": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "439d9c1e8aac593b871565dad3ce33997df48c76861460046c72c09a35384b97",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "medical-research-gap-finder": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "819ebd0ccb1b07441e08b963cb00b6f0ad964970675b1810cd26d891b8c22830",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "medical-research-gap-to-study-planner": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "2a5dc3c6236e31f5e2b7b76ee95fedd48837a811de84c9c1d8c10d38463deb0d",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "methods-section-writer": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "50006812b52a2f8c5aee11f4687d099a04af22d6abafdce57a3ebeb0e73d0f42",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "multi-database-literature-collector": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "613625f19c709996bfe7f4525690325154f9a933c1901dcda613756b679087eb",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "novelty-vs-feasibility-assessor": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "d8137f2f4b8e01d35e980641c3bf4671f0dd6320c8a63b06e2816dcc72a17208",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "pca-dimensionality-reduction": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "df0d138dc5ac9c2d32de2366a3a3b3b2f64f7de8fa9f2b52a299891cfaf566bb",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "primary-plan-recommender": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "1e225ecb71780fae9e7d4841beb188287121d04ef266515d657614c1aa6ef544",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "reference-integrity-checker": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "a9a06b5101b97d428328a72be9d0ac02585a8f3bc3f0555138675d23acc9108f",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "result-reliability-checker": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "505bb5d05faba1f0794e1f5b465014f8c4099bfbd61fddcee93818e25113258d",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "results-section-writer": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "8e7e025437c3c48b763c384b7783f223ab3419b04ba7189835df112d382cd322",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "topic-evidence-mapper": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "ad04d4e2c06795c35ee750f8f433157b99605fe34a53569d9e3aa80cc1c2fce0",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "validation-strategy-designer": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "fad52ea8f5f9a3fcd40e2455c78d2c9117b4042f0e75b24f0fa87c5f8d740eba",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "wgcna-analysis": {
+    "published_in": [
+      "auto-research-specialist@1.0.1"
+    ],
+    "content_digest": "058aa66cb5aa71387c6fec284c7011dfc2edbeeed29c0a138186c64520ae2201",
+    "source": "https://github.com/aipoch/medical-research-skills@f5ef65b9bea79b6dd9553f52f95b0d08f7d64d26"
+  },
+  "scientific-visualization": {
+    "published_in": [
+      "cryoem-structure-validator@1.0.0",
+      "neuroimaging-connectomics-architect@1.0.0"
+    ],
+    "content_digest": "86e85df3386b4d814983d893183ad7749f1c4f5a2d9a230e648cf65e138e44ea",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  },
+  "pymatgen": {
+    "published_in": [
+      "high-throughput-dft-screener@1.0.0"
+    ],
+    "content_digest": "4055254e0c9ad18c379c685e0d4102240d88075218a4b8a5b39ae8e81d091c72",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  },
+  "bids": {
+    "published_in": [
+      "neuroimaging-connectomics-architect@1.0.0"
+    ],
+    "content_digest": "49a396763ccad15d0546b2e999ed40c6fdc0cb45b6820b221855b5b555bd5251",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  },
+  "pkpd-modeling": {
+    "published_in": [
+      "pharmacometrics-pkpd-designer@1.0.0"
+    ],
+    "content_digest": "effa0c0a40f90a9b41497b157b79894e52ea98edeea79a1b083e833c1a025e53",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  },
+  "medchem": {
+    "published_in": [
+      "synthesis-route-optimizer@1.0.0"
+    ],
+    "content_digest": "502c6e347b55186254cb36f85f5e497941b7c2fc5e011465984c7efd3d6d77ba",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  },
+  "rdkit": {
+    "published_in": [
+      "synthesis-route-optimizer@1.0.0"
+    ],
+    "content_digest": "6f81878517f57da39b1aeae1904723d27d2b62ad14a0271e4e24d3542708a9df",
+    "source": "https://github.com/K-Dense-AI/scientific-agent-skills@36d8f13a1e754618794bf42f417884940077b4ae"
+  }
+}

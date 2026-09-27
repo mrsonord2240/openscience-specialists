@@ -1,0 +1,17 @@
+{
+  "id": "untargeted-metabolomics-analyst",
+  "display_name": "Untargeted Metabolomics Analyst",
+  "summary": "Takes untargeted LC-MS metabolomics from raw mzML to biological interpretation: xcms 4.x feature extraction, QC-based drift correction and normalization (pmp), confidence-stratified metabolite annotation (matchms/MetFrag) with MSI/Schymanski levels, permutation-validated statistics (PCA/OPLS-DA/univariate), and background-aware pathway mapping (MetaboAnalystR/FELLA). Batch/plate design and an alternate MS-DIAL/lipidomics route are included as supporting Skills. Research use only.",
+  "publisher": {
+    "id": "mrsonord2240",
+    "name": "Samuel Nord",
+    "url": "https://github.com/mrsonord2240"
+  },
+  "latest": {
+    "version": "1.0.0",
+    "release": {
+      "path": "releases/untargeted-metabolomics-analyst/1.0.0.json",
+      "sha256": "ef011f098897c2f41a638f981b81c7f8b0458f4d354fd601fc1c79421b57b6c5"
+    }
+  }
+}

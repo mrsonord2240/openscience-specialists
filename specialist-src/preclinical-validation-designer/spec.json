@@ -1,0 +1,117 @@
+{
+  "id": "preclinical-validation-designer",
+  "version": "1.0.0",
+  "display_name": "Preclinical Mechanism Validation Design Specialist",
+  "summary": "Designs claim-locked cell and animal validation routes from computational or association findings, with defined experimental units, randomization, blinding, controls, and escalation gates, without inventing models, effect sizes, or ethics approvals.",
+  "skills": [
+    {
+      "id": "mechanism-to-validation-planner",
+      "source": "medical/Protocol Design/mechanism-to-validation-planner",
+      "core": true,
+      "display_name": "Mechanism-to-Validation Planner",
+      "description": "Turns an association or mechanism finding into a staged validation ladder that separates replication, perturbation, specificity, robustness, and clinical relevance.",
+      "_audit": 89,
+      "_upstream_description": "Extends a mechanistic or association-level biomedical finding into a staged validation pathway that moves from descriptive evidence toward stronger functional support, mechanistic specificity, and clinical relevance. Use this skill when a user has a pathway, biomarker, cell-state, target, mechanism,"
+    },
+    {
+      "id": "animal-and-cell-validation-planner",
+      "source": "medical/Protocol Design/animal-and-cell-validation-planner",
+      "core": true,
+      "display_name": "Animal and Cell Validation Planner",
+      "description": "Plans claim-centered cell and animal validation with model choice, perturbations, controls, readouts, go/no-go gates, and Lite to Publication+ workload tiers.",
+      "_audit": 88,
+      "_upstream_description": "Designs cell-based and animal-based validation plans that translate computational, omics, biomarker, genetic, or clinical findings into experimentally testable validation routes. Always use this skill whenever a user wants to move from an in silico, statistical, or clinical association finding towar"
+    },
+    {
+      "id": "translational-study-blueprint",
+      "source": "medical/Protocol Design/translational-study-blueprint",
+      "core": true,
+      "display_name": "Translational Study Blueprint",
+      "description": "Frames one primary translational use case with an evidence ladder, milestone thresholds, non-advancement signals, and feasibility-aware fallback routes.",
+      "_audit": 89,
+      "_upstream_description": "Designs a translational blueprint for moving a biomedical finding toward diagnosis, prognosis, treatment response prediction, patient stratification, or therapeutic development, with explicit translational milestones, validation thresholds, and feasibility-sensitive route framing."
+    },
+    {
+      "id": "experiment-design",
+      "source": "scientific/Protocol Design/experiment-design",
+      "core": false,
+      "display_name": "Experiment Design",
+      "description": "Guides design selection, control types, randomization and blinding schemes, bias mitigation, and protocol structure for comparative experiments.",
+      "_audit": 87,
+      "_upstream_description": "Design scientific experiments including sample size calculation, randomization, control groups, blinding, and study protocols. Covers RCTs, quasi-experiments, factorial designs, A/B tests, survey design, and observational studies. Use when user asks to design an experiment, ca..."
+    },
+    {
+      "id": "sample-size-basic",
+      "source": "scientific/Protocol Design/sample-size-basic",
+      "core": false,
+      "display_name": "Basic Sample Size Estimator",
+      "description": "Computes per-group and total N for two-group mean, proportion, or survival comparisons from alpha, power, and effect size, with an assumptions summary.",
+      "_audit": 90,
+      "_upstream_description": "Basic sample size estimator for clinical research planning. Computes per-group and total N for two-sample/paired t-tests, chi-square tests, and proportion comparisons, reporting alpha, power, effect size, and statistical assumptions summary for grant proposals and preliminary ..."
+    },
+    {
+      "id": "randomization-gen",
+      "source": "scientific/Protocol Design/randomization-gen",
+      "core": false,
+      "display_name": "Randomization Generator",
+      "description": "Generates blocked randomization lists across named groups and exports them as CSV for concealed allocation of subjects or animals.",
+      "_audit": 90,
+      "_upstream_description": "Generates randomization sequences for RCTs including simple, blocked, and stratified allocation. Produces sealed randomization lists ready for allocation concealment."
+    },
+    {
+      "id": "sop-writer",
+      "source": "scientific/Protocol Design/sop-writer",
+      "core": false,
+      "display_name": "SOP Writer",
+      "description": "Drafts a structured standard operating procedure with purpose, scope, responsibilities, procedure steps, quality control, documentation, and approval sections.",
+      "_audit": 91,
+      "_upstream_description": "Write GCP-compliant standard operating procedures for laboratory, clinical, or research workflows; use when a reproducible SOP with roles, steps, and control points is required."
+    },
+    {
+      "id": "methodology-extractor",
+      "source": "scientific/Evidence Insight/methodology-extractor",
+      "core": false,
+      "display_name": "Methodology Extractor",
+      "description": "Extracts and compares experimental methods across papers into protocol-oriented tables of steps, parameters, and cross-study variations.",
+      "_audit": 91,
+      "_upstream_description": "Extract experimental methods from one or more papers into a structured protocol-oriented summary; use when comparing methods across studies or drafting reproducible procedures."
+    }
+  ],
+  "connectors": [
+    {
+      "id": "cancer-models",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "research-resources",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "genes",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "protein-annotation",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "expression",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

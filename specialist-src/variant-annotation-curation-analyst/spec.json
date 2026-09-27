@@ -1,0 +1,135 @@
+{
+  "id": "variant-annotation-curation-analyst",
+  "version": "1.0.0",
+  "upstream": {
+    "repository": "https://github.com/mrsonord2240/bioSkills",
+    "commit": "c1237cdbc9bb199947696f3909de26a55d259116",
+    "license": "MIT",
+    "path": "F:/OpenScience/external/mrsonord2240__bioSkills"
+  },
+  "display_name": "Variant Annotation & Curation Analyst",
+  "summary": "Research curation of called variants: VCF normalization, site and genotype filtering, functional and local-database annotation, callset and cohort QC, gene-based rare-variant tests, and live ClinVar, gnomAD, dbSNP and MyVariant evidence as research annotation. Research use only; no pathogenicity calls or clinical advice for individuals.",
+  "skills": [
+    {
+      "id": "bio-vcf-basics",
+      "source": "variant-calling/vcf-basics",
+      "core": true,
+      "display_name": "VCF Basics",
+      "description": "Read and query VCF/BCF correctly: QUAL vs GQ vs PL, AD/DP, missing vs hom-ref, Number=A/R/G, gVCF records.",
+      "_audit": 90,
+      "_upstream_description": "View, query, and interpret VCF/BCF variant files with bcftools and cyvcf2. Use when inspecting variants, extracting fields with query format strings, converting VCF/BCF, or correctly reading a field -- QUAL (site) vs GQ (genotype) vs PL/GL likelihood"
+    },
+    {
+      "id": "bio-variant-normalization",
+      "source": "variant-calling/variant-normalization",
+      "core": true,
+      "display_name": "Variant Normalization",
+      "description": "Split, atomize and left-align variants with bcftools norm before comparison or database matching.",
+      "_audit": 89,
+      "_upstream_description": "Left-align and trim indels to parsimonious canonical form, decompose MNPs (atomize), and split multiallelic variants with bcftools norm. Use when comparing variants across callers or cohorts, preparing a VCF for database annotation or ClinVar/dbSNP m"
+    },
+    {
+      "id": "bio-variant-calling-filtering-best-practices",
+      "source": "variant-calling/filtering-best-practices",
+      "core": true,
+      "display_name": "Variant Filtering",
+      "description": "Site- and genotype-level filtering: hard filters vs VQSR by cohort size, SNP/indel thresholds, hom-alt-safe expressions, somatic post-filters, validation.",
+      "_audit": 88,
+      "_upstream_description": "Filters germline and somatic variant callsets at the site and genotype level with GATK VQSR (VQSLOD, truth-sensitivity tranches), VETS/ScoreVariantAnnotations, NVScoreVariants, hard filters with per-annotation thresholds, and bcftools/cyvcf2 expressi"
+    },
+    {
+      "id": "bio-variant-annotation",
+      "source": "variant-calling/variant-annotation",
+      "core": true,
+      "display_name": "Variant Annotation",
+      "description": "Functional consequence and population/ClinVar annotation from local resources with bcftools, VEP and SnpEff, with transcript and version pinning.",
+      "_audit": 86,
+      "_upstream_description": "Annotates VCF variants with functional consequences, population frequencies, and pathogenicity scores using bcftools annotate/csq, Ensembl VEP, SnpEff, and ANNOVAR. Use when deciding which annotation engine and version to pin, which transcript set to"
+    },
+    {
+      "id": "bio-vcf-statistics",
+      "source": "variant-calling/vcf-statistics",
+      "core": true,
+      "display_name": "VCF QC Statistics",
+      "description": "Callset and cohort QC: Ti/Tv, het/hom, missingness, excess-het HWE, contamination signals and sample identity checks.",
+      "_audit": 88,
+      "_upstream_description": "Compute and interpret VCF quality-control metrics (Ti/Tv, het/hom, novel/known, missingness, HWE, contamination, relatedness) with bcftools stats, vcftools, plot-vcfstats, and identity tools (somalier, peddy, KING). Use when judging whether a callset"
+    },
+    {
+      "id": "bio-population-genetics-rare-variant-association",
+      "source": "population-genetics/rare-variant-association",
+      "core": true,
+      "display_name": "Rare-Variant Gene Tests",
+      "description": "Gene-based burden, SKAT, SKAT-O and ACAT tests with explicit masks using regenie, SAIGE-GENE+ or SKAT.",
+      "_audit": 89,
+      "_upstream_description": "Gene and region-based rare-variant aggregation - burden/collapsing, SKAT, SKAT-O, ACAT-V/ACAT-O, annotation-weighted STAAR - with regenie (--vc-tests), SAIGE-GENE+, and the SKAT R package. Single-variant tests are powerless at low minor allele count,"
+    },
+    {
+      "id": "bio-vcf-manipulation",
+      "source": "variant-calling/vcf-manipulation",
+      "core": false,
+      "display_name": "VCF Manipulation",
+      "description": "Merge, concatenate, intersect, subset, sort and reheader VCF/BCF files, including record contig renaming.",
+      "_audit": 90,
+      "_upstream_description": "Combine, split, sort, intersect, and subset VCF/BCF files with bcftools merge, concat, isec, sort, view, and reheader. Use when merging different samples into a cohort VCF, concatenating per-chromosome or per-region call sets for the same samples, in"
+    },
+    {
+      "id": "bio-clinical-databases-clinvar-lookup",
+      "source": "clinical-databases/clinvar-lookup",
+      "core": false,
+      "display_name": "ClinVar Evidence",
+      "description": "ClinVar records as research evidence: VCV/RCV levels, review stars, conflicts, weekly VCF annotation and ClinGen Allele Registry IDs.",
+      "_audit": 84,
+      "_upstream_description": "Queries ClinVar for variant pathogenicity classifications, ClinGen VCEP curations, and somatic-vs-germline interpretations via REST API, weekly VCF, or bulk XML. Use when determining clinical significance, triangulating conflicting interpretations, o"
+    },
+    {
+      "id": "bio-clinical-databases-gnomad-frequencies",
+      "source": "clinical-databases/gnomad-frequencies",
+      "core": false,
+      "display_name": "gnomAD Frequencies",
+      "description": "gnomAD v4/v3/v2.1.1 frequencies with grpmax FAF95, build checks, LOEUF constraint and frequency tags as research annotation.",
+      "_audit": 86,
+      "_upstream_description": "Queries gnomAD v4 (807k samples), v3, v2.1.1, and constraint metrics with grpmax FAF95, bottleneck-group exclusion, LOEUF interpretation, SV/CNV/mtDNA catalogs, and Whiffin max-credible-AF framework. Use when filtering rare variants, applying ACMG BS"
+    },
+    {
+      "id": "bio-clinical-databases-dbsnp-queries",
+      "source": "clinical-databases/dbsnp-queries",
+      "core": false,
+      "display_name": "dbSNP Identifiers",
+      "description": "rsID resolution through merge chains, canonical SPDI conversion, multi-allelic clusters and ALFA frequencies via NCBI Variation Services.",
+      "_audit": 86,
+      "_upstream_description": "Resolves rsIDs, navigates RsMergeArch/SNPHistory merge chains, and converts between rsID, SPDI, HGVS, and VCF representations using the dbSNP Build 156 JSON architecture. Use when normalizing variant identifiers, joining variant databases by cluster "
+    },
+    {
+      "id": "bio-clinical-databases-myvariant-queries",
+      "source": "clinical-databases/myvariant-queries",
+      "core": false,
+      "display_name": "MyVariant Aggregated Annotation",
+      "description": "Batch ClinVar, gnomAD 2.1.1, dbNSFP, CADD and COSMIC annotation from myvariant.info with source versions from /v1/metadata.",
+      "_audit": 84,
+      "_upstream_description": "Queries myvariant.info BioThings aggregator for ClinVar, gnomAD, dbSNP, dbNSFP, COSMIC, CADD, and CIViC annotations in batched, version-tracked requests. Use when annotating variant lists from multiple databases simultaneously without managing per-so"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "variants",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "clinical-genomics",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "human-genetics",
+      "required": false,
+      "default_selected": false
+    }
+  ]
+}

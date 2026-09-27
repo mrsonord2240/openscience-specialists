@@ -1,0 +1,158 @@
+collection,category,skill,missing_file,kind,audit_score
+medical,Data Analysis,model-calibration-curve,scripts/install_dependencies.R,script,95
+medical,Data Analysis,nomogram-construction,scripts/install_dependencies.R,script,96
+medical,Data Analysis,wgcna-analysis,references/diagnosis-report.md,reference,90
+scientific,Academic Writing,abstract-summarizer,scripts/batch.py,script,
+scientific,Academic Writing,abstract-summarizer,scripts/summarizer.py,script,
+scientific,Academic Writing,adverse-event-narrative,scripts/narrative_generator.py,script,75 (report claims 90)
+scientific,Academic Writing,anatomy-quiz-master,scripts/adaptive.py,script,
+scientific,Academic Writing,anatomy-quiz-master,scripts/quiz_generator.py,script,
+scientific,Academic Writing,authorship-credit-gen,references/guide.md,reference,76 (report claims 90)
+scientific,Academic Writing,authorship-credit-gen,scripts/authorship_credit.py,script,76 (report claims 90)
+scientific,Academic Writing,automated-soap-note-generator,scripts/soap_generator.py,script,76 (report claims 90)
+scientific,Academic Writing,citation-formatter,references/guide.md,reference,75 (report claims 89)
+scientific,Academic Writing,citation-formatter,scripts/citation_formatter.py,script,75 (report claims 89)
+scientific,Academic Writing,citation-formatter,scripts/main.py,script,75 (report claims 89)
+scientific,Academic Writing,clinical-decision-support,scripts/generate_schematic.py,script,77 (report claims 88)
+scientific,Academic Writing,cover-letter-generator,assets/cover_letter_template.md,asset,78 (report claims 88)
+scientific,Academic Writing,cover-letter-generator,references/guide.md,reference,78 (report claims 88)
+scientific,Academic Writing,digital-twin-discharge-drafter,scripts/discharge_drafter.py,script,
+scientific,Academic Writing,discussion-section-architect,references/guide.md,reference,76 (report claims 91)
+scientific,Academic Writing,graph-interpretation,scripts/graph_interpreter.py,script,
+scientific,Academic Writing,irb-application-assistant,references/audit-reference.md,reference,75 (report claims 89)
+scientific,Academic Writing,irb-application-assistant,references/guide.md,reference,75 (report claims 89)
+scientific,Academic Writing,irb-application-assistant,scripts/main.py,script,75 (report claims 89)
+scientific,Academic Writing,journal-cover-prompter,scripts/cover_prompter.py,script,
+scientific,Academic Writing,linkedin-optimizer,references/headline-templates.md,reference,
+scientific,Academic Writing,linkedin-optimizer,references/keywords-by-specialty.json,reference,
+scientific,Academic Writing,linkedin-optimizer,references/linkedin-examples.md,reference,
+scientific,Academic Writing,linkedin-optimizer,scripts/linkedin_optimizer.py,script,
+scientific,Academic Writing,literature-review,scripts/generate_schematic.py,script,77 (report claims 88)
+scientific,Academic Writing,meta-manuscript-generator,references/writing-guide.md,reference,76 (report claims 90)
+scientific,Academic Writing,meta-results-sensitivity-analysis,scripts/format_result.py,script,76 (report claims 90)
+scientific,Academic Writing,molecular-review-workflow,scripts/pubmed_api.py,script,77 (report claims 90)
+scientific,Academic Writing,molecular-review-workflow,scripts/validate_skill.py,script,77 (report claims 90)
+scientific,Academic Writing,paper-2-web,scripts/generate_schematic.py,script,
+scientific,Academic Writing,personal-statement,references/personal-statement-examples.md,reference,
+scientific,Academic Writing,personal-statement,scripts/personal_statement_writer.py,script,
+scientific,Academic Writing,radiology-image-quiz,scripts/radiology_quiz.py,script,
+scientific,Academic Writing,sample-size-power-calculator,references/audit-reference.md,reference,75 (report claims 89)
+scientific,Academic Writing,sample-size-power-calculator,scripts/main.py,script,75 (report claims 89)
+scientific,Academic Writing,tone-adjuster,scripts/tone_adjuster.py,script,
+scientific,Data Analysis,Case-control-study-quality-assessment-nos,references/nos_criteria_prompts.md,reference,78 (report claims 88)
+scientific,Data Analysis,Case-control-study-quality-assessment-nos,scripts/extract_pdf.py,script,78 (report claims 88)
+scientific,Data Analysis,Case-control-study-quality-assessment-nos,scripts/format_nos_table.py,script,78 (report claims 88)
+scientific,Data Analysis,adme-property-predictor,scripts/adme_predictor.py,script,
+scientific,Data Analysis,adme-property-predictor,scripts/batch_processor.py,script,
+scientific,Data Analysis,baseline-extraction-for-clinical-trials,scripts/baseline_extractor.py,script,
+scientific,Data Analysis,biopython-advanced,scripts/codon_usage.py,script,
+scientific,Data Analysis,biopython-advanced,scripts/motif_stats.py,script,
+scientific,Data Analysis,biopython-advanced,scripts/restriction_sites.py,script,
+scientific,Data Analysis,biopython-phylo,scripts/phylo_task.py,script,
+scientific,Data Analysis,biopython-sequence-io,scripts/sequence_io.py,script,
+scientific,Data Analysis,biopython-structure,scripts/neighbor_search.py,script,
+scientific,Data Analysis,code-refactor-for-reproducibility,references/environment-setup.md,reference,
+scientific,Data Analysis,code-refactor-for-reproducibility,references/guide.md,reference,
+scientific,Data Analysis,cohort-study-quality-assessment-nos,references/nos_criteria.md,reference,77 (report claims 90)
+scientific,Data Analysis,cohort-study-quality-assessment-nos,scripts/calculate_nos_score.py,script,77 (report claims 90)
+scientific,Data Analysis,cohort-study-quality-assessment-nos,scripts/extract_pdf.py,script,77 (report claims 90)
+scientific,Data Analysis,fastqc-report-interpreter,references/troubleshooting.md,reference,
+scientific,Data Analysis,fastqc-report-interpreter,scripts/fastqc_interpreter.py,script,
+scientific,Data Analysis,forest-plot-styler,scripts/main.py,script,75 (report claims 89)
+scientific,Data Analysis,meta-abstract-screener,references/screening_prompts.md,reference,77 (report claims 89)
+scientific,Data Analysis,meta-abstract-screener,scripts/screen_paper.py,script,77 (report claims 89)
+scientific,Data Analysis,meta-screening-fulltext,references/screening_prompts.md,reference,75 (report claims 88)
+scientific,Data Analysis,meta-screening-fulltext,scripts/extract_pdf.py,script,75 (report claims 88)
+scientific,Data Analysis,meta-screening-fulltext,scripts/query_pubmed.py,script,75 (report claims 88)
+scientific,Data Analysis,pathml,references/data_management.md,reference,78 (report claims 87)
+scientific,Data Analysis,pathml,references/graphs.md,reference,78 (report claims 87)
+scientific,Data Analysis,pathml,references/image_loading.md,reference,78 (report claims 87)
+scientific,Data Analysis,pathml,references/machine_learning.md,reference,78 (report claims 87)
+scientific,Data Analysis,pathml,references/multiparametric.md,reference,78 (report claims 87)
+scientific,Data Analysis,pathml,references/preprocessing.md,reference,78 (report claims 87)
+scientific,Data Analysis,pathology-roi-selector,scripts/main.py,script,75 (report claims 89)
+scientific,Data Analysis,pydicom,references/transfer_syntaxes.md,reference,78 (report claims 88)
+scientific,Data Analysis,pydicom,scripts/anonymize_dicom.py,script,78 (report claims 88)
+scientific,Data Analysis,pydicom,scripts/dicom_to_image.py,script,78 (report claims 88)
+scientific,Data Analysis,pydicom,scripts/extract_metadata.py,script,78 (report claims 88)
+scientific,Data Analysis,pyhealth,references/datasets.md,reference,78 (report claims 86)
+scientific,Data Analysis,pyhealth,references/medical_coding.md,reference,78 (report claims 86)
+scientific,Data Analysis,pyhealth,references/models.md,reference,78 (report claims 86)
+scientific,Data Analysis,pyhealth,references/preprocessing.md,reference,78 (report claims 86)
+scientific,Data Analysis,pyhealth,references/tasks.md,reference,78 (report claims 86)
+scientific,Data Analysis,pyhealth,references/training_evaluation.md,reference,78 (report claims 86)
+scientific,Data Analysis,shap,references/explainers.md,reference,76 (report claims 87)
+scientific,Data Analysis,shap,references/plots.md,reference,76 (report claims 87)
+scientific,Data Analysis,shap,references/theory.md,reference,76 (report claims 87)
+scientific,Data Analysis,shap,references/workflows.md,reference,76 (report claims 87)
+scientific,Data Analysis,spatial-transcriptomics-mapper,scripts/generate_test_data.py,script,
+scientific,Data Analysis,statistical-analysis,references/test_selection_guide.md,reference,77 (report claims 90)
+scientific,Data Analysis,survival-analysis-km,scripts/main.py,script,75 (report claims 89)
+scientific,Data Analysis,tooluniverse-statistical-modeling,references/bixbench_patterns.md,reference,75 (report claims 88)
+scientific,Data Analysis,tooluniverse-statistical-modeling,references/cox_regression.md,reference,75 (report claims 88)
+scientific,Data Analysis,tooluniverse-statistical-modeling,references/linear_models.md,reference,75 (report claims 88)
+scientific,Data Analysis,tooluniverse-statistical-modeling,references/logistic_regression.md,reference,75 (report claims 88)
+scientific,Data Analysis,tooluniverse-statistical-modeling,references/ordinal_logistic.md,reference,75 (report claims 88)
+scientific,Data Analysis,tooluniverse-statistical-modeling,references/troubleshooting.md,reference,75 (report claims 88)
+scientific,Evidence Insight,bio-ontology-mapper,scripts/mapper.py,script,
+scientific,Evidence Insight,biopython-entrez,scripts/pubmed_summaries.py,script,
+scientific,Evidence Insight,citation-chasing-mapping,references/audit-reference.md,reference,75 (report claims 89)
+scientific,Evidence Insight,citation-chasing-mapping,references/guide.md,reference,75 (report claims 89)
+scientific,Evidence Insight,citation-chasing-mapping,scripts/citation_mapper.py,script,75 (report claims 89)
+scientific,Evidence Insight,citation-chasing-mapping,scripts/main.py,script,75 (report claims 89)
+scientific,Evidence Insight,citation-network,references/README.md,reference,77 (report claims 90)
+scientific,Evidence Insight,cross-disciplinary-bridge-finder,references/guide.md,reference,
+scientific,Evidence Insight,cross-disciplinary-bridge-finder,scripts/interdisciplinary.py,script,
+scientific,Evidence Insight,diffdock-molecular-docking,references/workflows_examples.md,reference,
+scientific,Evidence Insight,gwas-database,references/api_reference.md,reference,75 (report claims 87)
+scientific,Evidence Insight,journal-latest-issue,scripts/journal_digest.py,script,78 (report claims 88)
+scientific,Evidence Insight,key-takeaways,references/guide.md,reference,
+scientific,Evidence Insight,open-access-scout,scripts/oa_scout.py,script,77 (report claims 91)
+scientific,Evidence Insight,patent-claim-mapper,scripts/claim_mapper.py,script,
+scientific,Evidence Insight,patent-landscape,references/ipc-classifications.md,reference,
+scientific,Evidence Insight,patent-landscape,references/patent-search-strategies.md,reference,
+scientific,Evidence Insight,patent-landscape,scripts/patent_landscape.py,script,
+scientific,Evidence Insight,scientific-critical-thinking,scripts/generate_schematic.py,script,78 (report claims 87)
+scientific,Other,academic-norm-review,assets/academic_compliance_checklist.md,asset,78 (report claims 88)
+scientific,Other,academic-norm-review,references/guide.md,reference,78 (report claims 88)
+scientific,Other,article-format-adjustment,templates/science_format.json,template,
+scientific,Other,bmi-bsa-calculator,references/bsa_formulas_comparison.md,reference,
+scientific,Other,bmi-bsa-calculator,references/chemotherapy_dosing.md,reference,
+scientific,Other,bmi-bsa-calculator,references/ethnic_adjustments.md,reference,
+scientific,Other,bmi-bsa-calculator,references/pediatric_norms.md,reference,
+scientific,Other,bmi-bsa-calculator,scripts/calculator.py,script,
+scientific,Other,buffer-calculator,references/troubleshooting.md,reference,
+scientific,Other,clinical-reports,scripts/generate_schematic.py,script,76 (report claims 88)
+scientific,Other,file-search,scripts/test_skill.py,script,
+scientific,Other,lab-result-interpretation,references/test_metadata.json,reference,75 (report claims 91)
+scientific,Other,literature-management,references/examples.md,reference,78 (report claims 88)
+scientific,Other,literature-management,scripts/import_library.py,script,78 (report claims 88)
+scientific,Other,literature-management,scripts/requirements.txt,script,78 (report claims 88)
+scientific,Other,literature-statistics,scripts/process_references.py,script,
+scientific,Other,patient-consent-simplifier,scripts/consent_simplifier.py,script,75 (report claims 89)
+scientific,Other,pdf-processor,references/examples.md,reference,79 (report claims 88)
+scientific,Other,pdf-processor,scripts/pdf_tool.py,script,79 (report claims 88)
+scientific,Other,pdf-processor,scripts/requirements.txt,script,79 (report claims 88)
+scientific,Other,pdf-to-ppt-pack,scripts/validate_skill.py,script,
+scientific,Other,symptom-checker-triage,references/red_flags.md,reference,
+scientific,Other,text-format-organizer,scripts/init_run.py,script,78 (report claims 88)
+scientific,Other,text-format-organizer,scripts/text_formatter.py,script,78 (report claims 88)
+scientific,Other,treatment-plans,scripts/generate_schematic.py,script,
+scientific,Protocol Design,basic-research-design,references/prompt_templates.md,reference,77 (report claims 89)
+scientific,Protocol Design,clinic-research-design,scripts/calculators/sample_size.py,script,78 (report claims 88)
+scientific,Protocol Design,clinic-research-design,scripts/main.py,script,78 (report claims 88)
+scientific,Protocol Design,hypothesis-generation,assets/FORMATTING_GUIDE.md,asset,79 (report claims 88)
+scientific,Protocol Design,hypothesis-generation,references/experimental_design_patterns.md,reference,79 (report claims 88)
+scientific,Protocol Design,hypothesis-generation,references/hypothesis_quality_criteria.md,reference,79 (report claims 88)
+scientific,Protocol Design,hypothesis-generation,references/literature_search_strategies.md,reference,79 (report claims 88)
+scientific,Protocol Design,hypothesis-generation,scripts/generate_schematic.py,script,79 (report claims 88)
+scientific,Protocol Design,research-grants,references/budget_preparation.md,reference,
+scientific,Protocol Design,research-grants,references/resubmission_strategies.md,reference,
+scientific,Protocol Design,research-grants,references/review_criteria.md,reference,
+scientific,Protocol Design,research-grants,references/team_building.md,reference,
+scientific,Protocol Design,research-grants,references/timeline_planning.md,reference,
+scientific,Protocol Design,research-grants,scripts/budget_calculator.py,script,
+scientific,Protocol Design,research-grants,scripts/compliance_checker.py,script,
+scientific,Protocol Design,research-grants,scripts/deadline_tracker.py,script,
+scientific,Protocol Design,research-grants,scripts/generate_schematic.py,script,
+scientific,Protocol Design,research-proposal-generator,references/prompts.md,reference,79 (report claims 88)

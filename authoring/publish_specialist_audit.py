@@ -4,7 +4,7 @@
 Usage:
   publish_specialist_audit.py ID=viable | ID=not-viable:<failing gate> [...]
 
-Reads F:/OpenScience/specialist-src/<ID>/AUDIT.md (override with OASS_SPECIALIST_SRC), writes
+Reads F:/openscience-specialists/specialist-src/<ID>/AUDIT.md (override with OASS_SPECIALIST_SRC), writes
 authoring/audits/<ID>/{AUDIT.md,verdict.json}, then regenerates authoring/audits/INDEX.md.
 Moved from the factory's tools/publish_audits.py on 2026-09-21.
 """
@@ -15,7 +15,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 AUDITS = os.path.join(HERE, "audits")
-SPECIALIST_SRC = os.environ.get("OASS_SPECIALIST_SRC", "F:/OpenScience/specialist-src")
+SPECIALIST_SRC = os.environ.get("OASS_SPECIALIST_SRC", "F:/openscience-specialists/specialist-src")
 
 
 def write_text(path, text):

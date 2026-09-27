@@ -1,0 +1,197 @@
+{
+  "id": "clinical-prediction-model-specialist",
+  "version": "1.0.0",
+  "display_name": "Clinical Prediction Model Development and Validation Specialist",
+  "summary": "Plans, develops, and validates diagnostic and prognostic clinical prediction models with leakage-safe selection, sample-size and optimism checks, calibration, decision curves, and TRIPOD-aligned reporting for research, without issuing individual patient risk predictions.",
+  "skills": [
+    {
+      "id": "prognostic-biomarker-protocol-designer",
+      "source": "medical/Protocol Design/prognostic-biomarker-protocol-designer",
+      "core": true,
+      "display_name": "Prognostic Biomarker Protocol Designer",
+      "description": "Plans prognostic biomarker and risk-model studies: cohort backbone, endpoint and time scale, marker screening, modeling line, validation, and leakage review.",
+      "_audit": 90,
+      "_upstream_description": "Designs discovery, modeling, and validation workflows for prognostic biomarkers in biomedical and clinical research. Always use this skill when the user needs a prognostic biomarker study blueprint rather than a diagnostic test protocol, predictive biomarker design, treatment recommendation, or a co"
+    },
+    {
+      "id": "validation-strategy-designer",
+      "source": "medical/Protocol Design/validation-strategy-designer",
+      "core": true,
+      "display_name": "Validation Strategy Designer",
+      "description": "Plans protocol-stage internal, temporal, site-based, external, and functional validation tiers and states what each tier can and cannot support.",
+      "_audit": 88,
+      "_upstream_description": "Designs internal, external, temporal, and functional validation strategies at the protocol stage for medical research studies."
+    },
+    {
+      "id": "sample-size-and-power-planning-assistant",
+      "source": "medical/Protocol Design/sample-size-and-power-planning-assistant",
+      "core": false,
+      "display_name": "Sample Size and Power Planning Assistant",
+      "description": "Plans assumption-audited sample size, event-driven, and fixed-N feasibility logic, including model-development and external-validation families.",
+      "_audit": 90
+    },
+    {
+      "id": "lasso-logistics-analysis",
+      "source": "medical/Data Analysis/lasso-logistics-analysis",
+      "core": true,
+      "display_name": "LASSO Logistic Regression Analysis",
+      "description": "Runs binary LASSO logistic regression on a numeric feature-by-sample matrix with cv.glmnet lambda selection, coefficient export, and CV and path plots.",
+      "_audit": 85,
+      "_upstream_description": "Use when building a binary classification model from an expression matrix or other omics feature matrix with LASSO logistic regression, cross-validation, and coefficient path visualization. NOT for: multiclass classification, survival/Cox models, or ordinary linear regression."
+    },
+    {
+      "id": "univariate-multivariable-cox-regression",
+      "source": "medical/Data Analysis/univariate-multivariable-cox-regression",
+      "core": true,
+      "display_name": "Univariable and Multivariable Cox Regression",
+      "description": "Fits univariable and multivariable Cox models on a complete-case clinical survival CSV and exports hazard-ratio tables and forest plots.",
+      "_audit": 86,
+      "_upstream_description": "Use when running prognostic survival analysis on a clinical cohort with time-to-event data to estimate univariate and multivariable Cox proportional hazards models, export result tables, and generate forest plots. NOT for: nomogram construction, calibration curves, time-dependent ROC analysis, or mo"
+    },
+    {
+      "id": "nomogram-construction",
+      "source": "medical/Data Analysis/nomogram-construction",
+      "core": true,
+      "display_name": "Nomogram Construction",
+      "description": "Builds an rms Cox nomogram from preselected survival predictors and exports the model bundle, an apparent C-index table, and a nomogram PDF.",
+      "_audit": 96,
+      "_upstream_description": "Use when constructing a prognosis nomogram from survival-related clinical predictors, exporting the nomogram bundle and C-index table, and optionally rendering the final nomogram PDF. NOT for: univariate/multivariable Cox feature screening, calibration curves, ROC analysis, decision-curve analysis, ",
+      "known_missing": {
+        "scripts/install_dependencies.R": "dependency installer not shipped upstream; analysis scripts present"
+      }
+    },
+    {
+      "id": "model-calibration-curve",
+      "source": "medical/Data Analysis/model-calibration-curve",
+      "core": true,
+      "display_name": "Survival Model Calibration Curve",
+      "description": "Refits a Cox model on a clinical CSV and produces bootstrap-corrected calibration curves and summary statistics at chosen survival horizons.",
+      "_audit": 95,
+      "_upstream_description": "Use when assessing how well a survival model's predicted probabilities agree with observed outcomes by fitting a Cox model and generating bootstrap calibration curves at one or more prediction horizons from a clinical CSV file. NOT for: nomogram construction, univariate Cox screening, ROC analysis, ",
+      "known_missing": {
+        "scripts/install_dependencies.R": "dependency installer not shipped upstream; analysis scripts present"
+      }
+    },
+    {
+      "id": "decision-curve-analysis",
+      "source": "medical/Data Analysis/decision-curve-analysis",
+      "core": true,
+      "display_name": "Decision Curve Analysis",
+      "description": "Computes net benefit and clinical-impact curves for one numeric predictor of a binary outcome with rmda, handling cohort or case-control prevalence.",
+      "_audit": 87,
+      "_upstream_description": "Use when evaluating the clinical utility of a binary prediction model from a single clinical CSV file by fitting a logistic decision-curve model, plotting decision and clinical-impact curves, and exporting summary outputs. NOT for: survival calibration, ROC-only discrimination analysis, nomogram con"
+    },
+    {
+      "id": "external-model-validation",
+      "source": "medical/Data Analysis/external-model-validation",
+      "core": true,
+      "display_name": "External Signature Validation",
+      "description": "Applies a fixed gene-coefficient prognostic signature to an external bulk expression cohort and outputs risk scores, KM, heatmap, and time-dependent ROC.",
+      "_audit": 90,
+      "_upstream_description": "Use when validating an existing prognostic risk signature on an external bulk expression cohort with survival outcomes, producing risk scores, Kaplan-Meier curves, risk distribution plots, heatmap, and time-dependent ROC curves. NOT for: model training, feature selection, nomogram construction, cali"
+    },
+    {
+      "id": "roc-diagnostic-performance",
+      "source": "medical/Data Analysis/roc-diagnostic-performance",
+      "core": false,
+      "display_name": "ROC Diagnostic Performance",
+      "description": "Fits a logistic model on case-control expression markers and reports in-sample ROC curves and AUCs for the combined model and each marker.",
+      "_audit": 85,
+      "_upstream_description": "Use when evaluating diagnostic biomarker performance from case-control expression data with logistic regression and ROC curves, exporting coefficient and AUC tables together with a ROC PDF. NOT for: survival analysis, time-to-event outcomes, multiclass classification, calibration curves, decision-cu"
+    },
+    {
+      "id": "time-dependent-roc",
+      "source": "medical/Data Analysis/time-dependent-roc",
+      "core": true,
+      "display_name": "Time-Dependent ROC Analysis",
+      "description": "Estimates IPCW time-dependent ROC curves and AUCs for a numeric risk marker against censored survival outcomes at chosen horizons.",
+      "_audit": 87,
+      "_upstream_description": "Use when performing time-dependent ROC curve analysis for survival data with follow-up time, event status, and a numeric marker. Supports CSV/TXT/TSV/Excel input, `risk_score` as the default marker unless `--marker_col` is provided, parameter validation, standardized output directories, AUC table ex"
+    },
+    {
+      "id": "elastic-net-feature-selection",
+      "source": "medical/Data Analysis/elastic-net-feature-selection",
+      "core": false,
+      "display_name": "Elastic Net Feature Selection",
+      "description": "Selects molecular features from bulk expression matrices for binary classification with elastic net logistic regression and alpha and lambda tuning.",
+      "_audit": 87,
+      "_upstream_description": "Use when selecting predictive genes or other molecular features from bulk expression matrices for binary case-vs-control classification with elastic net logistic regression, including coefficient path and cross-validation plots. Trigger keywords: elastic net, glmnet, feature selection, binary classi"
+    },
+    {
+      "id": "rf-model-importance-analysis",
+      "source": "medical/Data Analysis/rf-model-importance-analysis",
+      "core": false,
+      "display_name": "Random Forest Importance Analysis",
+      "description": "Trains a two-class random forest on a complete numeric feature matrix and reports OOB error curves and ranked variable importance.",
+      "_audit": 92,
+      "_upstream_description": "Use when you need a standardized R CLI workflow to train a two-class random forest model from an expression-like feature matrix, rank variable importance, and generate reproducible error and importance plots. NOT for regression tasks, multi-class classification, missing-value imputation, preprocessi"
+    },
+    {
+      "id": "svm-model-importance-analysis",
+      "source": "medical/Data Analysis/svm-model-importance-analysis",
+      "core": false,
+      "display_name": "SVM-RFE Feature Ranking",
+      "description": "Ranks features for a two-class problem by linear SVM recursive feature elimination with cross-validated error across feature counts.",
+      "_audit": 93,
+      "_upstream_description": "Use when you need a standardized R CLI workflow to run two-class SVM-RFE feature ranking on an expression-like matrix, choose an informative feature count from cross-validated error, and generate reproducible ranking and error plots. NOT for regression, multi-class classification, missing-value impu"
+    },
+    {
+      "id": "xgboost-analysis",
+      "source": "medical/Data Analysis/XGBoost-analysis",
+      "core": false,
+      "display_name": "XGBoost Modeling and Importance",
+      "description": "Trains an XGBoost binary or regression model on tabular data with one random train-test split and exports performance and feature-importance outputs.",
+      "_audit": 88,
+      "_upstream_description": "Use when building XGBoost models on tabular data and returning feature importance ranking outputs. Supports binary classification and regression with automatic task detection, train-test split, performance tables, feature importance ranking tables, and PNG importance plots."
+    },
+    {
+      "id": "lightgbm-analysis",
+      "source": "medical/Data Analysis/LightGBM-analysis",
+      "core": false,
+      "display_name": "LightGBM Modeling and Importance",
+      "description": "Trains a LightGBM model on tabular data with train, validation, and test splits and exports metrics, quality flags, and feature-importance rankings.",
+      "_audit": 86,
+      "_upstream_description": "Use when training a LightGBM model on tabular data in R and returning model metrics, feature importance ranking tables, and feature importance plots."
+    },
+    {
+      "id": "km-survival-curve",
+      "source": "medical/Data Analysis/km-survival-curve",
+      "core": false,
+      "display_name": "Kaplan-Meier Survival Curve",
+      "description": "Plots Kaplan-Meier curves with log-rank or Wald statistics and a risk table for precomputed risk groups in tabular survival data.",
+      "_audit": 92,
+      "_upstream_description": "Use when generating Kaplan-Meier survival curves from tabular survival data containing time, event status, and a precomputed risk group. Supports command-line parameter input, parameter validation, automatic time-unit handling, single-file PDF figure export, and session metadata capture."
+    },
+    {
+      "id": "reporting-guideline-compliance-checker",
+      "source": "medical/Academic Writing/reporting-guideline-compliance-checker",
+      "core": false,
+      "display_name": "Reporting Guideline Compliance Checker",
+      "description": "Reviews manuscripts against reporting guidelines such as TRIPOD, STROBE, CONSORT, and PRISMA and ranks gaps by severity and submission risk.",
+      "_audit": 91,
+      "_upstream_description": "Checks biomedical manuscripts against reporting guidelines such as CONSORT, STROBE, PRISMA, and TRIPOD to identify missing or weak reporting elements before submission or revision."
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "expression",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "omics-archives",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

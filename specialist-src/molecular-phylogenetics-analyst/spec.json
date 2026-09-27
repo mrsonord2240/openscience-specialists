@@ -1,0 +1,51 @@
+{
+  "id": "molecular-phylogenetics-analyst",
+  "version": "1.0.0",
+  "upstream": {
+    "repository": "https://github.com/mrsonord2240/optimizing-agent-science-skills",
+    "commit": "2f7bc21efd510c4c500eee1f3df2ce29eeeff026",
+    "license": "MIT",
+    "path": "F:/optimizing-agent-science-skills",
+    "prefix": "skills/bioSkills"
+  },
+  "display_name": "Molecular Phylogenetics Analyst",
+  "summary": "Takes homologous sequences to a defensible phylogeny: alignment and trimming, model selection, maximum-likelihood and Bayesian trees with honest support and convergence checks, coalescent species trees, divergence dating, and publication-ready tree figures.",
+  "skills": [
+    {"id": "bio-alignment-multiple", "source": "alignment/multiple-alignment", "core": true,
+     "display_name": "Multiple Sequence Alignment", "description": "Choose and run MAFFT, MUSCLE5, Clustal Omega or T-Coffee by dataset size, divergence and downstream use, including codon-aware and confidence-assessed alignments.", "_audit": 85,
+     "_upstream_description": "Perform multiple sequence alignment using MAFFT, MUSCLE5, ClustalOmega, or T-Coffee. Guides tool and algorithm selection based on dataset size, sequence divergence, and downstream application. Use when aligning three or more homologous sequences for "},
+    {"id": "bio-phylo-modern-tree-inference", "source": "phylogenetics/modern-tree-inference", "core": true,
+     "display_name": "Maximum-Likelihood Tree Inference", "description": "IQ-TREE and RAxML-NG trees with ModelFinder, UFBoot2 and SH-aLRT support, concordance factors, partitioning, topology tests and long-branch-attraction checks.", "_audit": 88,
+     "_upstream_description": "Infers maximum-likelihood phylogenetic trees with IQ-TREE2 and RAxML-NG -- model selection (ModelFinder), branch support (UFBoot2, SH-aLRT), concordance factors (gCF/sCF), partitioning, topology tests, and long-branch-attraction control. Covers why a"},
+    {"id": "bio-phylo-bayesian-inference", "source": "phylogenetics/bayesian-inference", "core": true,
+     "display_name": "Bayesian Phylogenetic Inference", "description": "MrBayes posteriors gated on scalar and topology convergence, prior checks, stepping-stone model comparison and site-heterogeneous models for deep data.", "_audit": 87,
+     "_upstream_description": "Frames Bayesian phylogenetics as approximating a posterior distribution over trees conditioned on data AND priors via an MCMC that must be proven to have converged, using MrBayes, BEAST2, RevBayes, and PhyloBayes-MPI. Covers why convergence (ESS, PSR"},
+    {"id": "bio-phylo-species-trees", "source": "phylogenetics/species-trees", "core": true,
+     "display_name": "Coalescent Species Trees", "description": "ASTRAL, wASTRAL and ASTRAL-Pro species trees from gene trees, concordance factors, polytomy tests and minority-quartet checks for introgression.", "_audit": 86,
+     "_upstream_description": "Estimates species trees under the multispecies coalescent from per-locus gene trees with the modern ASTER astral binary (ASTRAL-III/wASTRAL/ASTRAL-Pro), plus SVDQuartets, BPP, and StarBEAST2. Covers why a species tree is not a gene tree, why each loc"},
+    {"id": "bio-alignment-trimming", "source": "alignment/alignment-trimming", "core": false,
+     "display_name": "Alignment Trimming", "description": "ClipKIT, trimAl and BMGE trimming chosen by downstream goal, with retention rules, column maps and trimmed-versus-untrimmed tree checks.", "_audit": 83,
+     "_upstream_description": "Trim multiple sequence alignments using ClipKIT, trimAl, BMGE, Divvier, or HMMcleaner with mode selection guidance per downstream goal. Use when removing unreliable columns or contaminating residues before phylogenetic inference, HMM building, or sel"},
+    {"id": "bio-phylo-divergence-dating", "source": "phylogenetics/divergence-dating", "core": false,
+     "display_name": "Divergence Time Estimation", "description": "MCMCTree, BEAST2 and LSD2 dating with fossils as soft minima, prior-only runs and temporal-signal tests before tip-dating.", "_audit": 87,
+     "_upstream_description": "Estimate divergence times under molecular-clock models with BEAST2, MCMCTree/PAML, TreePL, and LSD2, framing a date as a product of the calibration prior and the clock model far more than of the sequence data. Covers why branch length = rate x time i"},
+    {"id": "bio-phylo-distance-calculations", "source": "phylogenetics/distance-calculations", "core": false,
+     "display_name": "Distance Trees", "description": "Model-corrected distance matrices and NJ, BIONJ or FastME trees with saturation checks, LogDet for compositional bias and valid bootstrap support.", "_audit": 87,
+     "_upstream_description": "Build model-corrected evolutionary distance matrices and distance trees (NJ, BIONJ, FastME, UPGMA) with Biopython Bio.Phylo plus R ape/phangorn/FastME. Covers why a distance is a model-corrected estimate of substitutions per site that undercounts raw"},
+    {"id": "bio-phylo-tree-manipulation", "source": "phylogenetics/tree-manipulation", "core": false,
+     "display_name": "Rooting and Tree Editing", "description": "Outgroup, MAD, MinVar and non-reversible rooting with stated uncertainty, distance-preserving pruning and support-based collapsing.", "_audit": 86,
+     "_upstream_description": "Edit phylogenetic tree structure with Biopython Bio.Phylo, and treat rooting as a separate statistical inference rather than a display choice. Covers why most inference returns an unrooted tree so placing the root creates every ancestor/descendant an"},
+    {"id": "bio-phylo-tree-io", "source": "phylogenetics/tree-io", "core": false,
+     "display_name": "Tree File I/O", "description": "Read, convert and write Newick, Nexus, phyloXML and NeXML trees without losing posteriors, HPD intervals or support values.", "_audit": 88,
+     "_upstream_description": "Read, write, and convert phylogenetic tree files with Biopython Bio.Phylo, and choose an annotation-preserving parser (treeio, DendroPy) when metadata matters. Covers why a tree file is a lossy serialization, why format conversion silently drops BEAS"},
+    {"id": "bio-phylo-tree-visualization", "source": "phylogenetics/tree-visualization", "core": false,
+     "display_name": "Tree Figures", "description": "Publication tree figures with named support measures, HPD bars, correct rooting and vector export via Bio.Phylo or ggtree.", "_audit": 84,
+     "_upstream_description": "Draw and export phylogenetic trees with Bio.Phylo plus matplotlib, and route rich figures to ggtree, ETE4, or iTOL. Covers why a tree figure is an argument not a neutral picture, the cladogram-vs-phylogram-vs-chronogram choice that hides or reveals r"}
+  ],
+  "connectors": [
+    {"id": "pubmed", "required": false, "default_selected": true},
+    {"id": "protein-annotation", "required": false, "default_selected": true},
+    {"id": "genes", "required": false, "default_selected": false},
+    {"id": "genomes", "required": false, "default_selected": false}
+  ]
+}

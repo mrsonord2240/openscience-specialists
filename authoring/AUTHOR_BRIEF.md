@@ -18,8 +18,8 @@ honestly how the result could be better.
 - Why every candidate uses bioSkills only:
   `CANDIDATES.md` beside this file. Your candidate's scope and
   boundaries are its row there.
-- Your spec: `F:\OpenScience\specialist-src\<id>\spec.json` and the auditor's
-  `F:\OpenScience\specialist-src\<id>\AUDIT.md`. Do not change the `upstream` block, Skill `id`s
+- Your spec: `F:\openscience-specialists\specialist-src\<id>\spec.json` and the auditor's
+  `F:\openscience-specialists\specialist-src\<id>\AUDIT.md`. Do not change the `upstream` block, Skill `id`s
   or `source`s.
 - Audit evidence per Skill: `F:\OpenScience\audits\<skill-id>\eval_report_*_result.json` and
   `eval_viewer_<skill-id>.md` (what the auditor ran, what executed, the P1/P2 findings).
@@ -27,14 +27,14 @@ honestly how the result could be better.
   on the shelf at `F:\optimized-scientific-skills\skills\<skill-id>\`, unmodified ones at
   `F:\OpenScience\external\GPTomics__bioSkills\<source>\` (`SKILL.md`, `usage-guide.md`,
   `examples/`). Read-only.
-- Builder: `python F:\OpenScience\specialist-src\build_specialist.py <id>` → writes
+- Builder: `python F:\openscience-specialists\specialist-src\build_specialist.py <id>` → writes
   `F:\openscience-specialists\specialists\<id>\...` (this repo). It enforces the threshold and fails loudly.
 - Clean marketplace worktree with dependencies installed: `F:\osa` (read-only for you).
   - Protocol: `protocol/README.md`; authoring guide `specialists/README.md`.
   - Exemplar system prompts (read at least one fully before writing):
     `specialists/pharmacometrics-pkpd-designer/versions/1.0.0/package/specialist.json` (the
     structure you must follow) and `specialists/auto-research-specialist/versions/1.0.1/package/specialist.json`
-    (routing discipline). The round-1 prompts in `F:\OpenScience\specialist-src\*\system_prompt.md`
+    (routing discipline). The round-1 prompts in `F:\openscience-specialists\specialist-src\*\system_prompt.md`
     show the same structure applied to biomedical workflows.
 
 ## Steps
@@ -52,7 +52,7 @@ honestly how the result could be better.
    protein-annotation structures rna regulation biomart clinical-genomics human-genetics
    drug-regulatory cancer-models research-resources chembl chemistry molecule zinc omics-archives
    variants cellguide. Leave `required: false`.
-3. **Write `F:\OpenScience\specialist-src\<id>\system_prompt.md`** using EXACTLY the section
+3. **Write `F:\openscience-specialists\specialist-src\<id>\system_prompt.md`** using EXACTLY the section
    structure of the pharmacometrics exemplar:
    `# <Display Name>` / `## Identity` / `## Open Science runtime contract` / `## Packaged Skill routing`
    / `## Connector policy` / `## Domain operating principles` / `## Mindset And First Principles` /
@@ -79,12 +79,12 @@ honestly how the result could be better.
 4. **Build**: run the builder until it passes. Then build the release twice and confirm identical
    artifact SHA-256:
    ```
-   cd F:/osa && npm run build:release --silent -- --specialist-id <id> --version 1.0.0 --version-directory F:/openscience-specialists/specialists/<id>/versions/1.0.0 --output F:/OpenScience/builds/<id>-a
-   (repeat with F:/OpenScience/builds/<id>-b)
+   cd F:/osa && npm run build:release --silent -- --specialist-id <id> --version 1.0.0 --version-directory F:/openscience-specialists/specialists/<id>/versions/1.0.0 --output F:/openscience-specialists/builds/<id>-a
+   (repeat with F:/openscience-specialists/builds/<id>-b)
    ```
    Do NOT copy anything into `F:\osa` and do not run `npm run validate`; central validation runs
    after all agents finish.
-5. **Write `F:\OpenScience\specialist-src\<id>\improvements.md`**: prioritized, actionable bullets —
+5. **Write `F:\openscience-specialists\specialist-src\<id>\improvements.md`**: prioritized, actionable bullets —
    missing workflow steps and what Skill would fill each; bundled Skills whose audit P1s matter
    here; bioSkills or other listed-repo Skills that would add value once audited (name them);
    system-prompt limits; connector gaps; the evaluation this Specialist itself still needs. Short

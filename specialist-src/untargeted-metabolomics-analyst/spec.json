@@ -1,0 +1,131 @@
+{
+  "id": "untargeted-metabolomics-analyst",
+  "version": "1.0.0",
+  "upstream": {
+    "repository": "https://github.com/mrsonord2240/optimizing-agent-science-skills",
+    "commit": "f5ad8c583206a9124732d9518ace53ab17a9be3b",
+    "license": "MIT",
+    "path": "F:/optimizing-agent-science-skills",
+    "prefix": "skills/bioSkills"
+  },
+  "display_name": "Untargeted Metabolomics Analyst",
+  "summary": "Takes untargeted LC-MS metabolomics from raw mzML to biological interpretation: xcms 4.x feature extraction, QC-based drift correction and normalization (pmp), confidence-stratified metabolite annotation (matchms/MetFrag) with MSI/Schymanski levels, permutation-validated statistics (PCA/OPLS-DA/univariate), and background-aware pathway mapping (MetaboAnalystR/FELLA). Batch/plate design and an alternate MS-DIAL/lipidomics route are included as supporting Skills. Research use only.",
+  "skills": [
+    {
+      "id": "bio-metabolomics-xcms-preprocessing",
+      "source": "metabolomics/xcms-preprocessing",
+      "core": true,
+      "display_name": "XCMS Untargeted LC-MS Feature Extraction",
+      "description": "Raw mzML to a feature table via CentWave peak detection, retention-time alignment, peak-density correspondence, gap-filling, CAMERA redundancy collapse, and QC feature filtering, with the peak-picking method matched to instrument resolution.",
+      "_audit": 92,
+      "_grade": "Production Ready",
+      "_role": "core - entry, feature extraction",
+      "_upstream_description": "Programmatic untargeted LC-MS feature extraction in R with the modern xcms 4.x MsExperiment/XcmsExperiment API, taking raw mzML to a feature table via CentWave peak detection, retention-time alignment, peak-density correspondence, gap-filling, CAMERA"
+    },
+    {
+      "id": "bio-metabolomics-normalization-qc",
+      "source": "metabolomics/normalization-qc",
+      "core": true,
+      "display_name": "Metabolomics QC, Drift Correction and Normalization",
+      "description": "QC design, QC-RSC signal-drift correction, batch-effect removal, feature filtering, sample normalization (PQN) and mechanism-aware missing-value imputation for untargeted LC-MS/GC-MS, treating every step as a measurement model.",
+      "_audit": 92,
+      "_grade": "Production Ready",
+      "_role": "core - QC, drift correction, normalization",
+      "_upstream_description": "Designs QC, corrects signal drift, removes batch effects, filters features, normalizes samples, and imputes missing values for untargeted LC-MS/GC-MS metabolomics, framing each step as a measurement model that can create or erase biological signal."
+    },
+    {
+      "id": "bio-metabolomics-metabolite-annotation",
+      "source": "metabolomics/metabolite-annotation",
+      "core": true,
+      "display_name": "Metabolite Annotation and MSI Confidence Levels",
+      "description": "Turns LC-MS/MS features into confidence-stratified metabolite annotations via spectral-library matching (matchms), in-silico fragmentation (MetFrag; SIRIUS documented but login-gated), and molecular networking, assigning a defensible MSI/Schymanski level rather than a bare name.",
+      "_audit": 95,
+      "_grade": "Production Ready",
+      "_role": "core - annotation",
+      "_upstream_description": "Turns untargeted LC-MS/MS features (m/z, RT, MS/MS) into confidence-stratified metabolite annotations using spectral-library matching (matchms), in-silico tools (SIRIUS/CSI:FingerID, MetFrag) and molecular networking, and assigns a defensible MSI/Sch"
+    },
+    {
+      "id": "bio-metabolomics-statistical-analysis",
+      "source": "metabolomics/statistical-analysis",
+      "core": true,
+      "display_name": "Metabolomics Statistical Analysis",
+      "description": "Decision-grade statistics for metabolomics intensity tables: transformation/scaling, PCA/HCA QC with Hotelling T2 outlier detection, permutation-validated PLS-DA/OPLS-DA, univariate testing (Welch/Mann-Whitney/ANOVA/LMM) with covariate adjustment, and dependence-aware multiple testing.",
+      "_audit": 96,
+      "_grade": "Production Ready",
+      "_role": "core - statistics",
+      "_upstream_description": "Decision-grade statistical analysis for metabolomics intensity tables: transformation/scaling as a hidden hypothesis, PCA/HCA for QC, permutation-validated PLS-DA/OPLS-DA, univariate testing (Welch/Mann-Whitney/ANOVA/LMM) with covariate adjustment, a"
+    },
+    {
+      "id": "bio-metabolomics-pathway-mapping",
+      "source": "metabolomics/pathway-mapping",
+      "core": true,
+      "display_name": "Metabolite Pathway Mapping",
+      "description": "Maps metabolomics results to biological pathways via over-representation analysis, metabolite-set enrichment (MSEA/QEA), mummichog/PSEA on raw m/z peaks, and FELLA network-diffusion enrichment, with correct background-set construction and honest interpretive ceilings.",
+      "_audit": 92,
+      "_grade": "Production Ready",
+      "_role": "core - pathway mapping, terminal step",
+      "_upstream_description": "Maps metabolomics results to biological pathways via over-representation (ORA), metabolite-set enrichment (MSEA/QEA), mummichog/PSEA on raw m/z peaks, and network-diffusion enrichment (FELLA), with correct background-set construction and honest inter"
+    },
+    {
+      "id": "bio-metabolomics-msdial-preprocessing",
+      "source": "metabolomics/msdial-preprocessing",
+      "core": false,
+      "display_name": "MS-DIAL Preprocessing (DIA/GC-MS Route)",
+      "description": "Runs the MS-DIAL console workflow (peak picking, MS2Dec deconvolution, alignment, gap-filling) for DIA/SWATH or GC-MS raw data and imports the alignment-result table into R or Python with an honest Fill%/MS-support filter, as an alternate entry point to xcms.",
+      "_audit": 91,
+      "_grade": "Limited Release",
+      "_role": "supporting - alternate preprocessing route (DIA/GC-MS)",
+      "_upstream_description": "Runs the MS-DIAL preprocessing workflow (peak picking, MS2Dec spectral deconvolution, alignment, gap-filling) and imports the alignment-result table into R or Python with honest filtering. Use when preprocessing LC-MS DDA/DIA (SWATH) or GC-MS raw dat"
+    },
+    {
+      "id": "bio-metabolomics-lipidomics",
+      "source": "metabolomics/lipidomics",
+      "core": false,
+      "display_name": "Lipidomics Analysis",
+      "description": "Assigns honest lipid annotation levels (pygoslin/Goslin), designs class-based internal-standard quantification with a coverage guard, and runs lipid-aware differential and enrichment analysis with lipidr, guarding against in-source-fragment phantoms and sn-position over-claims.",
+      "_audit": 92,
+      "_grade": "Production Ready",
+      "_role": "supporting - lipidomics branch",
+      "_upstream_description": "Assigns honest lipid annotation levels, designs class-based internal-standard quantification, and runs lipid-aware differential and enrichment analysis with lipidr, guarding against in-source-fragment phantoms, sn-position over-claims, and invalid cr"
+    },
+    {
+      "id": "bio-workflows-metabolomics-pipeline",
+      "source": "workflows/metabolomics-pipeline",
+      "core": false,
+      "display_name": "Untargeted Metabolomics Pipeline Orchestration",
+      "description": "Orchestrates the untargeted LC-MS metabolomics pipeline end-to-end across the five core Skills above, naming what each hand-off decides, enforcing the MSI-confidence gate and ionization-mode lock in real code, and naming where each stage can silently fail.",
+      "_audit": 92,
+      "_grade": "Production Ready",
+      "_role": "supporting - orchestration",
+      "_upstream_description": "Orchestrates the untargeted LC-MS metabolomics pipeline end-to-end (xcms 4.x feature extraction, QC/drift/normalization, confidence-stratified annotation, permutation-validated statistics, background-aware pathway mapping), naming what each stage dec"
+    },
+    {
+      "id": "bio-experimental-design-batch-design",
+      "source": "experimental-design/batch-design",
+      "core": false,
+      "display_name": "Batch and Confounding Design",
+      "description": "Balances batch, plate, run-order and (for TMT-style bridge designs) plex nuisance variation against the biological variable before any sample is run, so it stays estimable rather than confounded; includes SVA-based hidden-batch detection and a decision table for downstream correction.",
+      "_audit": 87,
+      "_grade": "Production Ready",
+      "_role": "supporting - framing/design",
+      "_upstream_description": "Designs genomics experiments so technical nuisance variation (batch, lane, plate, flow cell, operator, reagent lot, processing day) is balanced against the biological variable of interest and therefore estimable rather than confounded, using constrai"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "chemistry",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "omics-archives",
+      "required": false,
+      "default_selected": false
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "id": "systematic-review-meta-analysis-specialist",
+  "version": "1.0.0",
+  "display_name": "Systematic Review and Meta-analysis Specialist",
+  "summary": "Plans, registers, screens, appraises, pools, and reports PRISMA 2020-aligned systematic reviews and meta-analyses from supplied records and extracted data, without inventing studies, counts, or effect sizes and without making individual patient recommendations.",
+  "skills": [
+    {
+      "id": "systematic-review",
+      "source": "scientific/Academic Writing/systematic-review",
+      "core": true,
+      "display_name": "Systematic Review Workflow",
+      "description": "Plans an end-to-end PRISMA 2020 review: protocol, multi-database search, two-stage screening, extraction, risk of bias, synthesis, and reporting.",
+      "_audit": 86,
+      "_polish_changelog": 76,
+      "_upstream_description": "Orchestrates a systematic review and meta-analysis workflow following PRISMA 2020 guidelines, from protocol development through multi-database search, screening, data extraction, and evidence synthesis. Use when conducting evidence-based reviews, meta-analyses, or scoping revi..."
+    },
+    {
+      "id": "meta-protocol-writer",
+      "source": "scientific/Protocol Design/meta-protocol-writer",
+      "core": true,
+      "display_name": "Meta-analysis Protocol Writer",
+      "description": "Drafts a PROSPERO-style review protocol (administrative information, introduction, methods) from a validated title and PICOS.",
+      "_audit": 90,
+      "_polish_changelog": 76,
+      "_upstream_description": "Generates a PROSPERO-compliant Meta-analysis protocol based on Title and PICOS. Use when the user wants to write a protocol for a systematic review or meta-analysis."
+    },
+    {
+      "id": "prospero-registration-helper",
+      "source": "scientific/Protocol Design/prospero-registration-helper",
+      "core": true,
+      "display_name": "PROSPERO Registration Helper",
+      "description": "Drafts PROSPERO registration form content (basic details, eligibility, timeline, search and methods) from a review title and optional protocol.",
+      "_audit": 90,
+      "_polish_changelog": 76,
+      "_upstream_description": "Assists researchers in generating PROSPERO registration content for meta-analyses from a title and optional protocol. Use when the user wants to draft a PROSPERO registration form."
+    },
+    {
+      "id": "systematic-review-screener",
+      "source": "scientific/Evidence Insight/systematic-review-screener",
+      "core": true,
+      "display_name": "Systematic Review Abstract Screener",
+      "description": "Runs keyword-based title/abstract triage of CSV, MEDLINE or EndNote XML exports against YAML criteria, with confidence flags and PRISMA count data.",
+      "_audit": 90,
+      "_polish_changelog": 76,
+      "_upstream_description": "Automated abstract screening tool for systematic literature reviews with PRISMA workflow support."
+    },
+    {
+      "id": "rct-bias-assessment-rob2",
+      "source": "scientific/Evidence Insight/rct-bias-assessment-rob2",
+      "core": true,
+      "display_name": "RoB 2 Risk of Bias Assessment",
+      "description": "Assesses randomized trial reports across the five RoB 2 domains with an overall judgement, returning a JSON summary and a supporting report.",
+      "_audit": 91,
+      "_polish_changelog": 78,
+      "_upstream_description": "Automates Risk of Bias 2 (ROB2) assessment for RCT papers by analyzing text against specific domains and synthesizing a report. Use when you need to assess the quality of a clinical trial paper or evaluate risk of bias."
+    },
+    {
+      "id": "diagnostic-study-quality-assessment-quadas-2",
+      "source": "scientific/Evidence Insight/diagnostic-study-quality-assessment-quadas-2",
+      "core": true,
+      "display_name": "QUADAS-2 Diagnostic Study Assessment",
+      "description": "Answers QUADAS-2 signalling questions with supporting quotes for patient selection, index test, reference standard, and flow and timing.",
+      "_audit": 91,
+      "_polish_changelog": 78,
+      "_upstream_description": "Analyzes clinical diagnostic accuracy studies for bias using the QUADAS-2 tool. Use when Claude needs to assess the quality, risk of bias, or applicability of diagnostic accuracy studies (e.g., \"Assess this paper using QUADAS-2\")."
+    },
+    {
+      "id": "meta-analysis",
+      "source": "scientific/Data Analysis/meta-analysis",
+      "core": true,
+      "display_name": "Meta-analysis",
+      "description": "Computes effect sizes, random-effects pooled estimates, heterogeneity (Q, I², tau²), forest and funnel plots, and Egger/Begg tests from study data.",
+      "_audit": 86,
+      "_polish_changelog": 78,
+      "_upstream_description": "Perform quantitative meta-analysis with effect size calculation, forest plots, funnel plots, and heterogeneity assessment. Use when: user asks to combine results from multiple studies, calculate pooled effect sizes, assess publication bias, or create forest/funnel plots. NOT f..."
+    },
+    {
+      "id": "reporting-guideline-compliance-checker",
+      "source": "medical/Academic Writing/reporting-guideline-compliance-checker",
+      "core": true,
+      "_core_reason": "Flipped to core: it is the only PRISMA 2020 validation/reporting gate in the bundle (THRESHOLD gate 4) and scores 91 on a per-skill medical report.",
+      "display_name": "Reporting Guideline Compliance Checker",
+      "description": "Reviews manuscripts against CONSORT, STROBE, PRISMA, TRIPOD and similar guidelines, grading missing or weak reporting items by submission risk.",
+      "_audit": 91,
+      "_upstream_description": "Checks biomedical manuscripts against reporting guidelines such as CONSORT, STROBE, PRISMA, and TRIPOD to identify missing or weak reporting elements before submission or revision."
+    },
+    {
+      "id": "biomedical-search-strategy-builder",
+      "source": "medical/Evidence Insight/biomedical-search-strategy-builder",
+      "core": false,
+      "display_name": "Biomedical Search Strategy Builder",
+      "description": "Builds database-specific biomedical literature search strategies.",
+      "_audit": 85,
+      "_upstream_description": "Builds professional search strategies for PubMed, Embase, Web of Science, and similar databases. Use when a user needs to construct a MeSH-based Boolean query, design a systematic review search, expand a concept with synonyms, apply study-type or date filters, or adapt a query across multiple databa"
+    },
+    {
+      "id": "meta-baseline-generator",
+      "source": "scientific/Academic Writing/meta-baseline-generator",
+      "core": false,
+      "display_name": "Meta-analysis Baseline Characteristics Generator",
+      "description": "Drafts the included-study characteristics paragraph and Table 1, in English or Chinese, from supplied baseline data.",
+      "_audit": 90,
+      "_polish_changelog": 76,
+      "_upstream_description": "Generates a meta-analysis baseline characteristics section (text + table) from raw data. Supports Chinese and English. Use when the user provides baseline data and wants a formatted results section."
+    },
+    {
+      "id": "meta-results-forest-plot-analyzer",
+      "source": "scientific/Academic Writing/meta-results-forest-plot-analyzer",
+      "core": false,
+      "display_name": "Forest Plot Results Writer",
+      "description": "Drafts a Results paragraph and figure legend describing a supplied forest plot and its statistics, in English or Chinese.",
+      "_audit": 90,
+      "_polish_changelog": 76,
+      "_upstream_description": "Analyzes forest plots for meta-analysis, generating detailed descriptions and formatting figure legends in Chinese or English. Use when the user wants to interpret a forest plot image, describe its statistical significance (heterogeneity, p-value), and format the output with s..."
+    },
+    {
+      "id": "meta-results-funnel-plot-generator",
+      "source": "scientific/Academic Writing/meta-results-funnel-plot-generator",
+      "core": false,
+      "display_name": "Funnel Plot Results Writer",
+      "description": "Drafts publication-bias Results text with Egger's, Begg's and trim-and-fill tables and a funnel plot legend from supplied statistics.",
+      "_audit": 90,
+      "_polish_changelog": 76,
+      "_upstream_description": "Generates a Meta-analysis results section description for funnel plots, including statistical tables (Egger's, Begg's, Trim & Fill) and figure legends. Supports English and Chinese outputs. Use when user provides a funnel plot image and statistics and wants a formatted report."
+    },
+    {
+      "id": "meta-results-risk-of-bias",
+      "source": "scientific/Academic Writing/meta-results-risk-of-bias",
+      "core": false,
+      "display_name": "Risk of Bias Results Writer",
+      "description": "Drafts the risk-of-bias Results section from supplied RoB 2 domain (D1-D5) and summary tables, with figure citation and caption.",
+      "_audit": 90,
+      "_polish_changelog": 76,
+      "_upstream_description": "Generates the \"Risk of Bias\" results section for a meta-analysis based on assessment tables and statistics. Use when the user wants to draft the risk of bias analysis text from provided data tables."
+    },
+    {
+      "id": "meta-results-sensitivity-analysis",
+      "source": "scientific/Academic Writing/meta-results-sensitivity-analysis",
+      "core": false,
+      "display_name": "Sensitivity Analysis Results Writer",
+      "description": "Drafts leave-one-out sensitivity analysis Results text and a formatted table from a supplied sensitivity table.",
+      "_audit": 90,
+      "_polish_changelog": 76,
+      "_upstream_description": "Generates the \"Results\" section for meta-analysis sensitivity analysis based on statistical tables and titles. Use when the user wants to describe sensitivity analysis results or format sensitivity tables for a meta-analysis paper."
+    },
+    {
+      "id": "meta-analysis-methods-generator",
+      "source": "scientific/Academic Writing/meta-analysis-methods-generator",
+      "core": false,
+      "display_name": "Meta-analysis Methods Section Generator",
+      "description": "Drafts a six-part meta-analysis Methods section (search, eligibility, screening, quality assessment, extraction, statistics) from criteria and PICOS.",
+      "_audit": 90,
+      "_polish_changelog": 76,
+      "_upstream_description": "Generates the Methods section for a meta-analysis paper, including search strategy, screening, quality assessment, data extraction, and statistical analysis."
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "clinical-trials",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "biorxiv",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "drug-regulatory",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

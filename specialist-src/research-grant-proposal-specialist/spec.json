@@ -1,0 +1,107 @@
+{
+  "id": "research-grant-proposal-specialist",
+  "version": "1.0.0",
+  "display_name": "Research Grant Proposal Specialist",
+  "summary": "Frames testable aims, drafts agency-aligned proposal sections, and stress-tests them with structured mock review, verifying the current funding notice and never inventing preliminary data, citations, budgets, or reviewer scores.",
+  "skills": [
+    {
+      "id": "grant-proposal-assistant",
+      "source": "scientific/Academic Writing/grant-proposal-assistant",
+      "core": false,
+      "display_name": "Grant Proposal Assistant",
+      "description": "Drafts and revises NIH, NSF, and similar proposal sections from structured templates, with a heuristic structure checklist for existing drafts.",
+      "_audit": 76,
+      "_upstream_description": "Assist with biomedical grant proposal drafting, structure, and revision; use when preparing fundable proposal sections, aligning aims and methods, or improving reviewer-facing clarity."
+    },
+    {
+      "id": "grant-specific-aims-writer",
+      "source": "medical/Academic Writing/grant-specific-aims-writer",
+      "core": true,
+      "display_name": "Grant Specific Aims Writer",
+      "description": "Writes or revises a one-page NIH Specific Aims page or NSF Project Summary using a problem, gap, hypothesis, and aims logic chain.",
+      "_audit": 86,
+      "_upstream_description": "Writes Specific Aims pages for grant applications. Use when drafting or revising the Specific Aims page (NIH R01/R21/R03), NSF Project Summary, or equivalent for any major funding agency. Also triggers on \"write my specific aims\", \"help me draft specific aims for NIH\", \"what should a specific aims p"
+    },
+    {
+      "id": "aim-and-hypothesis-designer",
+      "source": "medical/Protocol Design/aim-and-hypothesis-designer",
+      "core": true,
+      "display_name": "Aim and Hypothesis Designer",
+      "description": "Turns a broad research idea into one primary aim, bounded secondary aims, and testable hypotheses separated from exploratory work.",
+      "_audit": 89,
+      "_upstream_description": "Designs primary aims, secondary aims, and testable hypotheses from broad biomedical research ideas. Use this skill when a user needs to convert a loose study idea into a tighter protocol-framing structure with clear aim hierarchy, hypothesis discipline, and separation between hypothesis-driven and e"
+    },
+    {
+      "id": "grant-mock-reviewer",
+      "source": "scientific/Academic Writing/grant-mock-reviewer",
+      "core": false,
+      "display_name": "Grant Mock Reviewer",
+      "description": "Simulates structured NIH-style critique of significance, innovation, approach, investigators, and environment to prioritize revisions.",
+      "_audit": 76,
+      "_upstream_description": "Simulate structured grant peer review for biomedical proposals; use when stress-testing significance, innovation, approach, feasibility, and reviewer-facing weaknesses before submission."
+    },
+    {
+      "id": "grant-budget-justification",
+      "source": "scientific/Academic Writing/grant-budget-justification",
+      "core": false,
+      "display_name": "Grant Budget Justification",
+      "description": "Writes narrative justifications for personnel, equipment, supplies, and travel lines that the applicant has already costed.",
+      "_audit": 77,
+      "_upstream_description": "Use grant budget justification for academic writing workflows that need structured execution, explicit assumptions, and clear output boundaries."
+    },
+    {
+      "id": "novelty-vs-feasibility-assessor",
+      "source": "medical/Evidence Insight/novelty-vs-feasibility-assessor",
+      "core": false,
+      "display_name": "Novelty vs. Feasibility Assessor",
+      "description": "Separates true from pseudo-novelty, audits feasibility under stated constraints, and forces a start, narrow, redesign, or stop decision.",
+      "_audit": 87,
+      "_upstream_description": "Assesses whether a medical research topic is worth starting now by separating true novelty from pseudo-novelty, auditing real feasibility under stated resource constraints, and forcing a concrete start / narrow / redesign / stop decision. Always require explicit assumptions and never fabricate refer"
+    },
+    {
+      "id": "feasibility-aware-study-planner",
+      "source": "medical/Protocol Design/feasibility-aware-study-planner",
+      "core": true,
+      "display_name": "Feasibility-Aware Study Planner",
+      "description": "Scales a study idea to the best executable version under stated sample, time, budget, data-access, and team constraints.",
+      "_audit": 90,
+      "_upstream_description": "Designs a realistic, execution-aware biomedical study version under explicit constraints of samples, time, budget, data access, lab capacity, team skill, and validation resources. Always use this skill when the user has a real study idea, a candidate route, or a partially framed project but cannot a"
+    },
+    {
+      "id": "sample-size-and-power-planning-assistant",
+      "source": "medical/Protocol Design/sample-size-and-power-planning-assistant",
+      "core": false,
+      "display_name": "Sample Size and Power Planning Assistant",
+      "description": "Plans sample-size logic, power assumptions, and fallback enrollment scenarios without fabricating exact calculations from missing inputs.",
+      "_audit": 90,
+      "_upstream_description": "Plans sample size estimation logic, power assumptions, feasibility checks, and fallback enrollment strategies for clinical and translational study protocols."
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "literature",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "biorxiv",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "research-resources",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "clinical-trials",
+      "required": false,
+      "default_selected": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "mass-spec-proteomics-analyst",
+  "display_name": "Mass-Spec Proteomics Analyst",
+  "summary": "Takes bottom-up proteomics from a search engine's output or raw DIA runs to differential protein abundance: imports MaxQuant, DIA-NN and mzML and strips search-engine bookkeeping, runs DDA target-decoy search and DIA-NN q-value filtering at the right level and context, resolves protein groups and protein-level FDR, rolls peptides up to proteins, tests differential abundance with missingness modelled rather than imputed, localises PTM sites, and carries QC throughout. Research use only.",
+  "publisher": {
+    "id": "mrsonord2240",
+    "name": "Samuel Nord",
+    "url": "https://github.com/mrsonord2240"
+  },
+  "latest": {
+    "version": "1.0.1",
+    "release": {
+      "path": "releases/mass-spec-proteomics-analyst/1.0.1.json",
+      "sha256": "2a36cc0059976266702b71518c6b3931382c95626b16828bb498e9340be96b48"
+    }
+  }
+}

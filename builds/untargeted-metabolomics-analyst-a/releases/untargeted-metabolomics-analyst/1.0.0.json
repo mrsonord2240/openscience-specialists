@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "specialist_id": "untargeted-metabolomics-analyst",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/mrsonord2240/optimizing-agent-science-skills",
+    "commit": "f5ad8c583206a9124732d9518ace53ab17a9be3b",
+    "license": "MIT"
+  },
+  "artifact": {
+    "path": "specialists/untargeted-metabolomics-analyst/1.0.0/untargeted-metabolomics-analyst-1.0.0.zip",
+    "github_release": {
+      "tag": "untargeted-metabolomics-analyst-v1.0.0",
+      "asset_name": "untargeted-metabolomics-analyst-1.0.0.zip"
+    },
+    "sha256": "8e378e24b6e24f3c1b5aab4ada09ea08ea09fbc2fcb9a0936e56dbf1a38525cf",
+    "compressed_bytes": 147345,
+    "uncompressed_bytes": 330345,
+    "file_count": 32
+  },
+  "defaults": {
+    "skill_ids": [
+      "bio-metabolomics-xcms-preprocessing",
+      "bio-metabolomics-normalization-qc",
+      "bio-metabolomics-metabolite-annotation",
+      "bio-metabolomics-statistical-analysis",
+      "bio-metabolomics-pathway-mapping",
+      "bio-metabolomics-msdial-preprocessing",
+      "bio-metabolomics-lipidomics",
+      "bio-workflows-metabolomics-pipeline",
+      "bio-experimental-design-batch-design"
+    ],
+    "connector_ids": [
+      "pubmed",
+      "chemistry"
+    ]
+  },
+  "skills": [
+    {
+      "id": "bio-metabolomics-xcms-preprocessing",
+      "name": "bio-metabolomics-xcms-preprocessing",
+      "display_name": "XCMS Untargeted LC-MS Feature Extraction",
+      "description": "Raw mzML to a feature table via CentWave peak detection, retention-time alignment, peak-density correspondence, gap-filling, CAMERA redundancy collapse, and QC feature filtering, with the peak-picking method matched to instrument resolution.",
+      "path": "skills/bio-metabolomics-xcms-preprocessing",
+      "content_digest": "8ac294d81c34b4bbdd1b82d93a367dcd16f251c076ba6f2c95d24531ca6db811",
+      "file_count": 3,
+      "uncompressed_bytes": 26870
+    },
+    {
+      "id": "bio-metabolomics-normalization-qc",
+      "name": "bio-metabolomics-normalization-qc",
+      "display_name": "Metabolomics QC, Drift Correction and Normalization",
+      "description": "QC design, QC-RSC signal-drift correction, batch-effect removal, feature filtering, sample normalization (PQN) and mechanism-aware missing-value imputation for untargeted LC-MS/GC-MS, treating every step as a measurement model.",
+      "path": "skills/bio-metabolomics-normalization-qc",
+      "content_digest": "59e0a73410c5048839d4d71a66474d697f5312a490b9f4921f7296bb7a126a33",
+      "file_count": 3,
+      "uncompressed_bytes": 36776
+    },
+    {
+      "id": "bio-metabolomics-metabolite-annotation",
+      "name": "bio-metabolomics-metabolite-annotation",
+      "display_name": "Metabolite Annotation and MSI Confidence Levels",
+      "description": "Turns LC-MS/MS features into confidence-stratified metabolite annotations via spectral-library matching (matchms), in-silico fragmentation (MetFrag; SIRIUS documented but login-gated), and molecular networking, assigning a defensible MSI/Schymanski level rather than a bare name.",
+      "path": "skills/bio-metabolomics-metabolite-annotation",
+      "content_digest": "6c8b7573e4c89c5ad476520e329df2028950faab742434cbc5d02f08ffc9a653",
+      "file_count": 3,
+      "uncompressed_bytes": 28915
+    },
+    {
+      "id": "bio-metabolomics-statistical-analysis",
+      "name": "bio-metabolomics-statistical-analysis",
+      "display_name": "Metabolomics Statistical Analysis",
+      "description": "Decision-grade statistics for metabolomics intensity tables: transformation/scaling, PCA/HCA QC with Hotelling T2 outlier detection, permutation-validated PLS-DA/OPLS-DA, univariate testing (Welch/Mann-Whitney/ANOVA/LMM) with covariate adjustment, and dependence-aware multiple testing.",
+      "path": "skills/bio-metabolomics-statistical-analysis",
+      "content_digest": "76351831c802c1279f0512c61e68d6769762686cc7a50776947f84eef39912ac",
+      "file_count": 4,
+      "uncompressed_bytes": 37386
+    },
+    {
+      "id": "bio-metabolomics-pathway-mapping",
+      "name": "bio-metabolomics-pathway-mapping",
+      "display_name": "Metabolite Pathway Mapping",
+      "description": "Maps metabolomics results to biological pathways via over-representation analysis, metabolite-set enrichment (MSEA/QEA), mummichog/PSEA on raw m/z peaks, and FELLA network-diffusion enrichment, with correct background-set construction and honest interpretive ceilings.",
+      "path": "skills/bio-metabolomics-pathway-mapping",
+      "content_digest": "e06a4645b8e02027c745a24796b51fd1e2f3d3012ce9f6ed03cd0e4d0a919b23",
+      "file_count": 3,
+      "uncompressed_bytes": 33697
+    },
+    {
+      "id": "bio-metabolomics-msdial-preprocessing",
+      "name": "bio-metabolomics-msdial-preprocessing",
+      "display_name": "MS-DIAL Preprocessing (DIA/GC-MS Route)",
+      "description": "Runs the MS-DIAL console workflow (peak picking, MS2Dec deconvolution, alignment, gap-filling) for DIA/SWATH or GC-MS raw data and imports the alignment-result table into R or Python with an honest Fill%/MS-support filter, as an alternate entry point to xcms.",
+      "path": "skills/bio-metabolomics-msdial-preprocessing",
+      "content_digest": "e817134bfcab5ed9fbfa0212cb13ba39861a848f49852cc72e1a3350310a79f7",
+      "file_count": 3,
+      "uncompressed_bytes": 35142
+    },
+    {
+      "id": "bio-metabolomics-lipidomics",
+      "name": "bio-metabolomics-lipidomics",
+      "display_name": "Lipidomics Analysis",
+      "description": "Assigns honest lipid annotation levels (pygoslin/Goslin), designs class-based internal-standard quantification with a coverage guard, and runs lipid-aware differential and enrichment analysis with lipidr, guarding against in-source-fragment phantoms and sn-position over-claims.",
+      "path": "skills/bio-metabolomics-lipidomics",
+      "content_digest": "bc328ce05fde33816439b062a9a2465c7ee83238ed40558d15207ec709edd26d",
+      "file_count": 3,
+      "uncompressed_bytes": 27667
+    },
+    {
+      "id": "bio-workflows-metabolomics-pipeline",
+      "name": "bio-workflows-metabolomics-pipeline",
+      "display_name": "Untargeted Metabolomics Pipeline Orchestration",
+      "description": "Orchestrates the untargeted LC-MS metabolomics pipeline end-to-end across the five core Skills above, naming what each hand-off decides, enforcing the MSI-confidence gate and ionization-mode lock in real code, and naming where each stage can silently fail.",
+      "path": "skills/bio-workflows-metabolomics-pipeline",
+      "content_digest": "64b0daa87366726972e8b9a61d3538262dbe46f6e6bbbe385e56997c9dade67c",
+      "file_count": 4,
+      "uncompressed_bytes": 45420
+    },
+    {
+      "id": "bio-experimental-design-batch-design",
+      "name": "bio-experimental-design-batch-design",
+      "display_name": "Batch and Confounding Design",
+      "description": "Balances batch, plate, run-order and (for TMT-style bridge designs) plex nuisance variation against the biological variable before any sample is run, so it stays estimable rather than confounded; includes SVA-based hidden-batch detection and a decision table for downstream correction.",
+      "path": "skills/bio-experimental-design-batch-design",
+      "content_digest": "6c53f17414fba34608d2c0b251b415a936e4583fc72082d7411cfd4eae4aacd6",
+      "file_count": 3,
+      "uncompressed_bytes": 31139
+    }
+  ],
+  "connectors": [
+    {
+      "id": "pubmed",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "chemistry",
+      "required": false,
+      "default_selected": true
+    },
+    {
+      "id": "omics-archives",
+      "required": false,
+      "default_selected": false
+    }
+  ]
+}
